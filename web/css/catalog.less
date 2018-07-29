@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300i,400|Merriweather:400,700');
+@import "_variables";
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.navbar.navbar-default {
+  margin-bottom: 0;
+  border-radius: 0;
+  border: none;
+  background: @lightColor;
+
+  .navbar-brand {
+    position: relative;
+    bottom: 2px;
+  }
+}
+
+.slider {
+  width: 100%;
+  float: left;
+  position: relative;
+
+  .callBackFormWrap {
+    height: 45%;
+    width: 300px;
+    background: fadeOut(#000, 50%);
+    position: absolute;
+    right: 15%;
+    top: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 5px;
+
+    .respond-to(small-desktops; {
+      height: 55%;
+      top: 25%;
+    });
+
+    form {
+      padding: 30px;
+
+      label {
+        color: @lightColor;
+        font-weight: 400;
+      }
+
+      label, input {
+        display: block;
+        width: 100%;
+      }
+
+      input[type="text"] {
+        margin-bottom: 20px;
+        outline: none;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 1.5rem;
+        border-bottom: 1px solid #fff;
+
+        &:focus {
+          border-bottom: 1px solid #8aff84;
+        }
+      }
+
+      input[type="submit"] {
+        color: #fff;
+        margin-top: 30px;
+        border: 1px solid #fff;
+        background: none;
+        padding: 20px;
+      }
+    }
+  }
+}
+
+.mobileFormWrap {
+  height: 200px;
+  background: #f5f5f5;
+  clear: both;
+
+  .respond-to(phones; {
+    height: 300px;
+  });
+
+  .mobileFormInsideWrap {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    form {
+
+      & > div {
+        float: left;
+        height: 80px;
+        margin: 0 5px;
+
+        .respond-to(phones; {
+          float: none;
+          height: auto;
+        });
+      }
+    }
+
+    input[type="text"] {
+      margin-bottom: 20px;
+      border: none;
+      border-bottom: 2px solid #e2e2e2;
+      background: none;
+
+      &:focus {
+        border-bottom: 2px solid #8aff84;
+        outline: none;
+      }
+    }
+
+    label {
+      color: #8a8a8a;
+      font-size: 2rem;
+    }
+
+    input[type="submit"] {
+      color: #8a8a8a;
+      border: 2px solid #e2e2e2;
+      background: none;
+      padding: 17px;
+    }
+  }
+}
+
+.ourServicesHead {
+  padding: 100px 0;
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+}
+
+.serviceCol {
+  .respond-to(wide-phones; {
+    width: 50%;
+    float: left;
+    padding-right: 15px;
+    padding-left: 15px;
+  });
+
+  .serviceUnit {
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+
+    .respond-to(wide-phones; {
+      margin-bottom: 20px;
+    });
+
+    .respond-to(phones; {
+      margin-bottom: 20px;
+    });
+
+    .serviceName {
+      font-family: 'Merriweather', serif;
+      margin: 10px;
+      font-size: 2rem;
+    }
+
+    .serviceDesc {
+      font-family: 'Lato', sans-serif;
+      color: #8a8a8a;
+      margin: 10px;
+      text-align: justify;
+    }
+
+    .serviceImg {
+
+      img {
+        width: 100%;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+      }
+    }
+
+    .moreBtnWrap {
+
+      a {
+        border-top: 1px solid #e2e2e2;
+        background: #f5f5f5;
+        color: #8e8e8e;
+        font-size: 12px;
+        padding: 7px 25px;
+        text-transform: uppercase;
+        display: block;
+
+        &:hover {
+          text-decoration: none;
+          color: #e67c00;
+        }
+      }
+    }
+  }
+}
+
+
+.serviceReviewsHeader {
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+  font-size: 36px;
+  padding: 100px 0;
+  text-align: center;
+  margin: 0;
+}
+
+.reviewUnitWrap {
+  padding: 30px;
+  box-sizing: border-box;
+
+  .review {
+    border-radius: 5px;
+    border: 1px solid #e2e2e2;
+
+    .reviewImgWrap {
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .reviewAuthor {
+      font-size: 2rem;
+      font-family: 'Merriweather', serif;
+      margin-top: 15px;
+      text-align: center;
+
+      .reviewAuthorPosition {
+        font-family: 'Lato', sans-serif;
+        font-weight: 300;
+        font-style: italic;
+        color: #8a8a8a;
+        font-size: 0.7em;
+      }
+    }
+
+    .reviewAuthorSocials {
+      text-align: center;
+      font-size: 3.5rem;
+      letter-spacing: 10px;
+
+      i {
+        color: #8a8a8a;
+
+        &:hover {
+          color: #626262;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .reviewServiceName {
+    font-size: 3rem;
+  }
+
+  .reviewPost {
+    font-size: 1.5rem;
+    text-align: justify;
+  }
+
+  .reviewIndexes {
+    margin-top: 15px;
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: 1.9rem;
+
+    .progress {
+      height: 8px;
+
+      .progress-bar {
+        background-color: #8a8a8a;
+      }
+    }
+  }
+
+  .helpful {
+    font-size: 2rem;
+    span {
+      cursor: pointer;
+      position: relative;
+      top: 4px;
+    }
+    .glyphicon-thumbs-up {
+      color: #e67c00;
+    }
+
+    .glyphicon-thumbs-down {
+      color: #626262;
+    }
+  }
+}
+
+.officesWrap {
+  background:
+          url(../images/offices.jpg) no-repeat center center,
+          rgba(255, 255, 255, 0.8)
+          ;
+  background-size: cover;
+  background-blend-mode: overlay;
+  padding-bottom: 100px;
+}
+
+.ourOfficesHeader {
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+  font-size: 36px;
+  margin: 100px 0;
+  text-align: center;
+}
+
+.addresses {
+  margin: 0;
+
+  &:after {
+    clear: both;
+    display: block;
+    content: '';
+  }
+
+  .addressCol {
+
+    .respond-to(wide-phones; {
+      width: 50%;
+      float: left;
+      padding-right: 15px;
+      padding-left: 15px;
+    });
+
+    &:last-child {
+      .respond-to(wide-phones; {
+        width: 100%;
+      });
+    }
+
+    address {
+      border-radius: 5px;
+      color: #8a8a8a;
+      margin: 0;
+      padding: 10px 0;
+
+      .addressData {
+        padding: 15px;
+        background: @lightColor;
+      }
+
+      img {
+        width: 100%;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+      }
+
+      button {
+        width: 100%;
+        display: block;
+        padding: 10px 15px;
+        background: #f5f5f5;
+        border: none;
+        border-top: 1px solid #e2e2e2;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        color: #333;
+        text-align: left;
+
+        &:hover {
+          color: #e67c00;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  background: #252a31;
+  color: @lightColor;
+  padding: 25px 15px;
+}

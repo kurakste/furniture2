@@ -1,0 +1,83 @@
+@font-face {
+  font-family: SocialIco;
+  src: url("../fonts/Socialico.ttf");
+}
+
+@darkColor: #445161;
+@lightColor: #fff;
+@sectionLightBackColor: #f5f5f5;
+
+.respond-to(@device, @content) {
+  & when (@device = phones) {
+    @media all and (max-width: 479px) { @content(); }
+  }
+  & when (@device = wide-phones) {
+    @media all and (min-width: 480px) and (max-width: 767px) { @content(); }
+  }
+  & when (@device = tablets) {
+    @media all and (min-width: 768px) and (max-width: 991px) { @content(); }
+  }
+  & when (@device = small-desktops) {
+    @media all and (min-width: 992px) and (max-width: 1199px) { @content(); }
+  }
+  & when (@device = lg-desktops) {
+    @media all and (min-width: 1200px) and (max-width: 1440px) { @content(); }
+  }
+  & when (@device = xlg-desktops) {
+    @media all and (min-width: 1441px) { @content(); }
+  }
+}
+
+.sectionAdaptiveMixin() {
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+.sectionStylesMixin() {
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+.sectionHeaderStylesMixin() {
+  color: @darkColor;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 36px;
+}
+
+.buttonMixin() {
+  color: @sectionLightBackColor;
+  outline: none;
+  background-color: @darkColor;
+  border: none;
+}
+
+.formInputMixin() {
+  border-radius: 5px;
+  border: none;
+  padding: 7px 5px;
+  box-sizing: border-box;
+  color: @darkColor;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  outline: none;
+}
+
+.submitButtonMixin() {
+  border-radius: 5px;
+  background-color: @lightColor;
+  width: 140px;
+  height: 40px;
+  text-align: center;
+  color: @darkColor;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  border: none;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+  outline: none;
+  text-transform: uppercase;
+}
