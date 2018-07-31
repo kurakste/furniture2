@@ -16,3 +16,19 @@ services:
          MYSQL_PASSWORD: akfyem
       ports:
          - 3306:3306
+
+   phpmyadmin:
+      depends_on:
+         - db
+      links:
+         - db
+      image: phpmyadmin/phpmyadmin
+      environment:
+         PMA_ARBITRARY: 1
+         PMA_HOST: db
+         PMA_USER: root
+         PMA_PASSWORD: foo
+      ports:
+         - 8081:80
+      volumes:
+         - /sessions
