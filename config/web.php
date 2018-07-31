@@ -52,6 +52,7 @@ $config = [
             'rules' => [
                 'cart/<id:\d+>'=>'cart/index'
             ],
+
         ],
         
     ],
