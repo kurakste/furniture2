@@ -18,7 +18,7 @@ class FilesController extends Controller
             $model->imageFiles = UploadedFile::getInstances($model, 'imageFiles');
             if ($model->upload()) {
                 // file is uploaded successfully
-                return;
+                return $this->redirect('/files');
             }
         }
 
@@ -39,6 +39,31 @@ class FilesController extends Controller
         $files = $dircontent->getListOfImages();
 
         return $this->render('list-of-file', ['files'=>$files]);
+    }
+
+    public function actionRename()
+    {
+        $oldname = \Yii::$app->request->post('oldname');
+        $newname = \Yii::$app->request->post('newname');
+
+        if (!$oldname || !$newname ) throw new \yii\web\HttpException(404, 'The old or new name could not be found.');
+        
+        $dircontent = new \app\models\Dircontent;
+        $dircontent->renameFileByName($oldname, $newname);
+
+        return $this->redirect('/files');
+    }
+
+    public function actionDelete()
+    {
+        $filename = \Yii::$app->request->post('filename');
+        if (!$filename) throw new \yii\web\HttpException(404, 'The requested Item could not be found.');
+
+        $dircontent = new \app\models\Dircontent;
+        $result = $dircontent->deleteFileByName($filename); 
+        if (!$result) throw new \yii\web\HttpException(404, 'The file could not be found.');
+        
+        return $this->redirect('/files');
     }
 }
 
