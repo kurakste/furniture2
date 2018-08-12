@@ -23,6 +23,14 @@ class FilesController extends Controller
 
         return $this->render('upload-form', ['model' => $model]);
     }
+    
+    public function actionIndex()
+    {
+        $dircontent = new \app\models\Dircontent;
+        $files = $dircontent->getListOfImages();
+
+        return $this->render('list-of-file', ['files'=>$files]);
+    }
 
     public function actionShowFiles()
     {
