@@ -9,9 +9,21 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="items-index" style = "width: 1000px; overflow-y: scroll">
 
     <h1><?= Html::encode($this->title) ?></h1>
+    <h3>
+        <a href="/files/upload">Загрузить</a>
+    </h3>
     <ul>
     <?php foreach ($files as $file) : ?>
-    <li><?= $file ?></li>
+    <li>
+        <?= $file ?>
+        <button class = "file-delete-button" 
+                value ="<?= $file ?>">
+                <i class="fa fa-trash-o" aria-hidden="true"></i>
+        </button>
+        <button class = "file-rename-button" value ="
+                <?= $file ?>">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+        </button> </li>
     <?php endforeach ?>
     </ul>
         
