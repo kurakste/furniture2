@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "21c3db4f3780d123c665f82fc68f650b",
+    "content-hash": "26920d17e7f2e7a3fb6da6bd70f68eb6",
     "packages": [
         {
             "name": "2amigos/yii-cdn-asset-management-library",
@@ -196,6 +196,23 @@
             "license": [
                 "MIT"
             ]
+        },
+        {
+            "name": "bower-asset/font-awesome",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FortAwesome/Font-Awesome.git",
+                "reference": "bab41b27a169f6b688996f24c10bd7a0697811e6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FortAwesome/Font-Awesome/zipball/bab41b27a169f6b688996f24c10bd7a0697811e6",
+                "reference": "bab41b27a169f6b688996f24c10bd7a0697811e6",
+                "shasum": null
+            },
+            "type": "bower-asset",
+            "time": "2018-08-06T14:44:29+00:00"
         },
         {
             "name": "bower-asset/inputmask",
@@ -4303,6 +4320,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "bower-asset/font-awesome": 20,
         "kint-php/kint": 20
     },
     "prefer-stable": false,

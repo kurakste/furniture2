@@ -17,6 +17,8 @@ class OrdersController extends Controller
     /**
      * {@inheritdoc}
      */
+    public $layout = 'adminlte';
+    
     public function behaviors()
     {
         return [
