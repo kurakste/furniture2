@@ -9,6 +9,7 @@ use yii\web\UploadedFile;
 
 class FilesController extends Controller
 {
+    public $layout = 'adminlte';
     public function actionUpload()
     {
         $model = new UploadForm();

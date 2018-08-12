@@ -18,11 +18,11 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= $file ?>
         <button class = "file-delete-button" 
                 value ="<?= $file ?>">
-                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                <i class="fas fa-trash-alt" aria-hidden="true"></i>
         </button>
         <button class = "file-rename-button" value ="
                 <?= $file ?>">
-                <i class="fa fa-pencil" aria-hidden="true"></i>
+                <i class="fas fa-pencil-alt" aria-hidden="true"></i>
         </button> </li>
     <?php endforeach ?>
     </ul>

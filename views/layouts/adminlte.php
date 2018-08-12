@@ -330,6 +330,7 @@ dmstr\web\AdminLteAsset::register($this);
         <li><a href="/images"><i class="fa fa-images"></i><span>Images</span></a></li>
         <li><a href="/colors"><i class="fas fa-palette"></i> <span>Colors</span></a></li>
         <li><a href="/factures"><i class="fas fa-paint-roller"></i> <span>Factures</span></a></li>
+        <li><a href="/files"><i class="fas fa-file"></i> <span>Files</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->
