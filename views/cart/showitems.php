@@ -22,20 +22,28 @@
                                 <?php foreach ($cart as $row): ?>
 
                                     <tr>
+                                        <td style='display: none;'>
+                                            <?= $row->item->id ?>
+                                        </td>
                                         <td class="cart_product_img">
                                             <a href="#"><img src="/img/<?= $row->item->mainImage ?>" alt="Product"></a>
+                                        </td>
+                                        <td style='display: none;'>
+                                            <?= $row->color->id ?>
                                         </td>
                                         <td class="cart_product_desc">
                                             <a href="#"><img src="<?= $row->color->img ?><?= $row->facture->img ?>" alt="Material"></a>
                                         </td>
-                                        <td class="price">
+                                        <td style='display: none;'>
+                                            <?= $row->facture->id ?>
+                                        </td>
+                                        <td class="facture">
                                             <a href="#"><img src="<?= $row->facture->img ?>" alt="Material"></a>
                                         </td>
                                         <td class="qty">
                                             <div class="qty-btn d-flex">
                                                 <?php 
                                                     $pref = ($i === 0) ? '' : $i;
-
                                                     ?>
                                                 <p>Количество</p>
                                                 <div class="quantity">

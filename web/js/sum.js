@@ -1,10 +1,12 @@
 window.onload = function() {
    var cart = 0; 
+   var cartstrings = [];
    getCartCost();
 
    function onChangeAmount() 
    {
       getCartCost();
+      getCartStrings();
 
    }
 
@@ -15,12 +17,30 @@ window.onload = function() {
       $('table tbody tr').each(function(){
          let tr = $(this);
          let td = tr.find('td');
-         console.log(td);
-         let price = $(td[4]).find('span').text();
-         price = parseInt(price);
-         amount = $(td[3]).find('.qty-text').val();
+         let price = $(td[7]).find('span').text();
+         price = parseFloat(price);
+         amount = $(td[6]).find('.qty-text').val();
          cost = price * amount;
          cart = cart + cost;
+      })
+      let cartval = $('#totalsum');
+      cartval.text(cart)
+   }
+   
+   // Пересчитывает стоимость корзины.
+   function getCartStrings(){
+      cartstrings = [];
+      $('table tbody tr').each(function(){
+         let str = {};
+         let tr = $(this);
+         let td = tr.find('td');
+         str['iid'] = parseInt($(td[0]).text());
+         str['cid'] = parseInt($(td[2]).text());
+         str['fid'] = parseInt($(td[2]).text());
+         str['price'] = parseFloat($(td[7]).find('span').text());
+         str['amount'] = parseInt($(td[6]).find('.qty-text').val());
+
+         console.log(str);
       })
       console.log(cart);
       let cartval = $('#totalsum');
