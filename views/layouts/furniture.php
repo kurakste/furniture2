@@ -14,16 +14,13 @@ $this->beginPage(); ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Чепецкая мебельная фабрика</title>
     <link rel="icon" href="/img/title_icon.png">
- <!--   <link rel="stylesheet" href="packages/bootstrap-3.3.7-dist/css/bootstrap.min.css">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> -->
     <?php $this->head() ?>
 </head>
 
 <body>
 <?php $this->beginBody() ?>
-
+    
       <div class="main-content-wrapper d-flex clearfix">
-
         <!-- Mobile Nav 767px-->
         <div class="mobile-nav">
             <div class="amado-navbar-brand">
@@ -63,12 +60,16 @@ $this->beginPage(); ?>
             <br>
             <!-- Social -->
             <div class="social-info d-flex justify-content-between">
-                <a href="https://www.instagram.com/chepcamebel" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+               <a href="https://www.instagram.com/chepcamebel" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <a href="https://www.facebook.com/chepcamebel/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                 <a href="https://m.vk.com/club117603272" target="_blank"><i class="fa fa-vk" aria-hidden="true"></i></a>
             </div>
         </header>
+
+
 <?= $content ?>
+
+
    </div>
     <section class="newsletter-area section-padding-100-0">
         <div class="container">

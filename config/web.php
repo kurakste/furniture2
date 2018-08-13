@@ -50,7 +50,8 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                'cart/<id:\d+>'=>'cart/index'
+                'cart/<id:\d+>'=>'cart/index',
+                'addtocart/<id:\d+>'=>'cart/index'
             ],
 
         ],

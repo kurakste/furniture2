@@ -114,6 +114,8 @@ class ItemsController extends Controller
 
     public function actionShowitem($id) 
     {
+        $this->layout = 'furniture';
+
         $item = $this->findModel($id);
         return $this->render('showitem', ['item' => $item]);
     }

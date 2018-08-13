@@ -38,6 +38,8 @@ use yii\helpers\Html;
 
    <form action="/cart/add-string-to-cart" method="post">
    <input type="hidden" name="iid" value=" <?= $item->id ?>" />
+   <input type="hidden" name="cid" value=" 2 " />
+   <input type="hidden" name="fid" value=" 2" />
       <input type="text" name="amount" value="1" />
       <input type="submit" name="" id="isubmit" value="в корзину" />
    </form>

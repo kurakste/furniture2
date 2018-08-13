@@ -1006,7 +1006,12 @@ img {
   .single-products-catagory:hover a::after, .single-products-catagory:focus a::after {
     opacity: 1;
     visibility: visible;
- 
+      
+/* рамка */
+    border-style: solid;
+    border-color: #fbb710;
+    border-width: 5px;
+    
     
 }
   .single-products-catagory:hover .hover-content p,

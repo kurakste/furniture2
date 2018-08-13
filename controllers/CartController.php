@@ -15,6 +15,12 @@ class CartController extends \yii\web\Controller
 
 
     /*
+     * Параметры придут пост запростом.
+     *
+     * @param integer $iid - идентификатор товара.
+     * @param integer $cid - идентификатор цвета.
+     * @param integer $fid - идентификатор фактуры.
+     *
      * Добавляет новую запись в корзину. 
      * Ключом будет адйди сессии. 
      * Нужно продумать алгоритм сборки мусора 
@@ -31,7 +37,7 @@ class CartController extends \yii\web\Controller
         $request['ssid'] = $ssid;
 
         // Сначала смотрим есть ли у пользователя с текущий ssid
-        // в корзине товар с данным iid. Если есть будем извлекать 
+        // в корзине товар с данным iid + cid + fid. Если есть будем извлекать 
         // извлекать эту строку корзины и увеличивать кол-во
         // если нет, то просто добавим строку. Если записей для
         // текущего ssid еще нет, то тоже просто добовляем строку
@@ -41,7 +47,11 @@ class CartController extends \yii\web\Controller
             ->all();
         $cart = [];
         foreach ($strings as $string) {
-            if ($string->iid == $request['iid']) {
+            if (
+                ($string->iid == $request['iid']) &&
+                ($string->cid == $request['cid']) &&
+                ($string->fid == $request['fid']) 
+                                                    ) {
                 $string->amount = $string->amount + $request['amount'];
                 $string->save();
                 $this->redirect('/');

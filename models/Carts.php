@@ -31,7 +31,7 @@ class Carts extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['iid', 'amount'], 'integer'],
+            [['iid', 'cid', 'fid', 'amount'], 'integer'],
             [['created_at'], 'safe'],
             [['ssid'], 'string', 'max' => 256],
             [['iid'], 'exist', 'skipOnError' => true, 'targetClass' => Items::className(), 'targetAttribute' => ['iid' => 'id']],
@@ -77,4 +77,15 @@ class Carts extends \yii\db\ActiveRecord
         $out = $summ->readAll()[0]['cartSum'] ?? null; 
         return $out;
     }
+    
+    public function getFacture()
+    {
+        return $this->hasOne(Factures::className(), ['id'=>'fid']);
+    }
+    
+    public function getColor()
+    {
+        return $this->hasOne(Color::className(), ['id'=>'cid']);
+    }
+
 }

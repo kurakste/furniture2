@@ -11,7 +11,7 @@ $this->title = 'My Yii Application'; ?>
             <?php foreach ($items as $item) : ?>
             
              <div class="single-products-catagory clearfix">
-             <a href="/items/showitem/?id=<?= $item->id ?>">
+             <a href="/items/showitem?id=<?= $item->id ?>">
              <img src="/img/<?= $item->getMainImage(); ?>" alt="chair">
                      <div class="hover-content">
                          <div class="line"></div>
