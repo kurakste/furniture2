@@ -2,6 +2,7 @@ window.onload = function() {
    var cart = 0; 
    var cartstrings = [];
    getCartCost();
+   getCartStrings();
 
    function onChangeAmount() 
    {
@@ -39,10 +40,9 @@ window.onload = function() {
          str['fid'] = parseInt($(td[2]).text());
          str['price'] = parseFloat($(td[7]).find('span').text());
          str['amount'] = parseInt($(td[6]).find('.qty-text').val());
-
-         console.log(str);
+         cartstrings.push(str);
       })
-      console.log(cart);
+      console.log(cartstrings);
       let cartval = $('#totalsum');
       cartval.text(cart)
    }
