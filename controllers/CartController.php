@@ -84,6 +84,22 @@ class CartController extends \yii\web\Controller
         $cartstrings = Carts::deleteAll(['ssid'=>$ssid]);
     }
 
+    /*
+     * Gets all data about carts items from frontend as Json.
+     * Validate data and if all data is valid for Carts model, its 
+     * clear old carts data and strore new one.
+     * If data validation will return false - throw HttpExeption
+     * @param string params;
+     * @throw HttpExeption;
+     */
+    public function actionJasonApiStore()
+    {
+        $request = \Yii::$app->request->post();
+
+           print_r($request); die; 
+    
+    }
+
     public function actionGetCartJson()
     {
         $ssid = (new \yii\web\session)->id;

@@ -1,13 +1,11 @@
 window.onload = function() {
    var cart = 0; 
-   var cartstrings = [];
    function onChangeAmount() 
    {
       getCartCost();
-      getCartStrings();
-
+      let cartstrings = getCartStrings();
+      sendDataToAPI(cartstrings);
    }
-
 
    // Пересчитывает стоимость корзины.
    function getCartCost(){
@@ -24,10 +22,16 @@ window.onload = function() {
       let cartval = $('#totalsum');
       cartval.text(cart)
    }
+
+
    
-   // Пересчитывает стоимость корзины.
-   function getCartStrings(){
-      cartstrings = [];
+   // Парсит данные из html таблицы что бы можно было потом
+   // передать данные на бекэнд через  API.
+   function getCartStrings()
+   {
+      console.log(outdata);
+      var outdata = [];
+      outdata.length = 0;
       $('table tbody tr').each(function(){
          let str = {};
          let tr = $(this);
@@ -37,11 +41,24 @@ window.onload = function() {
          str['fid'] = parseInt($(td[2]).text());
          str['price'] = parseFloat($(td[7]).find('span').text());
          str['amount'] = parseInt($(td[6]).find('.qty-text').val());
-         cartstrings.push(str);
+         outdata.push(str);
       })
-      console.log(cartstrings);
-      let cartval = $('#totalsum');
-      cartval.text(cart)
+      console.log(outdata);
+      return outdata;
+   }
+   // Сохраняет всю корзину через API.
+   function sendDataToAPI(cstrings)
+   {
+      $.ajax({
+         type: "POST",
+         url: "/cart/jason-api-store",
+         data: 'cartstrings='+JSON.stringify(cstrings),
+
+         success: function (msg) {
+            console.log('Получены данные:' + msg);
+         }
+      });
+   
    }
 
    $('.qty-minus').each(function(){
