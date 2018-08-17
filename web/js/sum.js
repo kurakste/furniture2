@@ -1,9 +1,6 @@
 window.onload = function() {
    var cart = 0; 
    var cartstrings = [];
-   getCartCost();
-   getCartStrings();
-
    function onChangeAmount() 
    {
       getCartCost();
@@ -57,4 +54,7 @@ window.onload = function() {
    $('.qty-text').each(function(){
       $(this).change(onChangeAmount);
    });
+   getCartCost();
+   getCartStrings();
 };
+

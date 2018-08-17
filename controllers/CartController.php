@@ -8,7 +8,7 @@ use app\models\Carts;
 
 class CartController extends \yii\web\Controller
 {
-    public function actionIndex($id)
+    public function actionIndex()
     {
         return $this->render('index');
     }
@@ -35,7 +35,6 @@ class CartController extends \yii\web\Controller
         $request = \Yii::$app->request->post();
         $ssid = (new \yii\web\session)->id;
         $request['ssid'] = $ssid;
-
         // Сначала смотрим есть ли у пользователя с текущий ssid
         // в корзине товар с данным iid + cid + fid. Если есть будем извлекать 
         // извлекать эту строку корзины и увеличивать кол-во

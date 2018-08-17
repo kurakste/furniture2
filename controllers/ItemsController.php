@@ -4,6 +4,8 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Items;
+use app\models\Factures;
+use app\models\Color;
 use app\models\ItemsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -112,12 +114,23 @@ class ItemsController extends Controller
         return $this->redirect(['index']);
     }
 
+
+    /*
+     * Shows one item with description for consumer.
+     * @param integer $id 
+     *
+     */
     public function actionShowitem($id) 
     {
         $this->layout = 'furniture';
+        $factures = Factures::find()->all();
+        $colors =Color::find()->all();
 
         $item = $this->findModel($id);
-        return $this->render('showitem', ['item' => $item]);
+        return $this->render(
+            'showitem', 
+            ['item' => $item, 'factures'=>$factures, 'colors' =>$colors]
+        );
     }
 
     /**

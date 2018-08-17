@@ -38,11 +38,18 @@ use yii\helpers\Html;
 
    <form action="/cart/add-string-to-cart" method="post">
    <input type="hidden" name="iid" value=" <?= $item->id ?>" />
-   <input type="hidden" name="cid" value=" 2 " />
-   <input type="hidden" name="fid" value=" 2" />
+       <p>Выберите фактуру</p> 
+       <?php foreach ($factures as $facture): ?>
+        <p><input name='fid' type='radio' value='<?= $facture->id; ?>'><?= $facture->name ?></p>
+       <?php endforeach ?>
+       <p>Выбирите цвет</p> 
+       <?php foreach ($colors as $color): ?>
+        <p><input name='cid' type='radio' value='<?= $color->id; ?>'><?= $color->name ?></p>
+       <?php endforeach ?>
       <input type="text" name="amount" value="1" />
       <input type="submit" name="" id="isubmit" value="в корзину" />
    </form>
+
 
    <a href="/">В КАТАЛОГ</a>
 </div>
