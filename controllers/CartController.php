@@ -94,9 +94,33 @@ class CartController extends \yii\web\Controller
      */
     public function actionJasonApiStore()
     {
-        $request = \Yii::$app->request->post();
+        $ssid = (new \yii\web\session)->id;
+        $data = \Yii::$app->request->post('cartstrings');
+        $cartstrings = json_decode($data);
 
-           print_r($request); die; 
+        foreach ($cartstrings as $cartstring) {
+            $cartstring = (array)$cartstring;
+            $cartstring['ssid'] = $ssid;
+            $model = new Carts;
+            $model->load($cartstring, '');
+            if (!$model->validate()) {
+                
+                return json_encode($model->errors, JSON_UNESCAPED_UNICODE);
+            } 
+        }
+        /* var_dump($ss); die; */
+        Carts::deleteAll(['ssid'=>$ssid]);
+        
+        foreach ($cartstrings as $cartstring) {
+            $cartstring = (array)$cartstring;
+            $cartstring['ssid'] = $ssid;
+            $model = new Carts;
+            $model->load($cartstring, '');
+            $model->save();
+        }
+
+
+        return 'hi!';
     
     }
 

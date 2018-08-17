@@ -7,7 +7,7 @@
                         </div>
 
                         <div class="cart-table clearfix">
-                            <table class="table table-responsive">
+                            <table class="table table-responsive cart">
                                 <thead>
                                     <tr>
                                         <th>Модель</th>
@@ -21,7 +21,7 @@
                                 <?php $i = 0 ?>
                                 <?php foreach ($cart as $row): ?>
 
-                                    <tr>
+                                    <tr class='cart-row'>
                                         <td style='display: none;'>
                                             <?= $row->item->id ?>
                                         </td>

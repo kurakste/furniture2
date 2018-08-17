@@ -10,7 +10,7 @@ window.onload = function() {
    // Пересчитывает стоимость корзины.
    function getCartCost(){
       cart = 0;
-      $('table tbody tr').each(function(){
+      $('table.cart tbody tr').each(function(){
          let tr = $(this);
          let td = tr.find('td');
          let price = $(td[7]).find('span').text();
@@ -31,24 +31,24 @@ window.onload = function() {
    {
       console.log(outdata);
       var outdata = [];
-      outdata.length = 0;
-      $('table tbody tr').each(function(){
+      $('table.cart tbody tr').each(function(){
          let str = {};
          let tr = $(this);
          let td = tr.find('td');
          str['iid'] = parseInt($(td[0]).text());
          str['cid'] = parseInt($(td[2]).text());
          str['fid'] = parseInt($(td[2]).text());
-         str['price'] = parseFloat($(td[7]).find('span').text());
+         // str['price'] = parseFloat($(td[7]).find('span').text());
          str['amount'] = parseInt($(td[6]).find('.qty-text').val());
          outdata.push(str);
       })
-      console.log(outdata);
+
       return outdata;
    }
    // Сохраняет всю корзину через API.
    function sendDataToAPI(cstrings)
    {
+      console.log(JSON.stringify(cstrings));
       $.ajax({
          type: "POST",
          url: "/cart/jason-api-store",

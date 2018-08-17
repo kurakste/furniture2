@@ -32,7 +32,8 @@ class Carts extends \yii\db\ActiveRecord
     {
         return [
             [['iid', 'cid', 'fid', 'amount'], 'integer'],
-            [['created_at'], 'safe'],
+            [['iid', 'cid', 'fid', 'amount', 'ssid'], 'required'],
+            [['iid', 'cid', 'fid', 'amount', 'ssid'], 'safe'],
             [['ssid'], 'string', 'max' => 256],
             [['iid'], 'exist', 'skipOnError' => true, 'targetClass' => Items::className(), 'targetAttribute' => ['iid' => 'id']],
         ];
