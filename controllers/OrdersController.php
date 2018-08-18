@@ -129,9 +129,18 @@ class OrdersController extends Controller
     
     public function actionGetform()
     {
+        $this->layout = 'furniture';
+
+        if (\Yii::$app->request->post()) {
+            return 'hi!';
+        }
+        $order = new Orders;
+
         $ssid = (new \yii\web\session)->id;
         $summ = \app\models\Carts::getSummtOfCart($ssid);
-        return $this->render('getform', ['summ' => $summ]);
+
+
+        return $this->render('getform', ['model'=>$order, 'summ' => $summ]);
     }
 
     public function actionStoreOrder()
