@@ -8,6 +8,7 @@ use app\models\OrdersSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\objects\ViewModels\OrderCreateView;
 
 /**
  * OrdersController implements the CRUD actions for Orders model.
@@ -132,15 +133,25 @@ class OrdersController extends Controller
         $this->layout = 'furniture';
 
         if (\Yii::$app->request->post()) {
+            var_dump($viewModel->getCities());
             return 'hi!';
         }
         $order = new Orders;
+        $cities = new OrderCreateView;
 
         $ssid = (new \yii\web\session)->id;
         $summ = \app\models\Carts::getSummtOfCart($ssid);
 
 
-        return $this->render('getform', ['model'=>$order, 'summ' => $summ]);
+        return $this->render
+            (
+                'getform', 
+                [
+                    'model'=>$order, 
+                    'summ' => $summ, 
+                    'cities' => $cities,
+                ]
+            );
     }
 
     public function actionStoreOrder()

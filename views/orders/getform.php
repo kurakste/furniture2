@@ -2,6 +2,12 @@
 /* @var $this yii\web\View */
 
 use yii\widgets\ActiveForm;
+use kartik\select2\Select2;
+use yii\web\JsExpression;
+
+$this->registerJsFile(\Yii::$app->request->baseUrl.'/js/calcdelivery.js',[
+        'depends'=> \yii\web\JqueryAsset::className(),
+        ]);
 
 ?>
 
@@ -19,7 +25,8 @@ use yii\widgets\ActiveForm;
                 $form = ActiveForm::begin([
                     'id' => 'client',
                     'options' => [
-                        'enctype' => 'multipart/form-data'
+                        'enctype' => 'multipart/form-data',
+                        'data' => ['pjax' => true],
                     ],
                 ]); 
 ?>
@@ -28,14 +35,14 @@ use yii\widgets\ActiveForm;
 
                     <div class="col-md-6 mb-3">
                         <?= $form->field($model, 'name')->textinput(array 
-                                    (
-                                        'placeholder' => "Введите ваше имя",
-                                        'class' => "form-control",
-                                        'id' => "first_name",
-                                    )
-                                )->label(false)
-                                
-                                ; ?>
+                            (
+                                'placeholder' => "Введите ваше имя",
+                                'class' => "form-control",
+                                'id' => "first_name",
+                            )
+                            )->label(false)
+                            
+                            ; ?>
                     </div>
                     <div class="col-md-6 mb-3">
                         <?= $form->field($model, 'lname')->textinput(array 
@@ -62,16 +69,33 @@ use yii\widgets\ActiveForm;
                                 ; ?>
                     </div>
                     <div class="col-md-12 mb-3">
-                        <?= $form->field($model, 'city')->textinput(array 
-                                    (
-                                        'placeholder' => "Введите город доставки.",
-                                        'class' => "form-control",
-                                        'id' => "city",
 
-                                    )
-                                )->label(false)
-                                
-                                ; ?>
+                    <?= $form->field($model, 'city')
+                        ->widget(Select2::classname(), [
+                            /* 'data' => $cities->getCities(), */
+                            /* 'options' => ['placeholder' => 'Select a state ...'], */
+                            /* 'pluginOptions' => [ */
+                            /*         'allowClear' => true */
+                            /*     ], */
+                            
+                            'initValueText' => '', // set the initial display text
+                            'options' => ['placeholder' => 'Search for a city ...'],
+                            'pluginOptions' => [
+                            'allowClear' => true,
+                            'minimumInputLength' => 3,
+                            'language' => [
+                                'errorLoading' => new JsExpression("function () { return 'Waiting for results...'; }"),
+                            ],
+                            'ajax' => [
+                                'url' => '/pec/ajax-get-cities',
+                                'dataType' => 'json',
+                                'data' => new JsExpression('function(params) { return {q:params.term}; }')
+                            ],
+                            'escapeMarkup' => new JsExpression('function (markup) { return markup; }'),
+                            'templateResult' => new JsExpression('function(city) { return city.text; }'),
+                            'templateSelection' => new JsExpression('function (city) { return city.text; }'),
+                        ], 
+                            ])->label(false); ?>
                     </div>
                     <div class="col-md-12 mb-3">
                         <?= $form->field($model, 'addr')->textinput(array 
@@ -84,7 +108,7 @@ use yii\widgets\ActiveForm;
                                 )->label(false)
                                 
                                 ; ?>
-                    </div>
+                    </div> 
                     <div class="col-md-12 mb-3">
                         <?= $form->field($model, 'phone')->textinput(array 
                                     (
@@ -147,7 +171,7 @@ use yii\widgets\ActiveForm;
                <h5>Ваши заказы</h5>
                <ul class="summary-table">
                <li><span>Сумма заказа:</span> <span><?= number_format($summ, 2) ?></span></li>
-                  <li><span>Ваши бонусные баллы:</span> <span>0</span></li>
+                  <li><span>Стоимость доставки</span> <span id='deliveryCost'>0</span></li>
 
 
                </ul>

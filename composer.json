@@ -21,7 +21,8 @@
         "mihaildev/yii2-elfinder": "*",
         "2amigos/yii-cdn-asset-management-library": "*",
         "dmstr/yii2-adminlte-asset": "^2.1",
-        "bower-asset/font-awesome": "dev-master"
+        "bower-asset/font-awesome": "dev-master",
+        "kartik-v/yii2-widget-select2": "@dev"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

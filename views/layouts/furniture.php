@@ -24,7 +24,7 @@ $this->beginPage(); ?>
         <!-- Mobile Nav 767px-->
         <div class="mobile-nav">
             <div class="amado-navbar-brand">
-                <a href="/"><img src="img/mailrusigimg_1.png" alt="logo"></a>
+<!--                <a href="/"><img src="img/mailrusigimg_1.png" alt="logo"></a> -->
             </div>
             <div class="amado-navbar-toggler">
                 <span></span><span></span><span></span>
@@ -38,7 +38,7 @@ $this->beginPage(); ?>
             </div>
             
             <div class="logo">
-                <a href="/"><img src="/img/mailrusigimg_1.png" alt="my icon"></a>
+<!--                <a href="/"><img src="/img/mailrusigimg_1.png" alt="my icon"></a> -->
             </div>
             
             <nav class="amado-nav">
@@ -99,7 +99,7 @@ $this->beginPage(); ?>
                     <div class="single_widget_area">
                         <!-- Logo -->
                         <div class="footer-logo mr-50">
-                            <a href="/"><img src="img/mailrusigimg_1.png" alt="logo"></a>
+                          <!--  <a href="/"><img src="img/mailrusigimg_1.png" alt="logo"></a> -->
                         </div>
                         
                         <p class="copywrite">

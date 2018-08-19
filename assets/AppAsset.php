@@ -25,14 +25,15 @@ class AppAsset extends AssetBundle
     ];
     public $js = [
         '/js/plugins.js',
-        '/js/active.js',
         '/js/button.js',
         '/js/sum.js',
+        '/js/active.js',
 
     ];
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
         'app\assets\FontAwesomeAsset',
+        '\yii\web\JqueryAsset',
     ];
 }
