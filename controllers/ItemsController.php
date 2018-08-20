@@ -128,7 +128,7 @@ class ItemsController extends Controller
 
         $item = $this->findModel($id);
         return $this->render(
-            'showitem', 
+            'showitem2', 
             ['item' => $item, 'factures'=>$factures, 'colors' =>$colors]
         );
     }

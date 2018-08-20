@@ -597,6 +597,7 @@ img {
     z-index: 1;
     -webkit-box-flex: 0;
     -ms-flex: 0 0 calc(95% - 320px);
+        
     flex: 0 0 calc(95% - 320px);
     width: calc(95% - 320px);
     max-width: calc(95% - 320px); }
@@ -1402,3 +1403,13 @@ img {
 /* ##### The End ##### */
 
 /*# sourceMappingURL=core-style.css.map */
+
+.w-100 {
+    width: 70%;
+    height: 70%;
+}
+
+.d-block {
+    width: 70%;
+    height: 70%;
+}
