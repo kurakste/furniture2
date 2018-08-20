@@ -78,7 +78,7 @@ class SiteController extends Controller
     /**
      * Login action.
      *
-     * @return Response|string
+     * @return Response string
      */
     public function actionLogin()
     {

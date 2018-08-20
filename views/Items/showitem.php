@@ -31,9 +31,9 @@ use yii\helpers\Html;
 <div id='item-wrapper'>
     <img class ='iimage' src="/img/<?= $item->getMainImage() ?>" alt="" />
       <div id = 'idescription'>
-      <h4> <?= $item->name ?> </h4>
-      <h6> <?= $item->description ?> </h6>
-      <p> Цена: <?= $item->price ?> </p>
+      <h4><?= $item->name ?></h4>
+      <h6><?= $item->description ?></h6>
+      <p> Цена: <?= $item->price ?></p>
 </div>
 
    <form action="/cart/add-string-to-cart" method="post">
