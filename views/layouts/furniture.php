@@ -1,6 +1,7 @@
 <?php
 use yii\helpers\Html;
 use app\assets\AppAsset;
+use app\objects\CartsBModel;
 
 AppAsset::register($this);
 
@@ -46,16 +47,19 @@ $this->beginPage(); ?>
                     <li class="active"><a href="/">Главная</a></li>
                     <li><a href="/site/chair">Стулья</a></li>
                     <li><a href="/site/tables">Обеденные группы</a></li>
-                    <li><a href="/cart/get-cart">Корзина 
-                        <?php if (isset($this->params['cartscount'])): ?>
-                            <span class='badge'><?= $this->params['cartscount'] ?>
-                            </span>
-                        <?php endif; ?>
-                       </a>
-                    </li>
+                    <li><a href="/cart/get-cart">Корзина </a></li>
                     <li><a href="#">Контакты</a></li>
                 </ul>
          </nav>
+        <br>
+        <br>
+            <!-- Cart Menu -->
+            <div class="cart-fav-search mb-100">
+            <a href="/cart/get-cart" class="cart-nav"><img src="img/core-img/cart.png" alt="">  Корзина <span>(<?= CartsBModel::getAmountItemsInCart() ?>)</span></a>
+                <a href="#" class="fav-nav"><img src="img/core-img/favorites.png" alt=""> Favourite</a>
+                <a href="#" class="search-nav"><img src="img/core-img/search.png" alt=""> Search</a>
+            </div>
+
         <br>
         <br>
         <!-- Social -->

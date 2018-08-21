@@ -65,24 +65,18 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $items = \app\models\Items::find()->where(['cid'=>1])->all();
-        $ssid = (new \yii\web\session)->id;
-        $this->view->params['cartscount'] = Carts::getAmountOfItems($ssid);
         return $this->render('index', [ 'items' => $items ]);
     }
     
     public function actionChair()
     {
         $items = \app\models\Items::find()->where(['cid'=>1])->all();
-        $ssid = (new \yii\web\session)->id;
-        $this->view->params['cartscount'] = Carts::getAmountOfItems($ssid);
         return $this->render('index', [ 'items' => $items ]);
     }
     
     public function actionTables()
     {
         $items = \app\models\Items::find()->where(['cid'=>2])->all();
-        $ssid = (new \yii\web\session)->id;
-        $this->view->params['cartscount'] = Carts::getAmountOfItems($ssid);
         return $this->render('tables', [ 'items' => $items ]);
     }
 
