@@ -48,7 +48,7 @@ $this->beginPage(); ?>
                     <li><a href="/site/chair">Стулья</a></li>
                     <li><a href="/site/tables">Обеденные группы</a></li>
                     <li><a href="/cart/get-cart">Корзина </a></li>
-                    <li><a href="#">Контакты</a></li>
+                    <li><a href="/site/about">О компании</a></li>
                 </ul>
          </nav>
         <br>
