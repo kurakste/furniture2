@@ -5,6 +5,7 @@ $(document).ready(function (){
    $('#back-to-color').on('click', backToColor);
 
    $('#add-to-cart').submit(function(){
+      if (path_without_checkbpx) return true;
       if (!isFidChecked()) {
          alert('Выберите пожалуйста фактуру.');
          return false;

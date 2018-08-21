@@ -28,36 +28,36 @@ $this->registerJsFile('/js/showitem.js', [
                 <div class="single_product_thumb">
                     <div id="product_details_slider" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
-                            <li class="active" data-target="#product_details_slider" data-slide-to="0" style="background-image: url(/img/<?= $item->getMainImage() ?>);">
-                            </li>
-                            <li data-target="#product_details_slider" data-slide-to="1" style="background-image: url(img/product-img/pro-big-2.jpg);">
-                            </li>
-                            <li data-target="#product_details_slider" data-slide-to="2" style="background-image: url(img/product-img/pro-big-3.jpg);">
-                            </li>
-                            <li data-target="#product_details_slider" data-slide-to="3" style="background-image: url(img/product-img/pro-big-4.jpg);">
-                            </li>
+                            <?php $aa = 0; ?>
+                            <?php foreach ($item->images as $image): ?>
+                                <?php if($aa===0): ?>
+                                    <li class="active" data-target="#product_details_slider" data-slide-to="0" style="background-image: url(/img/<?= $image->filename ?>);">
+                                    </li>
+                                <?php else: ?>
+                                    <li data-target="#product_details_slider" data-slide-to="0" style="background-image: url(/img/<?= $image->filename ?>);">
+                                    </li>
+                                <?php endif ?>
+                            <?php endforeach ?>
                         </ol>
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <a class="gallery_img" href="/img/<?= $item->getMainImage() ?>">
-                                    <img class="d-block w-100" src="/img/<?= $item->getMainImage() ?>" alt="First slide">
-                                </a>
-                            </div>
-                            <div class="carousel-item">
-                                <a class="gallery_img" href="img/product-img/pro-big-2.jpg">
-                                    <img class="d-block w-100" src="img/product-img/pro-big-2.jpg" alt="Second slide">
-                                </a>
-                            </div>
-                            <div class="carousel-item">
-                                <a class="gallery_img" href="img/product-img/pro-big-3.jpg">
-                                    <img class="d-block w-100" src="img/product-img/pro-big-3.jpg" alt="Third slide">
-                                </a>
-                            </div>
-                            <div class="carousel-item">
-                                <a class="gallery_img" href="img/product-img/pro-big-4.jpg">
-                                    <img class="d-block w-100" src="img/product-img/pro-big-4.jpg" alt="Fourth slide">
-                                </a>
-                            </div>
+                            <?php $ii = 0; ?>    
+                            <?php foreach ($item->images as $image): ?>
+                                <?php if ($ii ===0 ): ?>
+                                    <div class="carousel-item active">
+                                        <a class="gallery_img" href="/img/<?= $image->filename ?>">
+                                            <img class="d-block w-100" src="/img/<?= $image->filename ?>" alt="First slide">
+                                        </a>
+                                    </div>
+                                <?php else: ?>
+                                    <div class="carousel-item">
+                                        <a class="gallery_img" href="/img/<?= $image->filename ?>">
+                                            <img class="d-block w-100" src="/img/<?= $image->filename ?>" alt="First slide">
+                                        </a>
+                                    </div>
+                                <?php endif ?>
+                                <?php $ii++ ?>
+                                
+                            <?php endforeach ?>
                         </div> <!-- carusel -->
                     </div> <!-- producte detail -->
                 </div> <!-- single product .. -->
@@ -88,110 +88,125 @@ $this->registerJsFile('/js/showitem.js', [
                             </div>
                         </div>
                     </form>
-                    <button id="go-to-colors-btn" name="addtocart" value="5" class="btn amado-btn">Перейти к выбору цвета</button>
+                    <?php if($item->cid ===1): ?>
+                        <button id="go-to-colors-btn" name="addtocart" value="5" class="btn amado-btn">Перейти к выбору цвета</button>
+                    <?php else: ?>
+                        <script> 
+                            var path_without_checkbpx = true;
+                        </script>
+                        <button form = 'add-to-cart' id="btn-add-to-cart" name="addtocart" value="5" class="btn amado-btn">Добавить в корзину.</button>
+                    <?php endif ?>
                 </div> <!-- single product desc-->
             </div> <!-- col12 -->
         </div> <!-- row -->
     </div> <!-- container fluid -->
 </div>
-<div class="single-product-area section-padding-100 clearfix"
-    id='page2' style='display: none;'>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb mt-50">
-                        <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page"><?= $item->name ?></li>
-                    </ol>
-                </nav>
-            </div>
-        </div> <!-- row -->
-        <div class="row">
-            <div class="col-12 col-lg-7">
-                <div class="single_product_thumb">
-                    <div id="product_details_slider" class="carousel slide" data-ride="carousel">
-                    <?php foreach ($colors as $color): ?>
-                        <label>
-                        <input form="add-to-cart" type="radio" name="cid" id="cid" required value="<?= $color->id ?>" />
-                          <img class="imgClass" src="/img/material/<?= $color->img ?>">
-                        </label>
-                    <?php endforeach ?>
-                    </div>
+<!-- ==== Этот блок нужен только если категория  === 1 - стулья& -->
+    <?php if ($item->cid === 1): ?>
+    <div class="single-product-area section-padding-100 clearfix"
+        id='page2' style='display: none;'>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb mt-50">
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page"><?= $item->name ?></li>
+                        </ol>
+                    </nav>
                 </div>
-            </div> <!-- col 12 -->
-<!--- -->
-            <div class="col-12 col-lg-5">
-                <div class="single_product_desc">
-                    <!-- Product Meta Data -->
-                    <div class="product-meta-data">
-                        <div class="line"></div>
-                        <p class="product-price"><?= $item->price ?></p>
-                        <a href="product-details.html">
-                            <h6><?= $item->name ?></h6>
-                        </a>
-                
-                        <div class="short_overview my-5"> 
-                            <p><?= $item->description ?></p> 
+            </div> <!-- row -->
+            <div class="row">
+                <div class="col-12 col-lg-7">
+                    <div class="single_product_thumb">
+                        <div id="product_details_slider" class="carousel slide" data-ride="carousel">
+                        <?php foreach ($colors as $color): ?>
+                            <label>
+                            <input form="add-to-cart" type="radio" name="cid" id="cid" required value="<?= $color->id ?>" />
+                              <img class="imgClass" src="/img/material/<?= $color->img ?>">
+                            </label>
+                        <?php endforeach ?>
                         </div>
                     </div>
-                    <!-- Add to Cart Form -->
-                    <button id="go-to-description" name="addtocart" value="5" class="btn amado-btn">Вернуться к описанию.</button>
-                    <button id="go-to-facture-btn" name="addtocart" value="5" class="btn amado-btn">Перейти к выбору фактуры.</button>
-                </div> <!-- single product desc-->
-            </div> <!-- col12 -->
+                </div> <!-- col 12 -->
+    <!--- -->
+                <div class="col-12 col-lg-5">
+                    <div class="single_product_desc">
+                        <!-- Product Meta Data -->
+                        <div class="product-meta-data">
+                            <div class="line"></div>
+                            <p class="product-price"><?= $item->price ?></p>
+                            <a href="product-details.html">
+                                <h6><?= $item->name ?></h6>
+                            </a>
+                    
+                            <div class="short_overview my-5"> 
+                                <p><?= $item->description ?></p> 
+                            </div>
+                        </div>
+                        <!-- Add to Cart Form -->
+                        <button id="go-to-description" name="addtocart" value="5" class="btn amado-btn">Вернуться к описанию.</button>
+                        <button id="go-to-facture-btn" name="addtocart" value="5" class="btn amado-btn">Перейти к выбору фактуры.</button>
+                    </div> <!-- single product desc-->
+                </div> <!-- col12 -->
 
-<!--- -->
-        </div> <!-- row -->
+    <!--- -->
+            </div> <!-- row -->
+        </div>
     </div>
-</div>
-<div class="single-product-area section-padding-100 clearfix"
-    id='page3' style='display: none;'>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb mt-50">
-                        <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page"><?= $item->name ?></li>
-                    </ol>
-                </nav>
-            </div>
-        </div> <!-- row -->
-        <div class="row">
-            <div class="col-12 col-lg-7">
-                <div class="single_product_thumb">
-                    <div id="product_details_slider" class="carousel slide" data-ride="carousel">
-                    <?php foreach ($factures as $facture): ?>
-                        <label>
-                        <input  form="add-to-cart" type="radio" name="fid" id="fid" value="<?= $facture->id ?>" />
-                          <img class="imgClass" src="/img/material/<?= $facture->img ?>">
-                        </label>
-                    <?php endforeach ?>
-                    </div>
+    <div class="single-product-area section-padding-100 clearfix"
+        id='page3' style='display: none;'>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb mt-50">
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page"><?= $item->name ?></li>
+                        </ol>
+                    </nav>
                 </div>
-            </div> <!-- COL 12 -->
-<!--- -->
-            <div class="col-12 col-lg-5">
-                <div class="single_product_desc">
-                    <!-- Product Meta Data -->
-                    <div class="product-meta-data">
-                        <div class="line"></div>
-                        <p class="product-price"><?= $item->price ?></p>
-                        <a href="product-details.html">
-                            <h6><?= $item->name ?></h6>
-                        </a>
-                
-                        <div class="short_overview my-5"> 
-                            <p><?= $item->description ?></p> 
+            </div> <!-- row -->
+            <div class="row">
+                <div class="col-12 col-lg-7">
+                    <div class="single_product_thumb">
+                        <div id="product_details_slider" class="carousel slide" data-ride="carousel">
+                        <?php foreach ($factures as $facture): ?>
+                            <label>
+                            <input  form="add-to-cart" type="radio" name="fid" id="fid" value="<?= $facture->id ?>" />
+                              <img class="imgClass" src="/img/material/<?= $facture->img ?>">
+                            </label>
+                        <?php endforeach ?>
                         </div>
                     </div>
-                    <!-- Add to Cart Form -->
-                    <button id="back-to-color" name="addtocart" value="5" class="btn amado-btn">Выбор цвета.</button>
-                    <button form = 'add-to-cart' id="btn-add-to-cart" name="addtocart" value="5" class="btn amado-btn">Добавить в корзину.</button>
-                </div> <!-- single product desc-->
-            </div> <!-- col12 -->
-<!--- -->
-        </div> <!-- ROW -->
+                </div> <!-- COL 12 -->
+    <!--- -->
+                <div class="col-12 col-lg-5">
+                    <div class="single_product_desc">
+                        <!-- Product Meta Data -->
+                        <div class="product-meta-data">
+                            <div class="line"></div>
+                            <p class="product-price"><?= $item->price ?></p>
+                            <a href="product-details.html">
+                                <h6><?= $item->name ?></h6>
+                            </a>
+                    
+                            <div class="short_overview my-5"> 
+                                <p><?= $item->description ?></p> 
+                            </div>
+                        </div>
+                        <!-- Add to Cart Form -->
+                        <button id="back-to-color" name="addtocart" value="5" class="btn amado-btn">Выбор цвета.</button>
+                        <button form = 'add-to-cart' id="btn-add-to-cart" name="addtocart" value="5" class="btn amado-btn">Добавить в корзину.</button>
+                    </div> <!-- single product desc-->
+                </div> <!-- col12 -->
+    <!--- -->
+            </div> <!-- ROW -->
+        </div>
     </div>
-</div>
+<?php else: ?> 
+
+<input form="add-to-cart" type="hidden" name="cid" id="cid" required value="13" />
+<input form="add-to-cart" type="hidden" name="fid" id="fid" required value="20" />
+
+<?php endif ?>

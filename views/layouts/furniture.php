@@ -44,7 +44,8 @@ $this->beginPage(); ?>
             <nav class="amado-nav">
                 <ul>
                     <li class="active"><a href="/">Главная</a></li>
-                    <li><a href="/catalog">Каталог</a></li>
+                    <li><a href="/site/chair">Стулья</a></li>
+                    <li><a href="/site/tables">Обеденные группы</a></li>
                     <li><a href="/cart/get-cart">Корзина 
                         <?php if (isset($this->params['cartscount'])): ?>
                             <span class='badge'><?= $this->params['cartscount'] ?>
@@ -52,7 +53,6 @@ $this->beginPage(); ?>
                         <?php endif; ?>
                        </a>
                     </li>
-                    <li><a href="/cabinet">Личный кабинет</a></li>
                     <li><a href="#">Контакты</a></li>
                 </ul>
          </nav>
