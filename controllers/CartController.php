@@ -35,7 +35,8 @@ class CartController extends \yii\web\Controller
         $request = \Yii::$app->request->post();
 
         /* var_dump($request); die; */
-        $ssid = (new \yii\web\session)->id;
+        /* $ssid = (new \yii\web\session)->id; */
+        $ssid = \Yii::$app->session->getId();
         $request['ssid'] = $ssid;
         // Сначала смотрим есть ли у пользователя с текущий ssid
         // в корзине товар с данным iid + cid + fid. Если есть будем извлекать 
