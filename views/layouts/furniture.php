@@ -121,21 +121,13 @@ $this->beginPage(); ?>
                                 <div class="collapse navbar-collapse" id="footerNavContent">
                                    
                                     <ul class="navbar-nav ml-auto">
-                                        <li class="nav-item active">
-                                            <a class="nav-link" href="/">Главная</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="/catalog">Каталог</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="/cart">Корзина</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Админка</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Контакты</a>
-                                        </li>
+
+
+                                        <li class="nav-item"><a class="nav-link" href="/">Главная</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="/site/chair">Стулья</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="/site/tables">Обеденные группы</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="/cart/get-cart">Корзина </a></li>
+                                        <li class="nav-item"><a class="nav-link" href="/site/about">О компании</a></li>
                                     </ul>
                                 </div>
                             </nav>
