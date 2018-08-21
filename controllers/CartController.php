@@ -33,6 +33,8 @@ class CartController extends \yii\web\Controller
     public function actionAddStringToCart()
     {
         $request = \Yii::$app->request->post();
+
+        /* var_dump($request); die; */
         $ssid = (new \yii\web\session)->id;
         $request['ssid'] = $ssid;
         // Сначала смотрим есть ли у пользователя с текущий ssid
@@ -47,9 +49,9 @@ class CartController extends \yii\web\Controller
         $cart = [];
         foreach ($strings as $string) {
             if (
-                ($string->iid == $request['iid']) &&
-                ($string->cid == $request['cid']) &&
-                ($string->fid == $request['fid']) 
+                ($string->iid == (int)($request['iid'] ?? 0)) &&
+                ($string->cid == (int)($request['cid'] ?? 0)) &&
+                ($string->fid == (int)($request['fid'] ?? 0)) 
                                                     ) {
                 $string->amount = $string->amount + $request['amount'];
                 $string->save();
@@ -147,8 +149,10 @@ class CartController extends \yii\web\Controller
         $ssid = (new \yii\web\session)->id;
         $carts = Carts::findAll(['ssid'=>$ssid]);
 
+        /* var_dump($carts[0]->facture);die; */
 
-        return $this->render('showitems', ['cart' => $carts ]);
+
+        return $this->render('showitems', ['carts' => $carts ]);
     }
 
     public function actionTest()

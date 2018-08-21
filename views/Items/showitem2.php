@@ -77,12 +77,13 @@ $this->registerJsFile('/js/showitem.js', [
                         </div>
                     </div>
                     <!-- Add to Cart Form -->
-                    <form class="cart clearfix" method="post">
+                    <form id='add-to-cart' class="cart clearfix" method="post" action='/cart/add-string-to-cart'>
+                    <input type="hidden" name="iid" id="iid" value="<?= $item->id ?>" />
                         <div class="cart-btn d-flex mb-50">
                             <p>кол-во</p>
                             <div class="quantity">
                                 <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-caret-down" aria-hidden="true"></i></span>
-                                <input type="number" class="qty-text" id="qty" step="1" min="1" max="300" name="quantity" value="1">
+                                <input type="number" class="qty-text" id="qty" step="1" min="1" max="300" name="amount" value="1">
                                 <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-caret-up" aria-hidden="true"></i></span>
                             </div>
                         </div>
@@ -97,61 +98,25 @@ $this->registerJsFile('/js/showitem.js', [
     id='page2' style='display: none;'>
     <div class="container-fluid">
         <div class="row">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mt-50">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><?= $item->name ?></li>
+                    </ol>
+                </nav>
+            </div>
+        </div> <!-- row -->
+        <div class="row">
             <div class="col-12 col-lg-7">
                 <div class="single_product_thumb">
                     <div id="product_details_slider" class="carousel slide" data-ride="carousel">
+                    <?php foreach ($colors as $color): ?>
                         <label>
-                          <input type="radio" name="fb" value="small" />
-                          <img class="imgClass" src="/img/material/m1.jpg">
+                        <input form="add-to-cart" type="radio" name="cid" id="cid" required value="<?= $color->id ?>" />
+                          <img class="imgClass" src="/img/material/<?= $color->img ?>">
                         </label>
-                        <label>
-                          <input type="radio" name="fb" value="small" />
-                          <img class="imgClass" src="/img/material/m2.jpg">
-                        </label>
-                        <label>
-                          <input type="radio" name="fb" value="small" />
-                          <img class="imgClass" src="/img/material/m3.jpg">
-                        </label>
-                        <label>
-                          <input type="radio" name="fb" value="small" />
-                          <img class="imgClass" src="/img/material/m4.jpg">
-                        </label>
-                        <label>
-                          <input type="radio" name="fb" value="small" />
-                          <img class="imgClass" src="/img/material/m5.jpg">
-                        </label>
-                         <label>
-                          <input type="radio" name="fb" value="small" />
-                          <img class="imgClass" src="/img/material/m6.jpg">
-                        </label>                               
-                        <label>
-                          <input type="radio" name="fb" value="small" />
-                          <img class="imgClass" src="/img/material/m7.jpg">
-                        </label>                               
-                        <label>
-                          <input type="radio" name="fb" value="small" />
-                          <img class="imgClass" src="/img/material/m8.jpg">
-                        </label>                               
-                        <label>
-                          <input type="radio" name="fb" value="small" />
-                          <img class="imgClass" src="/img/material/m9.jpg">
-                        </label>                               
-                        <label>
-                          <input type="radio" name="fb" value="small" />
-                          <img class="imgClass" src="/img/material/m10.jpg">
-                        </label>                               
-                        <label>
-                          <input type="radio" name="fb" value="small" />
-                          <img class="imgClass" src="/img/material/m11.jpg">
-                        </label>                               
-                        <label>
-                          <input type="radio" name="fb" value="small" />
-                          <img class="imgClass" src="/img/material/m12.jpg">
-                        </label>                               
-                        <label>
-                          <input type="radio" name="fb" value="small" />
-                          <img class="imgClass" src="/img/material/m13.jpg">
-                        </label>                      
+                    <?php endforeach ?>
                     </div>
                 </div>
             </div> <!-- col 12 -->
@@ -184,85 +149,25 @@ $this->registerJsFile('/js/showitem.js', [
     id='page3' style='display: none;'>
     <div class="container-fluid">
         <div class="row">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mt-50">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><?= $item->name ?></li>
+                    </ol>
+                </nav>
+            </div>
+        </div> <!-- row -->
+        <div class="row">
             <div class="col-12 col-lg-7">
                 <div class="single_product_thumb">
                     <div id="product_details_slider" class="carousel slide" data-ride="carousel">
+                    <?php foreach ($factures as $facture): ?>
                         <label>
-                          <input type="radio" name="fb" value="small" />
-                          <img class="imgClass" src="/img/material/o1.jpg">
+                        <input  form="add-to-cart" type="radio" name="fid" id="fid" value="<?= $facture->id ?>" />
+                          <img class="imgClass" src="/img/material/<?= $facture->img ?>">
                         </label>
-                        <label>
-                          <input type="radio" name="fb" value="small" />
-                          <img class="imgClass" src="/img/material/o2.jpg">
-                        </label>
-                        <label>
-                          <input type="radio" name="fb" value="small" />
-                          <img class="imgClass" src="/img/material/o3.jpg">
-                        </label>
-                        <label>
-                          <input type="radio" name="fb" value="small" />
-                          <img class="imgClass" src="/img/material/o4.jpg">
-                        </label>
-                        <label>
-                          <input type="radio" name="fb" value="small" />
-                          <img class="imgClass" src="/img/material/o5.jpg">
-                        </label>
-                         <label>
-                          <input type="radio" name="fb" value="small" />
-                          <img class="imgClass" src="/img/material/o6.jpg">
-                        </label>                               
-                        <label>
-                          <input type="radio" name="fb" value="small" />
-                          <img class="imgClass" src="/img/material/o7.jpg">
-                        </label>                               
-                        <label>
-                          <input type="radio" name="fb" value="small" />
-                          <img class="imgClass" src="/img/material/o8.jpg">
-                        </label>                               
-                        <label>
-                          <input type="radio" name="fb" value="small" />
-                          <img class="imgClass" src="/img/material/o9.jpg">
-                        </label>                               
-                        <label>
-                          <input type="radio" name="fb" value="small" />
-                          <img class="imgClass" src="/img/material/o10.jpg">
-                        </label>                               
-                        <label>
-                          <input type="radio" name="fb" value="small" />
-                          <img class="imgClass" src="/img/material/o11.jpg">
-                        </label>                               
-                        <label>
-                          <input type="radio" name="fb" value="small" />
-                          <img class="imgClass" src="/img/material/o12.jpg">
-                        </label>                               
-                        <label>
-                          <input type="radio" name="fb" value="small" />
-                          <img class="imgClass" src="/img/material/o13.jpg">
-                        </label>
-                        <label>
-                          <input type="radio" name="fb" value="small" />
-                          <img class="imgClass" src="/img/material/o14.jpg">
-                        </label>
-                        <label>
-                          <input type="radio" name="fb" value="small" />
-                          <img class="imgClass" src="/img/material/o15.jpg">
-                        </label>
-                        <label>
-                          <input type="radio" name="fb" value="small" />
-                          <img class="imgClass" src="/img/material/o16.jpg">
-                        </label>
-                        <label>
-                          <input type="radio" name="fb" value="small" />
-                          <img class="imgClass" src="/img/material/o17.jpg">
-                        </label>
-                        <label>
-                          <input type="radio" name="fb" value="small" />
-                          <img class="imgClass" src="/img/material/o18.jpg">
-                        </label>
-                        <label>
-                          <input type="radio" name="fb" value="small" />
-                          <img class="imgClass" src="/img/material/o19.jpg">
-                        </label>                      
+                    <?php endforeach ?>
                     </div>
                 </div>
             </div> <!-- COL 12 -->
@@ -283,7 +188,7 @@ $this->registerJsFile('/js/showitem.js', [
                     </div>
                     <!-- Add to Cart Form -->
                     <button id="back-to-color" name="addtocart" value="5" class="btn amado-btn">Выбор цвета.</button>
-                    <button id="add-to-cart" name="addtocart" value="5" class="btn amado-btn">Добавить в корзину.</button>
+                    <button form = 'add-to-cart' id="btn-add-to-cart" name="addtocart" value="5" class="btn amado-btn">Добавить в корзину.</button>
                 </div> <!-- single product desc-->
             </div> <!-- col12 -->
 <!--- -->

@@ -126,6 +126,7 @@ class ItemsController extends Controller
         $factures = Factures::find()->all();
         $colors =Color::find()->all();
 
+
         $item = $this->findModel($id);
         return $this->render(
             'showitem2', 

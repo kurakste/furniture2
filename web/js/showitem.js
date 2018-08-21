@@ -4,6 +4,28 @@ $(document).ready(function (){
    $('#go-to-facture-btn').on('click', toChooseFacture);
    $('#back-to-color').on('click', backToColor);
 
+   $('#add-to-cart').submit(function(){
+      if (!isFidChecked()) {
+         alert('Выберите пожалуйста фактуру.');
+         return false;
+      };
+
+      return true;
+      
+   });
+   
+   function isFidChecked()
+   {
+      var out = false;
+      $("input[name='fid']").each(function (i, val)
+         {
+            if (val.checked) {
+               out = true;
+            }
+      });
+      return out;
+   }
+
    function toChooseColor()
    {
       $('#page1').css('display', 'none');
@@ -18,8 +40,25 @@ $(document).ready(function (){
 
    function toChooseFacture()
    {
+      if (!isCidChecked()){
+         alert('Выберите пожалуйста цвет.');
+         return;
+      }
       $('#page2').css('display', 'none');
       $('#page3').css('display', 'block');
+      return;
+   };
+   
+   function isCidChecked()
+   {
+      var out = false;
+      $("input[name='cid']").each(function (i, val)
+         {
+            if (val.checked) {
+               out = true;
+            }
+      });
+      return out;
    }
 
    function backToColor()
@@ -27,6 +66,5 @@ $(document).ready(function (){
       $('#page3').css('display', 'none');
       $('#page2').css('display', 'block');
    }
-
 
 });

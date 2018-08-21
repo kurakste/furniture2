@@ -19,26 +19,26 @@
                                 </thead>
                                 <tbody>
                                 <?php $i = 0 ?>
-                                <?php foreach ($cart as $row): ?>
+                                <?php foreach ($carts as $cart): ?>
 
                                     <tr class='cart-row'>
                                         <td style='display: none;'>
-                                            <?= $row->item->id ?>
+                                            <?= $cart->item->id ?>
                                         </td>
                                         <td class="cart_product_img">
-                                            <a href="#"><img src="/img/<?= $row->item->mainImage ?>" alt="Product"></a>
+                                            <a href="#"><img src="/img/<?= $cart->item->mainImage ?>" alt="Product"></a>
                                         </td>
                                         <td style='display: none;'>
-                                            <?= $row->color->id ?>
+                                            <?= $cart->color->id ?>
                                         </td>
                                         <td class="cart_product_desc">
-                                            <a href="#"><img src="<?= $row->color->img ?><?= $row->facture->img ?>" alt="Material"></a>
+                                            <a href="#"><img src="/img/material/<?= $cart->color->img ?>" alt="Material"></a>
                                         </td>
                                         <td style='display: none;'>
-                                            <?= $row->facture->id ?>
+                                            <?= $cart->facture->id ?>
                                         </td>
                                         <td class="facture">
-                                            <a href="#"><img src="<?= $row->facture->img ?>" alt="Material"></a>
+                                            <a href="#"><img src="/img/material/<?= $cart->facture->img ?>" alt="Material"></a>
                                         </td>
                                         <td class="qty">
                                             <div class="qty-btn d-flex">
@@ -48,13 +48,13 @@
                                                 <p>Количество</p>
                                                 <div class="quantity">
                                                     <span class="qty-minus" onclick="var effect = document.getElementById('qty<?= $pref ?>'); var qty<?= $pref ?>= effect.value; if( !isNaN( qty<?= $pref ?> ) &amp;&amp; qty<?= $pref ?> &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                                    <input type="number" class="qty-text" id="qty<?= $pref ?>" step="1" min="1" max="300" name="quantity" value="<?= $row->amount ?>">
+                                                    <input type="number" class="qty-text" id="qty<?= $pref ?>" step="1" min="1" max="300" name="quantity" value="<?= $cart->amount ?>">
                                                     <span class="qty-plus" onclick="var effect = document.getElementById('qty<?= $pref ?>'); var qty<?= $pref ?> = effect.value; if( !isNaN( qty<?= $pref ?> )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
                                                 </div>
                                             </div>
                                         </td>
                                         <td class="price">
-                                            <span><?= $row->item->price ?></span>
+                                            <span><?= $cart->item->price ?></span>
                                         </td>
                                     </tr>
                                     <?php $i++ ?>
@@ -70,8 +70,6 @@
                             <h5>Сумма заказа</h5>
                             <ul class="summary-table">
                                 <li><span><em><b>Заказ:</b></em></span> <span id='totalsum'>взять сумму</span></li>
-                                <li><span><em><b>Доставка:</b></em></span> <span>взять с карты</span></li>
-                                <li><span><b>Итого:</b></span> <span>Заказ+доставка</span></li>
                             </ul>
                             <div class="cart-btn mt-100">
                                 <a href="/orders/getform" class="btn amado-btn w-100">Оплатить</a>
