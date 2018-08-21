@@ -4,6 +4,8 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Orders;
+use app\models\Carts;
+use app\models\Ostrings;
 use app\models\OrdersSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -133,9 +135,30 @@ class OrdersController extends Controller
         $this->layout = 'furniture';
 
         if (\Yii::$app->request->post()) {
-            var_dump($viewModel->getCities());
-            return 'hi!';
+            $data = \Yii::$app->request->post();
+
+            $order = new Orders;
+            $order->load($data); 
+            $order->processflag = 'new';
+            if ($order->validate()) {
+                $order->save();
+                
+                $ssid = \Yii::$app->session->getId();
+                $carts = Carts::find()
+                    ->where(['ssid' => $ssid])
+                    ->all();
+                foreach ($carts as $cart) {
+                    $ostring = new Ostrings;
+                    $ostring->attributes = $cart->attributes;
+                    $ostring->oid = $order->id;
+                    $ostring->save();
+                }
+                Carts::deleteAll(['ssid' => $ssid]);
+            } 
+
+            return $this->redirect('/');
         }
+
         $order = new Orders;
         $cities = new OrderCreateView;
 

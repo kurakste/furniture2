@@ -32,8 +32,7 @@ class Ostrings extends \yii\db\ActiveRecord
     {
         return [
             [['oid', 'amount'], 'integer'],
-            [['price'], 'number'],
-            [['name'], 'string', 'max' => 125],
+            [['oid', 'iid', 'cid', 'fid', 'amount'], 'safe'],
             [['oid'], 'exist', 'skipOnError' => true, 'targetClass' => Orders::className(), 'targetAttribute' => ['oid' => 'id']],
         ];
     }
@@ -44,10 +43,11 @@ class Ostrings extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'Индекс',
-            'oid' => 'Индекс заказа',
-            'name' => 'Наименование',
-            'price' => 'Цена',
+            'id' => 'Индекс.',
+            'oid' => 'Индекс заказа.',
+            'iid' => 'Индекс товара.',
+            'cid' => 'Код цвета.',
+            'fid' => 'Код фактуры',
             'amount' => 'кол-во',
         ];
     }

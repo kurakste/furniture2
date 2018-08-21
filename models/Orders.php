@@ -36,8 +36,10 @@ class Orders extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['date'], 'safe'],
-            [['name', 'lname', 'email', 'city', 'addr', 'comments'], 'string', 'max' => 255],
+            [['name', 'lname', 'email', 'city', 'addr', 'comments', 'processflag'], 'safe'],
+            [['name', 'city', 'addr', 'phone', 'processflag'], 'required'],
+            [['name', 'lname', 'email', 'addr', 'comments'], 'string', 'max' => 255],
+            [['city', ], 'integer'],
             [['phone', 'processflag'], 'string', 'max' => 45],
         ];
     }
@@ -67,6 +69,11 @@ class Orders extends \yii\db\ActiveRecord
     public function getOstrings()
     {
         return $this->hasMany(Ostrings::className(), ['oid' => 'id']);
+    }
+
+    public function getCityName()
+    {
+        return $this->hasOne(Cities::className(), ['peccityid' => 'city']);
     }
 
     /*
