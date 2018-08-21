@@ -33,9 +33,11 @@ class CartController extends \yii\web\Controller
     public function actionAddStringToCart()
     {
         $request = \Yii::$app->request->post();
+        $session = Yii::$app->session;
 
         /* var_dump($request); die; */
         /* $ssid = (new \yii\web\session)->id; */
+        if  (!$session->isActive) $session->open();
         $ssid = \Yii::$app->session->getId();
         $request['ssid'] = $ssid;
         // Сначала смотрим есть ли у пользователя с текущий ssid
