@@ -35,9 +35,10 @@ window.onload = function() {
          let str = {};
          let tr = $(this);
          let td = tr.find('td');
+         console.log(td);
          str['iid'] = parseInt($(td[0]).text());
          str['cid'] = parseInt($(td[2]).text());
-         str['fid'] = parseInt($(td[2]).text());
+         str['fid'] = parseInt($(td[4]).text());
          // str['price'] = parseFloat($(td[7]).find('span').text());
          str['amount'] = parseInt($(td[6]).find('.qty-text').val());
          outdata.push(str);
