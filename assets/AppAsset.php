@@ -28,7 +28,6 @@ class AppAsset extends AssetBundle
     public $js = [
         '/js/plugins.js',
         '/js/button.js',
-        '/js/sum.js',
         '/js/active.js',
 
     ];

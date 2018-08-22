@@ -1,3 +1,11 @@
+<?php 
+$this->registerJsFile('/js/showitem.js', [
+        'depends' => [\yii\web\JqueryAsset::className()] 
+    ]);
+
+?>
+
+
 <div class="cart-table-area section-padding-100">
             <div class="container-fluid">
                 <div class="row">

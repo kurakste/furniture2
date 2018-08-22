@@ -33,51 +33,11 @@ class CartController extends \yii\web\Controller
      */
     public function actionAddStringToCart()
     { 
-        $request = \Yii::$app->request->post();
-        $ssid = CartsBModel::getCartId();
-        $request['ssid'] = $ssid;
+        $data = \Yii::$app->request->post();
+        $cart = new CartsBModel;
+        $cart->addStrings($data);
 
-        // Сначала смотрим есть ли у пользователя с текущий ssid
-        // в корзине товар с данным iid + cid + fid. Если есть будем извлекать 
-        // извлекать эту строку корзины и увеличивать кол-во
-        // если нет, то просто добавим строку. Если записей для
-        // текущего ssid еще нет, то тоже просто добовляем строку
-        // в базу данных. 
-        $strings = Carts::find()
-            ->where(['ssid' => $request['ssid']])
-            ->all();
-        $cart = [];
-        foreach ($strings as $string) {
-            if (
-                ($string->iid == (int)($request['iid'] ?? 0)) &&
-                ($string->cid == (int)($request['cid'] ?? 0)) &&
-                ($string->fid == (int)($request['fid'] ?? 0)) 
-                                                    ) {
-                $string->amount = $string->amount + $request['amount'];
-                $string->save();
-                $this->redirect('/');
-                return; // Товар уникальный для корзины. Если встретили - второго не будет.
-            }
-        }
-        // Если мы здесь, то значит в корзине до этого товара с таким  iid небыло
-        // нужно добавлять. 
-        $newcartstring = new Carts;
-
-        $newcartstring->attributes = $request;
-        // проверяем что бы все атрибуты были присвоенны.
-        if ($newcartstring->validate()) {
-            $newcartstring->save();
-            $out = null;
-            $this->redirect('/');
-            return;
-
-        } else {
-            // проверка не удалась:  $errors - это массив содержащий сообщения об ошибках
-            $out = $newcartstring->errors;
-            Yii::$app->response->format = Response::FORMAT_JSON;
-            return $out;
-        }
-        
+        return $this->redirect('/'); 
     }
 
     public function actionClearCart()
