@@ -5,6 +5,7 @@ namespace app\controllers;
 use Yii;
 use yii\web\Response;
 use app\models\Carts;
+use app\objects\CartsBModel;
 
 class CartController extends \yii\web\Controller
 {
@@ -31,15 +32,11 @@ class CartController extends \yii\web\Controller
      * временем жизни сессии в приложении.
      */
     public function actionAddStringToCart()
-    {
+    { 
         $request = \Yii::$app->request->post();
-        $session = Yii::$app->session;
-
-        /* var_dump($request); die; */
-        /* $ssid = (new \yii\web\session)->id; */
-        if  (!$session->isActive) $session->open();
-        $ssid = \Yii::$app->session->getId();
+        $ssid = CartsBModel::getCartId();
         $request['ssid'] = $ssid;
+
         // Сначала смотрим есть ли у пользователя с текущий ssid
         // в корзине товар с данным iid + cid + fid. Если есть будем извлекать 
         // извлекать эту строку корзины и увеличивать кол-во
@@ -149,7 +146,9 @@ class CartController extends \yii\web\Controller
     
     public function actionGetCart()
     {
-        $ssid = (new \yii\web\session)->id;
+        $ssid = CartsBModel::getCartId();
+
+        /* $ssid = (new \yii\web\session)->id; */
         $carts = Carts::findAll(['ssid'=>$ssid]);
 
         /* var_dump($carts[0]->facture);die; */
