@@ -284,7 +284,9 @@ dmstr\web\AdminLteAsset::register($this);
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                    <form action="/site/logout" method="post">
+                      <input type='submit' value="Sign out" class="btn btn-default btn-flat">
+                    </form>
                 </div>
               </li>
             </ul>

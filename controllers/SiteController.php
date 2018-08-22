@@ -26,7 +26,7 @@ class SiteController extends Controller
                 'only' => ['logout'],
                 'rules' => [
                     [
-                        'actions' => ['logout'],
+                        'actions' => ['logout' ],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -92,13 +92,14 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
+        $this->layout ='loginadminlte';
         if (!Yii::$app->user->isGuest) {
-            return $this->goHome();
+            return $this->redirect('/admin');
         }
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+            return $this->redirect('/admin');
         }
 
         $model->password = '';
@@ -116,7 +117,7 @@ class SiteController extends Controller
     {
         Yii::$app->user->logout();
 
-        return $this->goHome();
+        return $this->redirect('/admin');
     }
 
 

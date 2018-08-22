@@ -6,10 +6,29 @@ use Yii;
 use yii\web\Controller;
 use app\models\UploadForm;
 use yii\web\UploadedFile;
+use yii\filters\AccessControl;
 
 class FilesController extends Controller
 {
     public $layout = 'adminlte';
+
+    public function behaviors()
+    {
+        return [
+
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['index', 'upload', 'showFiles', 'rename', 'delete' ],
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+        ];
+    }
+
     public function actionUpload()
     {
         $model = new UploadForm();
