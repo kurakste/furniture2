@@ -1,5 +1,5 @@
 <?php 
-$this->registerJsFile('/js/showitem.js', [
+$this->registerJsFile('/js/sum.js', [
         'depends' => [\yii\web\JqueryAsset::className()] 
     ]);
 

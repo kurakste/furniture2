@@ -33,7 +33,7 @@ class CartController extends \yii\web\Controller
      */
     public function actionAddStringToCart()
     { 
-        $data = \Yii::$app->request->post();
+        $data = CartsBModel::getCartId();
         $cart = new CartsBModel;
         $cart->addStrings($data);
 
@@ -56,7 +56,7 @@ class CartController extends \yii\web\Controller
      */
     public function actionJasonApiStore()
     {
-        $ssid = (new \yii\web\session)->id;
+        $ssid = CartsBModel::getCartId();
         $data = \Yii::$app->request->post('cartstrings');
         $cartstrings = json_decode($data);
 
@@ -88,7 +88,7 @@ class CartController extends \yii\web\Controller
 
     public function actionGetCartJson()
     {
-        $ssid = (new \yii\web\session)->id;
+        $ssid = CartsBModel::getCartId();
         $carts = Carts::findAll(['ssid'=>$ssid]);
         $out = [];
         $tmp =[];
@@ -108,7 +108,6 @@ class CartController extends \yii\web\Controller
     {
         $ssid = CartsBModel::getCartId();
 
-        /* $ssid = (new \yii\web\session)->id; */
         $carts = Carts::findAll(['ssid'=>$ssid]);
 
         /* var_dump($carts[0]->facture);die; */
@@ -119,8 +118,9 @@ class CartController extends \yii\web\Controller
 
     public function actionTest()
     {
-        $carts = [];
-       $ssid = (new \yii\web\session)->id;
+       $carts = [];
+       $ssid = CartsBModel::getCartId();
+
        $summ = Carts::getSummtOfCart($ssid);
         return $this->render('showitems', ['cart' => $carts ]);
     }

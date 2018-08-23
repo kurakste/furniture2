@@ -1,4 +1,4 @@
-window.onload = function() {
+$(document).ready(function() {
    var cart = 0; 
    function onChangeAmount() 
    {
@@ -74,5 +74,5 @@ window.onload = function() {
    });
    getCartCost();
    getCartStrings();
-};
+});
 

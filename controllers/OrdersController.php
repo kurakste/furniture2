@@ -12,6 +12,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use app\objects\ViewModels\OrderCreateView;
 use yii\filters\AccessControl;
+use app\objects\CartsBModel;
 
 
 /**
@@ -155,7 +156,7 @@ class OrdersController extends Controller
             if ($order->validate()) {
                 $order->save();
                 
-                $ssid = \Yii::$app->session->getId();
+                $ssid = CartsBModel::getCartId();
                 $carts = Carts::find()
                     ->where(['ssid' => $ssid])
                     ->all();
@@ -174,7 +175,8 @@ class OrdersController extends Controller
         $order = new Orders;
         $cities = new OrderCreateView;
 
-        $ssid = (new \yii\web\session)->id;
+        $ssid = CartsBModel::getCartId();
+
         $summ = \app\models\Carts::getSummtOfCart($ssid);
 
 
@@ -192,7 +194,7 @@ class OrdersController extends Controller
     public function actionStoreOrder()
     {
         $request = \Yii::$app->request->post();
-        $ssid = (new \yii\web\session)->id;
+        $ssid = CartsBModel::getCartId();
 
         $order = new Orders;
         $request['processflag'] = 'new';
