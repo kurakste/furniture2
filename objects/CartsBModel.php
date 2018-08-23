@@ -14,10 +14,14 @@ class CartsBModel
      */
     public static function getAmountItemsInCart(): int
     {
-        $ssid = (new \yii\web\session)->id;
-        $count = Carts::find()->where(['ssid'=>$ssid])->count();
-
-        return $count;
+        $cookies = \Yii::$app->request->cookies;
+        if ($cookies->has('ssid')) {
+            $ssid = $cookies->get('ssid');
+            $count = Carts::find()->where(['ssid'=>$ssid])->count();
+            return $count;
+        } else {
+            return $count=0;
+        }
     }  
 
     /*
