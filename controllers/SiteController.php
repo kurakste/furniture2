@@ -80,11 +80,6 @@ class SiteController extends Controller
         return $this->render('tables', [ 'items' => $items ]);
     }
 
-    public function actionCartColor()
-    {
-        echo 'hi!'; die;
-    }
-
     /**
      * Login action.
      *
