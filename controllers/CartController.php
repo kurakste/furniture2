@@ -33,7 +33,7 @@ class CartController extends \yii\web\Controller
      */
     public function actionAddStringToCart()
     { 
-        $data = CartsBModel::getCartId();
+        $data = \Yii::$app->request->post();
         $cart = new CartsBModel;
         $cart->addStrings($data);
 
@@ -42,7 +42,7 @@ class CartController extends \yii\web\Controller
 
     public function actionClearCart()
     {
-        $ssid = (new \yii\web\session)->id;
+        $ssid = CartsBModel::getCartId();
         $cartstrings = Carts::deleteAll(['ssid'=>$ssid]);
     }
 
