@@ -56,49 +56,18 @@ class CartController extends \yii\web\Controller
      */
     public function actionJasonApiStore()
     {
-        $ssid = CartsBModel::getCartId();
         $data = \Yii::$app->request->post('cartstrings');
         $cartstrings = json_decode($data);
+        (new CartsBModel)->loadCartAsArray($cartstrings);
 
-        foreach ($cartstrings as $cartstring) {
-            $cartstring = (array)$cartstring;
-            $cartstring['ssid'] = $ssid;
-            $model = new Carts;
-            $model->load($cartstring, '');
-            if (!$model->validate()) {
-                
-                return json_encode($model->errors, JSON_UNESCAPED_UNICODE);
-            } 
-        }
-        /* var_dump($ss); die; */
-        Carts::deleteAll(['ssid'=>$ssid]);
-        
-        foreach ($cartstrings as $cartstring) {
-            $cartstring = (array)$cartstring;
-            $cartstring['ssid'] = $ssid;
-            $model = new Carts;
-            $model->load($cartstring, '');
-            $model->save();
-        }
-
-
-        return 'hi!';
+        Yii::$app->response->format = Response::FORMAT_JSON;
+        return;
     
     }
 
     public function actionGetCartJson()
     {
-        $ssid = CartsBModel::getCartId();
-        $carts = Carts::findAll(['ssid'=>$ssid]);
-        $out = [];
-        $tmp =[];
-        foreach ($carts as $cart) {
-            $tmp['name'] = $cart->item->name; 
-            $tmp['amount'] = $cart->amount; 
-            $tmp['price'] = $cart->item->price; 
-            $out[] = $tmp;
-        }
-
+        $out = (new CartsBModel)->getCartAsArray();
 
         Yii::$app->response->format = Response::FORMAT_JSON;
         return $out;
@@ -116,13 +85,5 @@ class CartController extends \yii\web\Controller
         return $this->render('showitems', ['carts' => $carts ]);
     }
 
-    public function actionTest()
-    {
-       $carts = [];
-       $ssid = CartsBModel::getCartId();
-
-       $summ = Carts::getSummtOfCart($ssid);
-        return $this->render('showitems', ['cart' => $carts ]);
-    }
 
 }

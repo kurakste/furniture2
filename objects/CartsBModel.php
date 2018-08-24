@@ -116,4 +116,50 @@ class CartsBModel
         }
     
     }
+
+    public function loadCartAsArray(array $cartstrings):bool
+    {
+        if (count($cartstrings)===0) {
+            throw new \yii\web\ServerErrorHttpException('Не могу обработать пустой массив.');
+        }
+        $ssid = self::getCartId();
+        foreach ($cartstrings as $cartstring) {
+            $cartstring = (array)$cartstring;
+            $cartstring['ssid'] = $ssid;
+            $model = new Carts;
+            $model->load($cartstring, '');
+            if (!$model->validate()) {
+                throw new \yii\web\ServerErrorHttpException($model->errors);
+                return false;
+            } 
+        }
+        /* var_dump($ss); die; */
+        Carts::deleteAll(['ssid'=>$ssid]);
+        
+        foreach ($cartstrings as $cartstring) {
+            $cartstring = (array)$cartstring;
+            $cartstring['ssid'] = $ssid;
+            $model = new Carts;
+            $model->load($cartstring, '');
+            $model->save();
+        }
+
+        return true;
+    }
+
+    public function getCartAsArray(): array
+    {
+        $ssid = CartsBModel::getCartId();
+        $carts = Carts::findAll(['ssid'=>$ssid]);
+        $out = [];
+        $tmp =[];
+        foreach ($carts as $cart) {
+            $tmp['name'] = $cart->item->name; 
+            $tmp['amount'] = $cart->amount; 
+            $tmp['price'] = $cart->item->price; 
+            $out[] = $tmp;
+        }
+
+        return $out;
+    }
 }
