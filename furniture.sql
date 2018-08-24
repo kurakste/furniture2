@@ -34,7 +34,7 @@ CREATE TABLE `carts` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `carts_to_items` (`iid`),
   CONSTRAINT `carts_to_items` FOREIGN KEY (`iid`) REFERENCES `items` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=244 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=288 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +43,7 @@ CREATE TABLE `carts` (
 
 LOCK TABLES `carts` WRITE;
 /*!40000 ALTER TABLE `carts` DISABLE KEYS */;
-INSERT INTO `carts` VALUES (241,'jsfsngia45phftv7oirm9q25ed',1,4,5,1,'2018-08-21 14:22:54'),(242,'jsfsngia45phftv7oirm9q25ed',15,13,20,3,'2018-08-21 14:22:54'),(243,'jsfsngia45phftv7oirm9q25ed',1,5,5,1,'2018-08-21 14:23:28');
+INSERT INTO `carts` VALUES (287,'jsfsngia45phftv7oirm9q25ed',1,4,5,1,'2018-08-24 18:07:58');
 /*!40000 ALTER TABLE `carts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -187,9 +187,13 @@ CREATE TABLE `items` (
   `name` varchar(125) DEFAULT NULL COMMENT 'Наименование',
   `description` varchar(255) DEFAULT NULL COMMENT 'Описание',
   `cid` int(11) NOT NULL COMMENT 'Индекс категории',
-  `size` varchar(255) DEFAULT NULL COMMENT 'Размер',
   `mainimageid` int(11) DEFAULT NULL COMMENT 'Индекс главного изображения',
   `price` float DEFAULT NULL COMMENT 'Цена',
+  `length` float DEFAULT NULL COMMENT 'Длина в упаковке.',
+  `width` float DEFAULT NULL COMMENT 'Ширина в упаковке.',
+  `height` float DEFAULT NULL COMMENT 'Высота в упаковке.',
+  `volume` float DEFAULT NULL COMMENT 'Объем упаковки.',
+  `weight` float DEFAULT NULL COMMENT 'Вес с упаковкой.',
   PRIMARY KEY (`id`),
   KEY `cid_index` (`cid`),
   CONSTRAINT `fk_items_categorys1` FOREIGN KEY (`cid`) REFERENCES `categorys` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
@@ -202,7 +206,7 @@ CREATE TABLE `items` (
 
 LOCK TABLES `items` WRITE;
 /*!40000 ALTER TABLE `items` DISABLE KEYS */;
-INSERT INTO `items` VALUES (1,'Стул 1','<h1>Описание стула 1</h1> Lorem ip dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',1,'90х60х90',1,1275.5),(2,'Стул 2','Описание стула 2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',1,'90х60х90',2,1205),(3,'Стул 3','Описание стула 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',1,'90х60х90',3,2050.9),(4,'Стол 1','Описание стола 1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',1,'90х60х90',4,2050.9),(5,'Стол 2','Описание стола 2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',1,'90х60х90',5,2050.9),(6,'Стол 3','Описание стола 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',1,'90х60х90',6,2050.9),(11,'Табурет','Простой табурет. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',1,'90х80х80',7,3000),(15,'Стол 1','Описание стола №1',2,NULL,19,6000),(16,'Стол 2','Описание стола №2',2,NULL,21,6500),(17,'Стол 3','Описание стола №3',2,NULL,23,5000),(18,'Стол 4','Описание стола №4',2,NULL,24,4500),(19,'Стол 5','Описание стола №5',2,NULL,27,5500);
+INSERT INTO `items` VALUES (1,'Стул 1','<h1>Описание стула 1</h1> Lorem ip dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',1,1,2275.5,1.08,0.44,0.11,0.05,7),(2,'Стул 2','Описание стула 2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',1,2,1205,1,0.43,0.1,0.04,5),(3,'Стул 3','Описание стула 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',1,3,2050.9,1,0.43,0.1,0.04,5),(4,'Стол 1','Описание стола 1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',1,4,2050.9,1,0.43,0.1,0.04,5),(5,'Стол 2','Описание стола 2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',1,5,2050.9,1,0.43,0.1,0.04,5),(6,'Стол 3','Описание стола 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',1,6,2050.9,1,0.43,0.1,0.04,5),(11,'Табурет','Простой табурет. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',1,7,3000,1,0.43,0.1,0.04,4.2),(15,'Стол 1','Описание стола №1',2,19,6000,1,0.43,0.1,0.04,4.7),(16,'Стол 2','Описание стола №2',2,21,6500,1,0.485,0.1,0.04,5),(17,'Стол 3','Описание стола №3',2,23,5000,1,0.43,0.1,0.04,5),(18,'Стол 4','Описание стола №4',2,24,4500,0.9,0.43,0.1,0.04,5),(19,'Стол 5','Описание стола №5',2,27,5500,1.08,0.43,0.1,0.04,5);
 /*!40000 ALTER TABLE `items` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -219,14 +223,15 @@ CREATE TABLE `orders` (
   `lname` varchar(255) DEFAULT NULL,
   `phone` varchar(45) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
-  `city` varchar(255) DEFAULT NULL,
+  `city` int(11) DEFAULT NULL,
   `addr` varchar(255) DEFAULT NULL,
   `comments` varchar(255) DEFAULT NULL,
+  `delivery_to_door` tinyint(1) DEFAULT '0' COMMENT 'Доставка до двери.',
   `processflag` varchar(45) DEFAULT NULL,
   `date` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -235,7 +240,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (60,'Степан','Куракин','79176450029','kurakste@gmail.com','Волгоград','пр. Канатчиков, 6','Комент к заказу.','new','2018-07-28 21:49:32'),(61,'Stepan','Куракин','','kurakste@gmail.com','Волгоград','пр. Канатчиков, 6','ввв','new','2018-07-28 21:50:05'),(62,'Stepan','Куракин','79176450029','kurakste@gmail.com','Волгоград','пр. Канатчиков, 6','ddd','new','2018-07-28 21:51:17'),(63,'Степан','Куракин','','kurakste@gmail.com','Волгоград','пр. Канатчиков, 6','Комментарии к первому заказу.','new','2018-07-31 09:19:00'),(64,'Степан','Куракин','','kurakste@gmail.com','Волгоград','пр. Канатчиков, 6','','new','2018-08-18 14:21:43');
+INSERT INTO `orders` VALUES (87,'Степан','Куракин','+79176450029','kurkste@gmail.com',-496,' пр. Героев Сталинграда, 16','Комментарий к первому зазау',NULL,'new','2018-08-21 21:59:35'),(88,'Сергей','Филиппов','+79176450022','kurakste@gmail.com',69143,'пр. Ленина, 3','Комментарий к первому заказу 2.',NULL,'new','2018-08-21 22:01:05'),(89,'ывава','выафв','+79176450029','kurkste@gmail.com',-496,' пр. Героев Сталинграда, 16','Комментарий к первому зазау',NULL,'new','2018-08-22 20:00:00'),(90,'ывава','выафв','+79176450029','kudfsa@rm.ru',-496,'пр. Ленина, 3','Комментарий к первому зазау',NULL,'new','2018-08-22 20:03:42'),(91,'Степан','Куракин','+79176450029','kurkste@gmail.com',136705,'пр. Ленина, 3','Комментарий к первому зазау',NULL,'new','2018-08-22 20:42:54'),(92,'ывава','выафв','+79176450029','kurkste@gmail.com',-496,' пр. Героев Сталинграда, 16','Комментарий к первому заказу 2.',NULL,'new','2018-08-23 21:18:38'),(93,'ывава','выафв','+79176450029','',69143,' пр. Героев Сталинграда, 16','Комментарий к первому зазау',NULL,'new','2018-08-24 21:07:46');
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -249,11 +254,9 @@ DROP TABLE IF EXISTS `ostrings`;
 CREATE TABLE `ostrings` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Индекс',
   `oid` int(11) DEFAULT NULL COMMENT 'Индекс заказа',
-  `name` varchar(125) DEFAULT NULL COMMENT 'Наименование',
   `iid` int(11) DEFAULT NULL COMMENT 'Идентификатор товара',
   `cid` int(11) DEFAULT NULL COMMENT 'Иентификатор цвета',
   `fid` int(11) DEFAULT NULL COMMENT 'Идентификатор фактуры',
-  `price` double DEFAULT NULL COMMENT 'Цена',
   `amount` int(11) DEFAULT NULL COMMENT 'кол-во',
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
@@ -261,7 +264,7 @@ CREATE TABLE `ostrings` (
   KEY `ostring_to_items` (`iid`),
   CONSTRAINT `oid` FOREIGN KEY (`oid`) REFERENCES `orders` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `ostring_to_items` FOREIGN KEY (`iid`) REFERENCES `items` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=84 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=137 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -270,7 +273,7 @@ CREATE TABLE `ostrings` (
 
 LOCK TABLES `ostrings` WRITE;
 /*!40000 ALTER TABLE `ostrings` DISABLE KEYS */;
-INSERT INTO `ostrings` VALUES (75,60,NULL,1,NULL,NULL,NULL,1),(76,60,NULL,3,NULL,NULL,NULL,1),(77,60,NULL,5,NULL,NULL,NULL,1),(78,61,NULL,1,NULL,NULL,NULL,1),(79,62,NULL,1,NULL,NULL,NULL,1),(80,63,NULL,2,NULL,NULL,NULL,2),(81,63,NULL,3,NULL,NULL,NULL,1),(82,63,NULL,1,NULL,NULL,NULL,1),(83,64,'Стул 1',NULL,NULL,NULL,1275.5,1);
+INSERT INTO `ostrings` VALUES (124,87,1,4,5,1),(125,87,15,13,20,5),(126,87,1,5,5,1),(127,87,1,9,9,1),(128,87,17,13,20,1),(129,88,1,4,5,1),(130,89,15,13,20,1),(131,90,2,5,5,1),(132,91,15,13,20,1),(133,92,16,13,20,4),(134,93,1,2,3,2),(135,93,2,10,6,2),(136,93,1,4,5,1);
 /*!40000 ALTER TABLE `ostrings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -313,4 +316,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-08-21 18:28:21
+-- Dump completed on 2018-08-24 23:05:18
