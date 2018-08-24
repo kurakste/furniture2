@@ -162,4 +162,89 @@ class CartsBModel
 
         return $out;
     }
+    /*
+     * Функция расчитывает транспортирововчный вес корзины. 
+     * Алгоритм такой берем максимальную высоту и максимальную 
+     * ширину коробки. Высоты и вес складываем.
+     *  
+     *
+     */
+    public function getCartsSizeVolumeAndWeight(): array
+    {
+        return
+            [
+                'width' => $this->getMaxWidth(),
+                'length' => $this->getMaxLength(),
+                'height' => $this->getSumHeight(),
+                'volume' => $this->getSumVolume(),
+                'weight' => $this->getSumWeight(),
+            ];
+    }
+
+    protected function getMaxLength()
+    {
+        $ssid = CartsBModel::getCartId();
+
+        $out = (new \yii\db\Query())
+            ->from('carts')
+            ->LeftJoin('items','items.id = carts.iid')
+            ->where(['carts.ssid' => $ssid])
+            ->max('length');
+
+        return $out;     
+    }
+    
+    protected function getMaxWidth()
+    {
+        $ssid = CartsBModel::getCartId();
+
+        $out = (new \yii\db\Query())
+            ->from('carts')
+            ->LeftJoin('items','items.id = carts.iid')
+            ->where(['carts.ssid' => $ssid])
+            ->max('width');
+
+        return $out;     
+    }
+    
+    protected function getSumHeight()
+    {
+        $ssid = CartsBModel::getCartId();
+
+        $out = (new \yii\db\Query())
+            ->from('carts')
+            ->LeftJoin('items','items.id = carts.iid')
+            ->where(['carts.ssid' => $ssid])
+            ->sum('height');
+
+        return $out;     
+    }
+    
+    protected function getSumVolume()
+    {
+        $ssid = CartsBModel::getCartId();
+
+        $out = (new \yii\db\Query())
+            ->from('carts')
+            ->LeftJoin('items','items.id = carts.iid')
+            ->where(['carts.ssid' => $ssid])
+            ->sum('volume');
+
+        return $out;     
+    }
+    
+    protected function getSumWeight()
+    {
+        $ssid = CartsBModel::getCartId();
+
+        $out = (new \yii\db\Query())
+            ->from('carts')
+            ->LeftJoin('items','items.id = carts.iid')
+            ->where(['carts.ssid' => $ssid])
+            ->sum('weight');
+
+        return $out;     
+    }
+
+
 }

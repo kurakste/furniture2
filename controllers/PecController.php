@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\objects\PecDelivery;
+use app\objects\CartsBModel;
 
 class PecController extends \yii\web\Controller
 {
@@ -44,6 +45,9 @@ class PecController extends \yii\web\Controller
      *
      * Calculate cost of delivery with PEC delivery
      * service.
+     * Данные о размере товара, которые лежи
+     * в корзине предоставляет корзина в виде
+     * массива.
      *
      *
      */  
@@ -52,19 +56,14 @@ class PecController extends \yii\web\Controller
         $params = (\Yii::$app->request);
         /* var_dump($params->post());die; */ 
         $town = $params->post('town');
-        $data = [
-            'width' => 0.3,
-            'length'=> 0.8,
-            'height'=> 0.4,
-            'volume'=> 0.096,
-            'weight'=> 4,
-            'town' => $town,         
-        ];
+        $tohome = (bool)$params->post('tohome');
+        $data = (new CartsBModel)->getCartsSizeVolumeAndWeight();
+        $data ['town'] = $town;         
 
         $pec = new PecDelivery;
         $pec->attributes = $data;
         
-        $delivery = $pec->calcDeliveryCost();
+        $delivery = $pec->calcDeliveryCost($tohome);
 
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
 

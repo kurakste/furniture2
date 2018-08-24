@@ -85,5 +85,11 @@ class CartController extends \yii\web\Controller
         return $this->render('showitems', ['carts' => $carts ]);
     }
 
+    public function actionTest()
+    {
+        $i =(new CartsBModel)->getCartsSizeVolumeAndWeight(); 
+        var_dump($i);
+    }
+
 
 }

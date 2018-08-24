@@ -56,7 +56,11 @@ Class PecDelivery extends Model
         return $out;
     }
 
-    public function calcDeliveryCost()
+    public function calcDeliveryCost
+        (
+            bool $deliveryToDoor = false,   // Доставка до двери или до отделения ПЭК?
+            bool $takeFromSender = false  // Забарать у отправителя?
+        ): float
     {
         $data = [];
         //Ширина, Длина, Высота, Объем, Вес, Признак негабаритности груза, Признак ЖУ
@@ -67,7 +71,7 @@ Class PecDelivery extends Model
         $data['places'][0][]=$this->weight;
         $data['places'][0][]=0; // признак не габоритности
         $data['places'][0][]=0; // Признак ЖУ
-        $data['take']['town']=-441; // Код города киров по их кодировки
+        $data['take']['town']= -441; // Код города киров по их кодировки
         $data['take']['tent']= 0; // требуется растентовка при заборе. 
         $data['take']['gidro']= 0; // требуется гидролифт при заборе. 
         $data['take']['manip']= 0; // требуется манипулятор при заборе. 
@@ -89,9 +93,12 @@ Class PecDelivery extends Model
         /* die; */
         $data = file_get_contents('http://calc.pecom.ru/bitrix/components/pecom/calc/ajax.php?' . $request);
         $res = json_decode($data, true);
-        (float)$out = $res['take'][2] + $res['auto'][2] + $res['deliver'][2] 
-            + $res['ADD'][2] ?? 0+ $res['ADD_1'][2] ?? 0 +
-            + $res['ADD_2'][2] ?? 0 + $res['ADD_3'][2] ?? 0 + $res['ADD_4'][2] ?? 0; 
+        $deliver = ($deliveryToDoor) ? $res['deliver'][2] : 0;
+        $taken = ($takeFromSender) ? $res['take'][2] : 0;
+
+        (float)$out = $taken + $res['auto'][2] + $deliver; 
+            /* + $res['ADD'][2] ?? 0 + $res['ADD_1'][2] ?? 0 + */
+            /* + $res['ADD_2'][2] ?? 0 + $res['ADD_3'][2] ?? 0 + $res['ADD_4'][2] ?? 0; */ 
         //take + auto + deliver + ADD + ADD_1 + ADD_2 + ADD_3 + ADD_4 
     
         return $out;

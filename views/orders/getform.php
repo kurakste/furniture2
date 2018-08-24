@@ -110,6 +110,23 @@ $this->registerJsFile(\Yii::$app->request->baseUrl.'/js/calcdelivery.js',[
                                 ; ?>
                     </div> 
                     <div class="col-md-12 mb-3">
+                        <?= $form->field($model, 'delivery_to_door')->dropDownList(array 
+                                    (
+                                        '0' => "Заберу из пункта выдачи.",
+                                         '1' => 'доставить до дома',
+                                    ) , array 
+                                    (
+                                        'placeholder' => "уточните тип доставки",
+                                        'class' => "",
+                                        'id' => "delivery_to_door",
+
+                                    )
+
+                                )->label(false);
+                                
+                                ; ?>
+                    </div> 
+                    <div class="col-md-12 mb-3">
                         <?= $form->field($model, 'phone')->textinput(array 
                                     (
                                         'placeholder' => "Введите телефон для связи.",

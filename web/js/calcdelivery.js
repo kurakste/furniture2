@@ -1,30 +1,42 @@
 document.addEventListener('DOMContentLoaded', function() {
 
    var townsel = document.getElementById('orders-city');
+   var delivery_to_door = document.getElementById('delivery_to_door');
+   console.log(delivery_to_door);
    townsel.onchange = cityChangeValue;
+   delivery_to_door.onchange = cityChangeValue;
 
    function cityChangeValue()
    {
-     let town = getTown();
-      getDeliveryCost(town);
+      let town = getTown();
+      let todoor = getToDoor();
+      getDeliveryCost(town, todoor);
       var field = document.getElementById('deliveryCost');
       field.innerHTML = 'считаю';        
-     
    }
+
    function getTown()
    {
       var town = document.getElementById('orders-city');
       town = town.value;
       return town;
    }
+
+   function getToDoor()
+   {
+      var todoor = document.getElementById('delivery_to_door');
+      var out = todoor.value;
+      return out
+   }
    
-   function getDeliveryCost(town) 
+   function getDeliveryCost(town, todoor) 
    {
       console.log(town);
+      console.log(todoor);
       var town = getTown();
       // var xhr = new XMLHttpRequest();
       var addr = '/pec/ajax-get-delivery-cost';
-      var param =  {'town':town};
+      var param =  {'town':town, 'tohome':todoor};
       var request = addr + param;
       // console.log(param);
       // xhr.open("GET", addr , true);
