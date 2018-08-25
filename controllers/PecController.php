@@ -54,8 +54,7 @@ class PecController extends \yii\web\Controller
     public function actionAjaxGetDeliveryCost()
     {
         $params = (\Yii::$app->request);
-        /* var_dump($params->post());die; */ 
-        $town = $params->post('town');
+        $town = (int)$params->post('town');
         $tohome = (bool)$params->post('tohome');
         $data = (new CartsBModel)->getCartsSizeVolumeAndWeight();
         $data ['town'] = $town;         
