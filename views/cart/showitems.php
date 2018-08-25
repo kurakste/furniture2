@@ -67,7 +67,7 @@ $this->registerJsFile('/js/sum.js', [
                                             </div>
                                         </td>
                                         <td class="price">
-                                            <span style = "margin-left: 20px"><?= $cart->item->price ?></span>
+                                            <span style = "margin-left: 20px"><?= number_format($cart->item->price, 2, '.', ' ') ?></span>
                                         </td>
                                     </tr>
                                     <?php $i++ ?>

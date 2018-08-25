@@ -66,7 +66,7 @@ $this->registerJsFile('/js/showitem.js', [
                     <!-- Product Meta Data -->
                     <div class="product-meta-data">
                         <div class="line"></div>
-                        <p class="product-price"><?= $item->price ?></p>
+                        <p class="product-price"><?= number_format($item->price, 2, '.', ' ')?></p>
                         <a href="product-details.html">
                             <h6><?= $item->name ?></h6>
                         </a>
@@ -134,7 +134,7 @@ $this->registerJsFile('/js/showitem.js', [
                         <!-- Product Meta Data -->
                         <div class="product-meta-data">
                             <div class="line"></div>
-                            <p class="product-price"><?= $item->price ?></p>
+                            <p class="product-price"><?= number_format($item->price, 2, '.', ' ') ?></p>
                             <a href="product-details.html">
                                 <h6><?= $item->name ?></h6>
                             </a>
@@ -185,7 +185,7 @@ $this->registerJsFile('/js/showitem.js', [
                         <!-- Product Meta Data -->
                         <div class="product-meta-data">
                             <div class="line"></div>
-                            <p class="product-price"><?= $item->price ?></p>
+                            <p class="product-price"><?= number_format($item->price, 2, '.', ' ') ?></p>
                             <a href="product-details.html">
                                 <h6><?= $item->name ?></h6>
                             </a>

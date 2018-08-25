@@ -14,13 +14,14 @@ $(document).ready(function() {
          let tr = $(this);
          let td = tr.find('td');
          let price = $(td[7]).find('span').text();
-         price = parseFloat(price);
+         price = parseFloat(String(price).replace(/ /g, ''));
          amount = $(td[6]).find('.qty-text').val();
          cost = price * amount;
          cart = cart + cost;
       })
       let cartval = $('#totalsum');
-      cartval.text(cart)
+      let str = (cart.toFixed(2)).toString();
+      cartval.text(cart.toLocaleString('ru'));
    }
 
 

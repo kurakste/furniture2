@@ -7,7 +7,7 @@
             <img src="/img/<?= $item->getMainImage() ?>" alt="chair">
                 <div class="hover-content">
                     <div class="line"></div>
-                    <p>&#8381 <?= $item->price ?></p>
+                    <p>&#8381 <?= number_format($item->price, 2, '.', ' ') ?></p>
                     <h4><?= $item->name ?></h4>
                 </div>
             </a>
