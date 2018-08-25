@@ -44,6 +44,7 @@ class CartController extends \yii\web\Controller
     {
         $ssid = CartsBModel::getCartId();
         $cartstrings = Carts::deleteAll(['ssid'=>$ssid]);
+        $this->redirect('/');
     }
 
     /*

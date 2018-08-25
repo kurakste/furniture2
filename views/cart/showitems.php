@@ -86,6 +86,10 @@ $this->registerJsFile('/js/sum.js', [
                             </ul>
                             <div class="cart-btn mt-100">
                                 <a href="/orders/getform" class="btn amado-btn w-100">Оплатить</a>
+                                <form action="/cart/clear-cart" method="post">
+                                    <input type="submit" name="" id="" value="Очистить корзину" />
+                                    
+                                </form>
                             </div>
                         </div>
                     </div>
