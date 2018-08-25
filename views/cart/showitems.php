@@ -19,8 +19,7 @@ $this->registerJsFile('/js/sum.js', [
                                 <thead>
                                     <tr>
                                         <th>Модель</th>
-                                        <th>Цвет основания</th>
-                                        <th>Цвет обивки</th>
+                                        <th>Цвета</th>
                                         <th>Количество</th>
                                         <th>цена</th>
                                     </tr>
@@ -40,13 +39,19 @@ $this->registerJsFile('/js/sum.js', [
                                             <?= $cart->color->id ?>
                                         </td>
                                         <td class="cart_product_desc">
-                                            <a href="#"><img src="/img/material/<?= $cart->color->img ?>" alt="Material"></a>
+                                        <?php if ($cart->item->cid === 1): ?>
+                                            <div style ="width: 40%;">
+                                            <a href="/img/material/<?= $cart->color->img ?>"><img src="/img/material/<?= $cart->color->img ?>" alt="Material"></a>
+                                            </div>
+                                            <div style ="width: 40%;">
+                                            <a href="/img/material/<?= $cart->facture->img ?>"><img src="/img/material/<?= $cart->facture->img ?>" alt="Material"></a>
+                                            </div>
+                                        <?php endif ?>
                                         </td>
                                         <td style='display: none;'>
                                             <?= $cart->facture->id ?>
                                         </td>
-                                        <td class="facture">
-                                            <a href="#"><img src="/img/material/<?= $cart->facture->img ?>" alt="Material"></a>
+                                        <td class="facture" style="display:none;">
                                         </td>
                                         <td class="qty">
                                             <div class="qty-btn d-flex">
@@ -62,7 +67,7 @@ $this->registerJsFile('/js/sum.js', [
                                             </div>
                                         </td>
                                         <td class="price">
-                                            <span><?= $cart->item->price ?></span>
+                                            <span style = "margin-left: 20px"><?= $cart->item->price ?></span>
                                         </td>
                                     </tr>
                                     <?php $i++ ?>
