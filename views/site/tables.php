@@ -7,7 +7,7 @@
             <img src="/img/<?= $item->getMainImage() ?>" alt="chair">
                 <div class="hover-content">
                     <div class="line"></div>
-                    <p><?= $item->price ?></p>
+                    <p>&#8381 <?= $item->price ?></p>
                     <h4><?= $item->name ?></h4>
                 </div>
             </a>

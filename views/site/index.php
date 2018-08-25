@@ -15,7 +15,7 @@ $this->title = 'My Yii Application'; ?>
              <img src="/img/<?= $item->getMainImage(); ?>" alt="chair">
                      <div class="hover-content">
                          <div class="line"></div>
-                         <p>От <?= $item->price ?></p>
+                         <p>&#8381 <?= $item->price ?></p>
                          <h4><?= $item->name ?></h4>
                      </div>
                  </a>
