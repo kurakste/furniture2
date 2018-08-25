@@ -57,7 +57,9 @@ class PecController extends \yii\web\Controller
         $town = (int)$params->post('town');
         $tohome = (bool)$params->post('tohome');
         $data = (new CartsBModel)->getCartsSizeVolumeAndWeight();
+        \Yii::error($data, 'my_error' );
         $data ['town'] = $town;         
+
 
         $pec = new PecDelivery;
         $pec->attributes = $data;

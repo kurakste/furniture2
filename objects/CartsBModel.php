@@ -215,7 +215,7 @@ class CartsBModel
             ->from('carts')
             ->LeftJoin('items','items.id = carts.iid')
             ->where(['carts.ssid' => $ssid])
-            ->sum('height');
+            ->sum('height*amount');
 
         return $out;     
     }
@@ -228,7 +228,7 @@ class CartsBModel
             ->from('carts')
             ->LeftJoin('items','items.id = carts.iid')
             ->where(['carts.ssid' => $ssid])
-            ->sum('volume');
+            ->sum('volume*amount');
 
         return $out;     
     }
@@ -241,7 +241,7 @@ class CartsBModel
             ->from('carts')
             ->LeftJoin('items','items.id = carts.iid')
             ->where(['carts.ssid' => $ssid])
-            ->sum('weight');
+            ->sum('weight*amount');
 
         return $out;     
     }
