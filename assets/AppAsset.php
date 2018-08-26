@@ -23,6 +23,8 @@ class AppAsset extends AssetBundle
         '/css/core-style.css',
         '/css/modal.css',
        '/scss/style.css',
+        '/css/order.css',
+        '/css/radio.css',
     ];
     public $js = [
         '/js/plugins.js',
