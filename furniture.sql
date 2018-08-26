@@ -34,7 +34,7 @@ CREATE TABLE `carts` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `carts_to_items` (`iid`),
   CONSTRAINT `carts_to_items` FOREIGN KEY (`iid`) REFERENCES `items` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=288 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=527 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +43,7 @@ CREATE TABLE `carts` (
 
 LOCK TABLES `carts` WRITE;
 /*!40000 ALTER TABLE `carts` DISABLE KEYS */;
-INSERT INTO `carts` VALUES (287,'jsfsngia45phftv7oirm9q25ed',1,4,5,1,'2018-08-24 18:07:58');
+INSERT INTO `carts` VALUES (520,'jsfsngia45phftv7oirm9q25ed',18,13,20,1,'2018-08-26 07:18:59'),(521,'jsfsngia45phftv7oirm9q25ed',1,4,5,1,'2018-08-26 07:19:10'),(522,'jsfsngia45phftv7oirm9q25ed',1,11,9,1,'2018-08-26 08:10:09'),(523,'10b4697bphor4qhr2a883idm56',18,13,20,1,'2018-08-26 08:17:42'),(524,'10b4697bphor4qhr2a883idm56',1,8,9,1,'2018-08-26 08:17:55'),(525,'10b4697bphor4qhr2a883idm56',1,12,13,1,'2018-08-26 11:36:15'),(526,'10b4697bphor4qhr2a883idm56',1,8,5,1,'2018-08-26 13:16:33');
 /*!40000 ALTER TABLE `carts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -171,7 +171,7 @@ CREATE TABLE `images` (
 
 LOCK TABLES `images` WRITE;
 /*!40000 ALTER TABLE `images` DISABLE KEYS */;
-INSERT INTO `images` VALUES (1,'pic1.jpg',1),(2,'pic2.jpg',1),(3,'pic3.jpg',1),(4,'pic4.jpg',2),(5,'pic5.jpg',2),(6,'pic6.jpg',2),(7,'pic7.jpg',3),(8,'pic8.jpg',3),(9,'pic9.jpg',3),(10,'pic10.jpg',4),(11,'pic11.jpg',4),(12,'pic12.jpg',4),(13,'pic13.jpg',5),(14,'pic14.jpg',5),(15,'pic15.jpg',5),(16,'pic16.jpg',6),(17,'pic17.jpg',6),(18,'pic18.jpg',6),(19,'group/01.jpg',15),(20,'group/02.jpg',15),(21,'group/07.jpg',16),(22,'group/08.jpg',16),(23,'group/09.jpg',17),(24,'group/12.jpg',18),(25,'group/13.jpg',18),(26,'group/18.jpg',19),(27,'group/19.jpg',19),(28,'group/21.jpg',19),(29,'group/37.jpg',18);
+INSERT INTO `images` VALUES (1,'lot1.jpg',1),(2,'lot2.jpg',1),(3,'lot3.jpg',1),(4,'lot4.jpg',2),(5,'lot5.jpg',2),(6,'lot6.jpg',2),(7,'lot7.jpg',3),(8,'lot8.jpg',3),(9,'lot9.jpg',3),(10,'pic10.jpg',4),(11,'pic11.jpg',4),(12,'pic12.jpg',4),(13,'pic13.jpg',5),(14,'pic14.jpg',5),(15,'pic15.jpg',5),(16,'pic16.jpg',6),(17,'pic17.jpg',6),(18,'pic18.jpg',6),(19,'group/01.jpg',15),(20,'group/02.jpg',15),(21,'group/07.jpg',16),(22,'group/08.jpg',16),(23,'group/09.jpg',17),(24,'group/12.jpg',18),(25,'group/13.jpg',18),(26,'group/18.jpg',19),(27,'group/19.jpg',19),(28,'group/21.jpg',19),(29,'group/37.jpg',18);
 /*!40000 ALTER TABLE `images` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -316,4 +316,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-08-24 23:05:18
+-- Dump completed on 2018-08-26 16:27:40
