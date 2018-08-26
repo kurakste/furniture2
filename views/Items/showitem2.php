@@ -93,19 +93,16 @@ $this->registerJsFile('/js/showitem.js', [
                     </form>
                     <?php if($item->cid ===1): ?>
                         <button id="go-to-colors-btn" name="addtocart" value="5" class="btn amado-btn">Перейти к выбору цвета</button>
-
-                        <script> 
-                            path_without_checkbpx = false;
-                        </script>
+<?php $script = "path_without_checkbpx = false;"; ?>
 
                     <?php else: ?>
 
-                        <script> 
-                            path_without_checkbpx = true;
-                        </script>
+
+<?php $script = "path_without_checkbpx = true;"; ?>
 
                         <button form = 'add-to-cart' id="btn-add-to-cart" name="addtocart" value="5" class="btn amado-btn">Добавить в корзину.</button>
                     <?php endif ?>
+                <?php $this->registerJs($script); ?>
                 </div> <!-- single product desc-->
             </div> <!-- col12 -->
         </div> <!-- row -->
