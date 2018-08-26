@@ -19,7 +19,7 @@ $this->registerJsFile('/js/sum.js', [
                                 <thead>
                                     <tr>
                                         <th>Модель</th>
-                                        <th>Цвета</th>
+                                        <th>Цвет/фактура</th>
                                         <th>Количество</th>
                                         <th>цена</th>
                                     </tr>
@@ -41,10 +41,24 @@ $this->registerJsFile('/js/sum.js', [
                                         <td class="cart_product_desc">
                                         <?php if ($cart->item->cid === 1): ?>
                                             <div style ="width: 40%;">
-                                            <a href="/img/material/<?= $cart->color->img ?>"><img src="/img/material/<?= $cart->color->img ?>" alt="Material"></a>
+                                                <a href="#win_o_1" class="button button-orange">
+                                                    <img src="/img/material/<?= $cart->color->img ?>" alt="Material" class="roundOrder">
+                                                </a>
+                                               <a href="order.html" class="overlay" id="win_o_1"></a>
+                                                <div class="popup">
+                                                    <img class="is-image" src="/img/material/<?= $cart->color->img ?>" alt="Material">
+                                                    <a class="close" title="Закрыть" href="/cart/get-cart"></a>
+                                                </div>
                                             </div>
                                             <div style ="width: 40%;">
-                                            <a href="/img/material/<?= $cart->facture->img ?>"><img src="/img/material/<?= $cart->facture->img ?>" alt="Material"></a>
+                                                <a href="#win_m_1" class="button button-orange">
+                                                <img src="/img/material/<?= $cart->facture->img ?>" alt="Material" class="roundOrder">
+                                            </a>
+                                                <a href="order.html" class="overlay" id="win_m_1"></a>
+                                                    <div class="popup">
+                                                        <img class="is-image" src="/img/material/<?= $cart->facture->img ?>" alt="Material">
+                                                        <a class="close" title="Закрыть" href="#close"></a>
+                                                    </div>
                                             </div>
                                         <?php endif ?>
                                         </td>
@@ -54,11 +68,10 @@ $this->registerJsFile('/js/sum.js', [
                                         <td class="facture" style="display:none;">
                                         </td>
                                         <td class="qty">
+<?php 
+$pref = ($i === 0) ? '' : $i;
+?>
                                             <div class="qty-btn d-flex">
-                                                <?php 
-                                                    $pref = ($i === 0) ? '' : $i;
-                                                    ?>
-                                                <p>Количество</p>
                                                 <div class="quantity">
                                                     <span class="qty-minus" onclick="var effect = document.getElementById('qty<?= $pref ?>'); var qty<?= $pref ?>= effect.value; if( !isNaN( qty<?= $pref ?> ) &amp;&amp; qty<?= $pref ?> &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
                                                     <input type="number" class="qty-text" id="qty<?= $pref ?>" step="1" min="1" max="300" name="quantity" value="<?= $cart->amount ?>">
