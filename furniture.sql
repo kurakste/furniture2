@@ -57,9 +57,11 @@ DROP TABLE IF EXISTS `categorys`;
 CREATE TABLE `categorys` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(125) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `description` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,7 +70,7 @@ CREATE TABLE `categorys` (
 
 LOCK TABLES `categorys` WRITE;
 /*!40000 ALTER TABLE `categorys` DISABLE KEYS */;
-INSERT INTO `categorys` VALUES (1,'Стулья'),(2,'Столы'),(3,NULL);
+INSERT INTO `categorys` VALUES (1,'Стулья  класические','cat1.jpg',NULL),(2,'Столы','cat2.jpg',NULL),(3,'Троны','cat3.jpg',NULL),(4,'Обеденные группы','cat4.jpg',NULL);
 /*!40000 ALTER TABLE `categorys` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -316,4 +318,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-08-26 16:27:40
+-- Dump completed on 2018-08-26 18:06:25
