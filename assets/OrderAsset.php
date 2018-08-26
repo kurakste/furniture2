@@ -33,6 +33,7 @@ class OrderAsset extends AssetBundle
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
         'app\assets\FontAwesomeAsset',
+        'app\assets\AppAsset',
         '\yii\web\JqueryAsset',
     ];
 }
