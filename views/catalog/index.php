@@ -5,7 +5,6 @@
 $this->title = 'Каталог'; ?>
 
 
-
 <div class="products-catagories-area clearfix">
  <div class="amado-pro-catagory clearfix">
     <?php foreach ($items as $item) : ?>

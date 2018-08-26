@@ -8,7 +8,11 @@ use yii\helpers\Html;
 $this->registerJsFile('/js/showitem.js', [
         'depends' => [\yii\web\JqueryAsset::className()] 
     ]);
+
+\app\assets\OrderAsset::register($this);
+
 ?>
+
 <div class="single-product-area section-padding-100 clearfix" 
         id='page1' style='display:block;'>
     <div class="container-fluid">
