@@ -98,7 +98,7 @@ $pref = ($i === 0) ? '' : $i;
                                 <li><span><em><b>Заказ:</b></em></span> <span id='totalsum'>взять сумму</span></li>
                             </ul>
                             <div class="cart-btn mt-100">
-                                <a href="/orders/getform" class="btn amado-btn w-100">Оплатить</a>
+                                <a href="/orders/getform" class="btn amado-btn w-100">Оформить заказ</a>
                                 <form action="/cart/clear-cart" method="post">
                                     <input type="submit" name="" id="" value="Очистить корзину" />
                                     
