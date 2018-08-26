@@ -89,13 +89,17 @@ $this->registerJsFile('/js/showitem.js', [
                     </form>
                     <?php if($item->cid ===1): ?>
                         <button id="go-to-colors-btn" name="addtocart" value="5" class="btn amado-btn">Перейти к выбору цвета</button>
+
                         <script> 
                             path_without_checkbpx = false;
                         </script>
+
                     <?php else: ?>
+
                         <script> 
                             path_without_checkbpx = true;
                         </script>
+
                         <button form = 'add-to-cart' id="btn-add-to-cart" name="addtocart" value="5" class="btn amado-btn">Добавить в корзину.</button>
                     <?php endif ?>
                 </div> <!-- single product desc-->
