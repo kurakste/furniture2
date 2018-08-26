@@ -89,9 +89,12 @@ $this->registerJsFile('/js/showitem.js', [
                     </form>
                     <?php if($item->cid ===1): ?>
                         <button id="go-to-colors-btn" name="addtocart" value="5" class="btn amado-btn">Перейти к выбору цвета</button>
+                        <script> 
+                            path_without_checkbpx = false;
+                        </script>
                     <?php else: ?>
                         <script> 
-                            var path_without_checkbpx = true;
+                            path_without_checkbpx = true;
                         </script>
                         <button form = 'add-to-cart' id="btn-add-to-cart" name="addtocart" value="5" class="btn amado-btn">Добавить в корзину.</button>
                     <?php endif ?>
@@ -146,6 +149,9 @@ $this->registerJsFile('/js/showitem.js', [
                         <!-- Add to Cart Form -->
                         <button id="go-to-description" name="addtocart" value="5" class="btn amado-btn">Вернуться к описанию.</button>
                         <button id="go-to-facture-btn" name="addtocart" value="5" class="btn amado-btn">Перейти к выбору фактуры.</button>
+                        <div id='warn-message-choose-color' style="display: none;">
+                            <p>Выбирите пожалуйста цвет основания стула, для перехода к следующему шагу.</p>
+                        </div>
                     </div> <!-- single product desc-->
                 </div> <!-- col12 -->
 
@@ -197,6 +203,9 @@ $this->registerJsFile('/js/showitem.js', [
                         <!-- Add to Cart Form -->
                         <button id="back-to-color" name="addtocart" value="5" class="btn amado-btn">Выбор цвета.</button>
                         <button form = 'add-to-cart' id="btn-add-to-cart" name="addtocart" value="5" class="btn amado-btn">Добавить в корзину.</button>
+                        <div id='warn-message-choose-facture' style="display: none;">
+                            <p>Выбирите пожалуйста фактуру обивки стула, для перехода к следующему шагу.</p>
+                        </div>
                     </div> <!-- single product desc-->
                 </div> <!-- col12 -->
     <!--- -->

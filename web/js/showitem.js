@@ -7,7 +7,8 @@ $(document).ready(function (){
    $('#add-to-cart').submit(function(){
       if (path_without_checkbpx) return true;
       if (!isFidChecked()) {
-         alert('Выберите пожалуйста фактуру.');
+         let warn = $('#warn-message-choose-facture');
+         warn.css('display', 'block');
          return false;
       };
 
@@ -22,6 +23,7 @@ $(document).ready(function (){
          {
             if (val.checked) {
                out = true;
+               return out;
             }
       });
       return out;
@@ -42,7 +44,8 @@ $(document).ready(function (){
    function toChooseFacture()
    {
       if (!isCidChecked()){
-         alert('Выберите пожалуйста цвет.');
+         let warn = $('#warn-message-choose-color');
+         warn.css('display', 'block');
          return;
       }
       $('#page2').css('display', 'none');
