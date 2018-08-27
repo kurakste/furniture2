@@ -4,38 +4,27 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Items;
-use app\models\Factures;
 use app\models\Color;
+use app\models\Factures;
 use app\models\ItemsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\filters\AccessControl;
 
 /**
  * ItemsController implements the CRUD actions for Items model.
  */
 class ItemsController extends Controller
 {
-    /**
-     * {@inheritdoc}
-     */
 
     public $layout = 'adminlte';
 
+    /**
+     * {@inheritdoc}
+     */
     public function behaviors()
     {
         return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'only' => ['index', 'view', 'create', 'update', 'delete' ],
-                'rules' => [
-                    [
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
-                ],
-            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -125,30 +114,6 @@ class ItemsController extends Controller
         return $this->redirect(['index']);
     }
 
-
-    /*
-     * Shows one item with description for consumer.
-     * @param integer $id 
-     *
-     */
-    public function actionShowitem($id) 
-    {
-        $this->layout = 'furniture';
-        $factures = Factures::find()->all();
-        $colors =Color::find()->all();
-
-
-        $item = $this->findModel($id);
-        
-        $headers = Yii::$app->response->headers;
-        $headers->set('Pragma', 'no-cache');
-
-        return $this->render(
-            'showitem2', 
-            ['item' => $item, 'factures'=>$factures, 'colors' =>$colors]
-        );
-    }
-
     /**
      * Finds the Items model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
@@ -164,4 +129,27 @@ class ItemsController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
+      /*  
+   * Shows one item with description for consumer.  
+   * @param integer $id  
+   *  
+   */  
+  public function actionShowitem($id)  
+  {  
+      $this->layout = 'furniture';  
+      $factures = Factures::find()->all();  
+      $colors =Color::find()->all();  
+ 
+ 
+      $item = $this->findModel($id);  
+        
+      $headers = Yii::$app->response->headers;  
+      $headers->set('Pragma', 'no-cache');  
+ 
+      return $this->render(  
+          'showitem2',  
+          ['item' => $item, 'factures'=>$factures, 'colors' =>$colors]  
+      );  
+  }  
 }

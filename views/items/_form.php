@@ -18,11 +18,19 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'cid')->textInput() ?>
 
-    <?= $form->field($model, 'size')->textInput(['maxlength' => true]) ?>
-
     <?= $form->field($model, 'mainimageid')->textInput() ?>
 
     <?= $form->field($model, 'price')->textInput() ?>
+
+    <?= $form->field($model, 'length')->textInput() ?>
+
+    <?= $form->field($model, 'width')->textInput() ?>
+
+    <?= $form->field($model, 'height')->textInput() ?>
+
+    <?= $form->field($model, 'volume')->textInput() ?>
+
+    <?= $form->field($model, 'weight')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

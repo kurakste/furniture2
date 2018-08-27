@@ -23,11 +23,19 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'cid') ?>
 
-    <?= $form->field($model, 'size') ?>
-
-    <?php // echo $form->field($model, 'mainimageid') ?>
+    <?= $form->field($model, 'mainimageid') ?>
 
     <?php // echo $form->field($model, 'price') ?>
+
+    <?php // echo $form->field($model, 'length') ?>
+
+    <?php // echo $form->field($model, 'width') ?>
+
+    <?php // echo $form->field($model, 'height') ?>
+
+    <?php // echo $form->field($model, 'volume') ?>
+
+    <?php // echo $form->field($model, 'weight') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

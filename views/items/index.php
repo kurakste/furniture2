@@ -10,7 +10,7 @@ use yii\grid\GridView;
 $this->title = 'Items';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="items-index" style = "width: 1000px; overflow-y: scroll">
+<div class="items-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -29,9 +29,13 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             'description',
             'cid',
-            'size',
-            //'mainimageid',
-            //'price',
+            'mainimageid',
+            'price',
+            'length',
+            'width',
+            'height',
+            'volume',
+            'weight',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

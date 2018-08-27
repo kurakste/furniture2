@@ -19,8 +19,8 @@ class ItemsSearch extends Items
     {
         return [
             [['id', 'cid', 'mainimageid'], 'integer'],
-            [['name', 'description', 'size'], 'safe'],
-            [['price'], 'number'],
+            [['name', 'description'], 'safe'],
+            [['price', 'length', 'width', 'height', 'volume', 'weight'], 'number'],
         ];
     }
 
@@ -64,11 +64,15 @@ class ItemsSearch extends Items
             'cid' => $this->cid,
             'mainimageid' => $this->mainimageid,
             'price' => $this->price,
+            'length' => $this->length,
+            'width' => $this->width,
+            'height' => $this->height,
+            'volume' => $this->volume,
+            'weight' => $this->weight,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'description', $this->description])
-            ->andFilterWhere(['like', 'size', $this->size]);
+            ->andFilterWhere(['like', 'description', $this->description]);
 
         return $dataProvider;
     }

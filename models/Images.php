@@ -50,7 +50,7 @@ class Images extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getItem()
+    public function getI()
     {
         return $this->hasOne(Items::className(), ['id' => 'iid']);
     }

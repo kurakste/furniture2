@@ -10,7 +10,7 @@ $this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => 'Items', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="items-view" style="width: 900px;">
+<div class="items-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -32,9 +32,13 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             'description',
             'cid',
-            'size',
             'mainimageid',
             'price',
+            'length',
+            'width',
+            'height',
+            'volume',
+            'weight',
         ],
     ]) ?>
 
