@@ -139,6 +139,9 @@ class ItemsController extends Controller
 
 
         $item = $this->findModel($id);
+
+        $headers->set('Pragma', 'no-cache');
+
         return $this->render(
             'showitem2', 
             ['item' => $item, 'factures'=>$factures, 'colors' =>$colors]
