@@ -152,6 +152,7 @@ $this->registerJsFile('/js/showitem.js', [
                         <button id="go-to-facture-btn" name="addtocart" value="5" class="btn amado-btn">Перейти к выбору фактуры.</button>
                         <div id="warn-message-choose-color" style="display: none;">
                             <p>Выбирите пожалуйста цвет основания стула, для перехода к следующему шагу.</p>
+
                         </div>
                     </div> <!-- single product desc-->
                 </div> <!-- col12 -->
