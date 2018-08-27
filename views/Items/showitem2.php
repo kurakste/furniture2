@@ -93,9 +93,9 @@ $this->registerJsFile('/js/showitem.js', [
                     </form>
                     <?php if($item->cid ===1): ?>
                         <button id="go-to-colors-btn" name="addtocart" value="5" class="btn amado-btn">Перейти к выбору цвета</button>
-                        <?php $script = "var path_without_checkbpx = false;"; ?>
+                        <?php $script = "path_without_checkbpx = false;"; ?>
                     <?php else: ?>
-                        <?php $script = "var path_without_checkbpx = true;"; ?>
+                        <?php $script = "path_without_checkbpx = true;"; ?>
                         <button form = 'add-to-cart' id="btn-add-to-cart" name="addtocart" value="5" class="btn amado-btn">Добавить в корзину.</button>
                     <?php endif ?>
                 <?php $this->registerJs($script); ?>
@@ -150,7 +150,7 @@ $this->registerJsFile('/js/showitem.js', [
                         <!-- Add to Cart Form -->
                         <button id="go-to-description" name="addtocart" value="5" class="btn amado-btn">Вернуться к описанию.</button>
                         <button id="go-to-facture-btn" name="addtocart" value="5" class="btn amado-btn">Перейти к выбору фактуры.</button>
-                        <div id='warn-message-choose-color' style="display: none;">
+                        <div id="warn-message-choose-color" style="display: none;">
                             <p>Выбирите пожалуйста цвет основания стула, для перехода к следующему шагу.</p>
                         </div>
                     </div> <!-- single product desc-->

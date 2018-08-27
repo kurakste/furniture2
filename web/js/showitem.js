@@ -45,6 +45,7 @@ $(document).ready(function (){
    {
       if (!isCidChecked()){
          let warn = $('#warn-message-choose-color');
+         console.log(warn);
          warn.css('display', 'block');
          return;
       }
