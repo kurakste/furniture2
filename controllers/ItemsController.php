@@ -139,7 +139,8 @@ class ItemsController extends Controller
 
 
         $item = $this->findModel($id);
-
+        
+        $headers = Yii::$app->response->headers;
         $headers->set('Pragma', 'no-cache');
 
         return $this->render(
