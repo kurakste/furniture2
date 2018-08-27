@@ -44,7 +44,7 @@ $this->registerJsFile('/js/sum.js', [
                                                 <a href="#win_o_1" class="button button-orange">
                                                     <img src="/img/material/<?= $cart->color->img ?>" alt="Material" class="roundOrder">
                                                 </a>
-                                               <a href="order.html" class="overlay" id="win_o_1"></a>
+                                               <a href="#" class="overlay" id="win_o_1"></a>
                                                 <div class="popup">
                                                     <img class="is-image" src="/img/material/<?= $cart->color->img ?>" alt="Material">
                                                     <a class="close" title="Закрыть" href="/cart/get-cart"></a>
@@ -54,7 +54,7 @@ $this->registerJsFile('/js/sum.js', [
                                                 <a href="#win_m_1" class="button button-orange">
                                                 <img src="/img/material/<?= $cart->facture->img ?>" alt="Material" class="roundOrder">
                                             </a>
-                                                <a href="order.html" class="overlay" id="win_m_1"></a>
+                                                <a href="#" class="overlay" id="win_m_1"></a>
                                                     <div class="popup">
                                                         <img class="is-image" src="/img/material/<?= $cart->facture->img ?>" alt="Material">
                                                         <a class="close" title="Закрыть" href="#close"></a>
