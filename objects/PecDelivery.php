@@ -48,7 +48,7 @@ Class PecDelivery extends Model
                 ->limit(5);
             $command = $query->createCommand();
             $data = $command->queryAll();
-            $out['results'] = array_values($data);
+            $out = array_values($data);
         }
         elseif ($id > 0) {
             $out['results'] = ['id' => $id, 'text' => Cities::find($id)->name];

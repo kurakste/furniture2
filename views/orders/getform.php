@@ -21,6 +21,10 @@ $this->registerJsFile(\Yii::$app->request->baseUrl.'/js/calcdelivery.js',[
                <div class="cart-title">
                   <h2>Оформление заказа.</h2>
                </div>
+    
+<?php $this->registerJsFile('/js/cityselect.js', ['depends' => \yii\web\JqueryAsset::className()]); ?>
+
+
 <?php
                 $form = ActiveForm::begin([
                     'id' => 'client',
@@ -151,8 +155,18 @@ $this->registerJsFile(\Yii::$app->request->baseUrl.'/js/calcdelivery.js',[
                                 ; ?>
                     </div>
                 </div>
+
+                <div class="col-12 mb-3" >
+                    <input id="cityid" type="text" class="form-control mb-3" id="street_address" placeholder="Address" value="">
+                </div>
+                <div class="col-12 mb-3" >
+                    <input id="cityselector" type="text" class="form-control mb-3" id="street_address" placeholder="Address" value="">
+                </div>
+                <div id='citycont' style ="width: 100%"></div>
                 
                 <?php ActiveForm::end(); ?>
+
+
 
 <!--               <form id='client' action="/orders/store-order" method="post">
                  <div class="row">

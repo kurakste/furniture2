@@ -21,11 +21,12 @@ class PecController extends \yii\web\Controller
      * cities with code.
      *
      */  
-    public function actionAjaxGetCities ($q=null, $id= null)
+    public function actionAjaxGetCities ()
     {
-        $citylist = (new PecDelivery)->getCitylist($q, $id);
+        $params = (\Yii::$app->request);
+        $pattern = (string)$params->post('pattern');
+        $citylist = (new PecDelivery)->getCitylist($pattern);
 
-        /* var_dump($citylist); */
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         
         return $citylist; 
