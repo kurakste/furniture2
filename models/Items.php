@@ -100,4 +100,10 @@ class Items extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Ostrings::className(), ['iid' => 'id']);
     }
+
+    public function getMainImage()
+    {
+        $img = \app\models\Images::findOne($this->mainimageid);
+        return $img->filename ?? null;
+    }
 }
