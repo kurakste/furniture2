@@ -17,16 +17,6 @@ $this->registerJsFile('/js/showitem.js', [
         id='page1' style='display:block;'>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb mt-50">
-                        <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page"><?= $item->name ?></li>
-                    </ol>
-                </nav>
-            </div>
-        </div> <!-- row -->
-        <div class="row">
             <div class="col-12 col-lg-7">
                 <div class="single_product_thumb">
                     <div id="product_details_slider" class="carousel slide" data-ride="carousel">

@@ -603,6 +603,7 @@ img {
     flex: 0 0 calc(95% - 320px);
     width: calc(95% - 320px);
     max-width: calc(95% - 320px); }
+
     @media only screen and (min-width: 992px) and (max-width: 1199px) {
       .main-content-wrapper .cart-table-area {
         -webkit-box-flex: 0;
