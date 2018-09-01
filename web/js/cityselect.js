@@ -4,7 +4,7 @@ $(document).ready(function() {
 
    function onChange()
    {
-      if (this.value.length > 3 ) {
+      if (this.value.length > 2 ) {
       getCityList(this.value)
       $('#citytable').css({'display': 'none'})
       }
@@ -21,7 +21,6 @@ $(document).ready(function() {
          success: function (msg) {
             var data = msg;
             var table = getTable(data);
-            console.log(table)
             $('#citycont').html(table);
             setHoverHendler();
             setClickHendler();
@@ -45,6 +44,8 @@ $(document).ready(function() {
       let cityid = $(this).find('td:first').html();
       let cityname = $(this).find('td').eq(1).html();
       $('#cityid').val(cityid);
+      $('#cityid').change();
+      console.log($('#cityid'));
       $('#cityselector').val(cityname);
       $('#citytable').css({'display': 'none'})
       });

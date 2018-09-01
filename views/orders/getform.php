@@ -74,33 +74,21 @@ $this->registerJsFile(\Yii::$app->request->baseUrl.'/js/calcdelivery.js',[
                     </div>
                     <div class="col-md-12 mb-3">
 
-                    <?= $form->field($model, 'city')
-                        ->widget(Select2::classname(), [
-                            /* 'data' => $cities->getCities(), */
-                            /* 'options' => ['placeholder' => 'Select a state ...'], */
-                            /* 'pluginOptions' => [ */
-                            /*         'allowClear' => true */
-                            /*     ], */
-                            
-                            'initValueText' => '', // set the initial display text
-                            'options' => ['placeholder' => 'Search for a city ...'],
-                            'pluginOptions' => [
-                            'allowClear' => true,
-                            'minimumInputLength' => 3,
-                            'language' => [
-                                'errorLoading' => new JsExpression("function () { return 'Waiting for results...'; }"),
-                            ],
-                            'ajax' => [
-                                'url' => '/pec/ajax-get-cities',
-                                'dataType' => 'json',
-                                'data' => new JsExpression('function(params) { return {q:params.term}; }')
-                            ],
-                            'escapeMarkup' => new JsExpression('function (markup) { return markup; }'),
-                            'templateResult' => new JsExpression('function(city) { return city.text; }'),
-                            'templateSelection' => new JsExpression('function (city) { return city.text; }'),
-                        ], 
-                            ])->label(false); ?>
+                    <?= $form->field($model, 'city')->textinput(array 
+                                    (
+                                        'placeholder' => "Город",
+                                        'class' => "form-control",
+                                        'id' => "cityid",
+                                        'style' => 'display: none;',
+                                    ))
+                                ->label(false); ?>
                     </div>
+
+                    <div class="col-12 mb-3" >
+                        <input id="cityselector"  AUTOCOMPLETE="off" type="text" class="form-control mb-3" id="street_address" placeholder="Введите первые буквы названия города." value="">
+                    </div>
+
+                <div id='citycont' style ="width: 100%"></div>
                     <div class="col-md-12 mb-3">
                         <?= $form->field($model, 'addr')->textinput(array 
                                     (
@@ -156,13 +144,6 @@ $this->registerJsFile(\Yii::$app->request->baseUrl.'/js/calcdelivery.js',[
                     </div>
                 </div>
 
-                <div class="col-12 mb-3" >
-                    <input id="cityid" type="text" class="form-control mb-3" id="street_address" placeholder="Address" value="">
-                </div>
-                <div class="col-12 mb-3" >
-                    <input id="cityselector" type="text" class="form-control mb-3" id="street_address" placeholder="Address" value="">
-                </div>
-                <div id='citycont' style ="width: 100%"></div>
                 
                 <?php ActiveForm::end(); ?>
 

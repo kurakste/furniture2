@@ -1,8 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-   var townsel = document.getElementById('orders-city');
+   var townsel = document.getElementById('cityid');
    var delivery_to_door = document.getElementById('delivery_to_door');
-   console.log(delivery_to_door);
    townsel.onchange = cityChangeValue;
    delivery_to_door.onchange = cityChangeValue;
 
@@ -17,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
    function getTown()
    {
-      var town = document.getElementById('orders-city');
+      var town = document.getElementById('cityid');
       town = town.value;
       return town;
    }
@@ -31,26 +30,11 @@ document.addEventListener('DOMContentLoaded', function() {
    
    function getDeliveryCost(town, todoor) 
    {
-      console.log(town);
-      console.log(todoor);
       var town = getTown();
       // var xhr = new XMLHttpRequest();
       var addr = '/pec/ajax-get-delivery-cost';
       var param =  {'town':town, 'tohome':todoor};
       var request = addr + param;
-      // console.log(param);
-      // xhr.open("GET", addr , true);
-      // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-      // xhr.onreadystatechange = function() {
-      //    if (this.readyState != 4) return;
-
-      //    console.log(this.responseText);
-      //    var cost = parseFloat(this.responseText);
-      //    var field = document.getElementById('deliveryCost');
-      //    field.innerHTML = cost;        
-      // }
-      // xhr.send("?town=121212");
       $.ajax({
          url: addr,
          type: "POST",
