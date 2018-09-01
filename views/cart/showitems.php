@@ -100,7 +100,7 @@ $pref = ($i === 0) ? '' : $i;
                             <div class="cart-btn mt-100">
                                 <a href="/orders/getform" class="btn amado-btn w-100">Оформить заказ</a>
                                 <form action="/cart/clear-cart" method="post">
-                                    <input type="submit" name="" id="" value="Очистить корзину" />
+                                    <input type="submit" class="btn amado-btn w-100" name="" id="" value="Очистить корзину" />
                                     
                                 </form>
                             </div>
