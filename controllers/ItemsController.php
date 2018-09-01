@@ -16,7 +16,6 @@ use yii\filters\VerbFilter;
  */
 class ItemsController extends Controller
 {
-
     public $layout = 'adminlte';
 
     /**
@@ -32,6 +31,15 @@ class ItemsController extends Controller
                 ],
             ],
         ];
+    }
+
+
+    public function beforeAction($action)
+    {
+        if ($action->id == 'api-get-catalog-by-cid') {
+            $this->enableCsrfValidation = false;
+        }
+        return parent::beforeAction($action);
     }
 
     /**
@@ -152,4 +160,5 @@ class ItemsController extends Controller
           ['item' => $item, 'factures'=>$factures, 'colors' =>$colors]  
       );  
   }  
+
 }

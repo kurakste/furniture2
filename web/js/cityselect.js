@@ -45,7 +45,6 @@ $(document).ready(function() {
       let cityname = $(this).find('td').eq(1).html();
       $('#cityid').val(cityid);
       $('#cityid').change();
-      console.log($('#cityid'));
       $('#cityselector').val(cityname);
       $('#citytable').css({'display': 'none'})
       });
