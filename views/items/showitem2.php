@@ -20,18 +20,6 @@ $this->registerJsFile('/js/showitem.js', [
             <div class="col-12 col-lg-7">
                 <div class="single_product_thumb">
                     <div id="product_details_slider" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <?php $aa = 0; ?>
-                            <?php foreach ($item->images as $image): ?>
-                                <?php if($aa===0): ?>
-                                    <li class="active" data-target="#product_details_slider" data-slide-to="0" style="background-image: url(/img/<?= $image->filename ?>);">
-                                    </li>
-                                <?php else: ?>
-                                    <li data-target="#product_details_slider" data-slide-to="0" style="background-image: url(/img/<?= $image->filename ?>);">
-                                    </li>
-                                <?php endif ?>
-                            <?php endforeach ?>
-                        </ol>
                         <div class="carousel-inner">
                             <?php $ii = 0; ?>    
                             <?php foreach ($item->images as $image): ?>
