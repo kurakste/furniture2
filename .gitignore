@@ -1,3 +1,4 @@
+.env
 # phpstorm project files
 .idea
 /tags

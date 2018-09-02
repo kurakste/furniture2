@@ -22,7 +22,8 @@
         "2amigos/yii-cdn-asset-management-library": "*",
         "dmstr/yii2-adminlte-asset": "^2.1",
         "bower-asset/font-awesome": "dev-master",
-        "kartik-v/yii2-widget-select2": "@dev"
+        "kartik-v/yii2-widget-select2": "@dev",
+        "yiithings/yii2-dotenv": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
