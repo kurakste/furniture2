@@ -170,7 +170,7 @@ class OrdersController extends Controller
                  $summ = \app\models\Carts::getSummtOfCart($ssid);
 
                 
-                $sber = new \app\objects\SberBankBMOdel
+                $sber = new \app\objects\SberBankBModel
                     (
                         $order->id,
                         $summ,
