@@ -167,13 +167,28 @@ class OrdersController extends Controller
                     $ostring->save();
                 }
                 /* var_dump(\Yii::$app->config); die; */
-                Carts::deleteAll(['ssid' => $ssid]);
+                 $summ = \app\models\Carts::getSummtOfCart($ssid);
+
+                
+                $sber = new \app\objects\SberBankBMOdel
+                    (
+                        $order->id,
+                        $summ,
+                        '/',
+                        '/',
+                        'Оплата за заказ номер '.$order->id,
+                        'DESKTOP'
+                    );
+                var_dump($sber->doPaymentRequest()); die;
+                // Это участо нужно перенести в очередь. ==
                 \Yii::$app->mailer->compose()
                     ->setFrom('yoursiteaudit@yandex.ru')
                     ->setTo('kurakste@gmail.com')
                     ->setSubject('new order')
                     ->send();
-                
+                // =======================================
+                Carts::deleteAll(['ssid' => $ssid]);
+
             } 
 
             return $this->redirect('/');
@@ -198,32 +213,32 @@ class OrdersController extends Controller
             );
     }
 
-    public function actionStoreOrder()
-    {
-        $request = \Yii::$app->request->post();
-        $ssid = CartsBModel::getCartId();
+    /* public function actionStoreOrder() */
+    /* { */
+    /*     $request = \Yii::$app->request->post(); */
+    /*     $ssid = CartsBModel::getCartId(); */
 
-        $order = new Orders;
-        $request['processflag'] = 'new';
-        $order->attributes = $request;
+    /*     $order = new Orders; */
+    /*     $request['processflag'] = 'new'; */
+    /*     $order->attributes = $request; */
 
-        if ($order->validate()) {
-            $order->save();
+    /*     if ($order->validate()) { */
+    /*         $order->save(); */
             
-            Orders::storeCartStinsInOrderString($order->id);
-            Orders::clearCart();
+    /*         Orders::storeCartStinsInOrderString($order->id); */
+    /*         Orders::clearCart(); */
 
-            $out = null;
-            $this->redirect('/');
-            return;
+    /*         $out = null; */
+    /*         $this->redirect('/'); */
+    /*         return; */
 
-        } else {
-            // проверка не удалась:  $errors - это массив содержащий сообщения об ошибках
-            $out = $newcartstring->errors;
-            Yii::$app->response->format = Response::FORMAT_JSON;
-            return $out;
-        }
-       var_dump($request); 
-        echo 'hi!'; 
-    }
+    /*     } else { */
+    /*         // проверка не удалась:  $errors - это массив содержащий сообщения об ошибках */
+    /*         $out = $newcartstring->errors; */
+    /*         Yii::$app->response->format = Response::FORMAT_JSON; */
+    /*         return $out; */
+    /*     } */
+    /*    var_dump($request); */ 
+    /*     echo 'hi!'; */ 
+    /* } */
 }
