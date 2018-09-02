@@ -30,9 +30,15 @@ $config = [
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
-            // send all mails to a file by default. You have to set
-            // 'useFileTransport' to false and configure a transport
-            // for the mailer to send real emails.
+            'transport' => [
+                     'class' => 'Swift_SmtpTransport',
+                     'host' => env('EMAIL_SMTP_HOST'),  // e.g. smtp.mandrillapp.com or smtp.gmail.com
+                     'username' => env('EMAIL_ADDR'),
+                     'password' => env('EMAIL_PASS'),
+                     'port' => env('EMAIL_PORT'), // Port 25 is a very common port too
+                     'encryption' => env('EMAIL_ENC'), // It is often used, check your provider or mail server specs
+                     ],
+
             'useFileTransport' => false,
         ],
         'log' => [

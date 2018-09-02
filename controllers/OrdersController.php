@@ -166,7 +166,14 @@ class OrdersController extends Controller
                     $ostring->oid = $order->id;
                     $ostring->save();
                 }
+                /* var_dump(\Yii::$app->config); die; */
                 Carts::deleteAll(['ssid' => $ssid]);
+                \Yii::$app->mailer->compose()
+                    ->setFrom('yoursiteaudit@yandex.ru')
+                    ->setTo('kurakste@gmail.com')
+                    ->setSubject('new order')
+                    ->send();
+                
             } 
 
             return $this->redirect('/');
@@ -205,11 +212,6 @@ class OrdersController extends Controller
             
             Orders::storeCartStinsInOrderString($order->id);
             Orders::clearCart();
-            \Yii::$app->mailer->compose('contact/html')
-                ->setFrom('from@furniture.ru')
-                ->setTo('kurakste@gmail.com')
-                ->setSubject('new order')
-                ->send();
 
             $out = null;
             $this->redirect('/');

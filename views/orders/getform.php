@@ -22,7 +22,7 @@ $this->registerJsFile(\Yii::$app->request->baseUrl.'/js/calcdelivery.js',[
                   <h2>Оформление заказа.</h2>
                </div>
     
-<?php $this->registerJsFile('/js/cityselect.js', ['depends' => \yii\web\JqueryAsset::className()]); ?>
+                <?php $this->registerJsFile('/js/cityselect.js', ['depends' => \yii\web\JqueryAsset::className()]); ?>
 
 
 <?php
