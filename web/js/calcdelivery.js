@@ -45,10 +45,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
    function success(resp)
    {
-         console.log(resp);
          var cost = parseFloat(resp);
          var field = document.getElementById('deliveryCost');
+         var formField = document.getElementById('ffdeliverycost');
+         console.log(formField);
          field.innerHTML = cost;        
+         formField.value = cost;
       
    }
 });

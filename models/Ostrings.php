@@ -59,4 +59,9 @@ class Ostrings extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Orders::className(), ['id' => 'oid']);
     }
+    
+    public function getItem()
+    {
+        return $this->hasOne(Items::className(), ['id' => 'iid']);
+    }
 }

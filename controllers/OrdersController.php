@@ -149,6 +149,9 @@ class OrdersController extends Controller
 
         if (\Yii::$app->request->post()) {
             $data = \Yii::$app->request->post();
+            /* var_dump($data); die; */
+            $data['Orders']['totalsumm'] = (real)$data['Orders']['totalsumm'];
+            $data['Orders']['deliveryсost'] = (real)$data['Orders']['deliveryсost'];
 
             $order = new Orders;
             $order->load($data); 
@@ -171,6 +174,7 @@ class OrdersController extends Controller
                 $success = \yii\helpers\Url::base('https').'/';
                 $error = \yii\helpers\Url::base('https').'/site/tables';
 
+                $strings = Ostrings::find()->where(['oid' => $order->id])->all();
                 
                 $sber = new \app\objects\SberBankBModel
                     (
@@ -185,7 +189,10 @@ class OrdersController extends Controller
                 $response = json_decode($sber->doPaymentRequest());
 
                 // Это участо нужно перенести в очередь. ==
-                \Yii::$app->mailer->compose()
+                \Yii::$app->mailer->compose('/mail/order', [
+                    'order' => $order,
+                    'strings' => $strings
+                    ])
                     ->setFrom('yoursiteaudit@yandex.ru')
                     ->setTo('kurakste@gmail.com')
                     ->setSubject('new order')

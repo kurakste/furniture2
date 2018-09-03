@@ -17,6 +17,8 @@ use app\models\Ostrings;
  * @property string $comments
  * @property string $processflag
  * @property string $date
+ * @property DECIMAL(6,2) $deliverycost
+ * @property DECIMAL(6,2) $totalsumm
  *
  * @property Ostrings[] $ostrings
  */
@@ -36,7 +38,7 @@ class Orders extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'lname', 'email', 'city', 'addr', 'comments', 'processflag'], 'safe'],
+            [['name', 'lname', 'email', 'city', 'addr', 'comments', 'processflag', 'deliveryсost', 'totalsumm'], 'safe'],
             [['name', 'city', 'addr', 'phone', 'processflag'], 'required'],
             [['name', 'lname', 'email', 'addr', 'comments'], 'string', 'max' => 255],
             [['city', ], 'integer'],

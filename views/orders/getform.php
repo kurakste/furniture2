@@ -142,6 +142,29 @@ $this->registerJsFile(\Yii::$app->request->baseUrl.'/js/calcdelivery.js',[
                                 
                                 ; ?>
                     </div>
+                    <div class="col-md-12 mb-3">
+                        <?= $form->field($model, 'deliveryсost')->textinput(array 
+                                    (
+                                        'placeholder' => "delivery cost",
+                                        'class' => "form-control",
+                                        'id' => "ffdeliverycost",
+
+                                    )
+                                )->label(false)
+                                ; ?>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <?= $form->field($model, 'totalsumm')->textinput(array 
+                                    (
+                                        'placeholder' => "totalsumm",
+                                        'class' => "form-control",
+                                        'id' => "fftotalsumm",
+                                        'value' =>$summ, 
+                                    )
+                                )->label(false)
+                                
+                                ; ?>
+                    </div>
                 </div>
 
                 
