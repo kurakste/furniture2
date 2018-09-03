@@ -184,8 +184,6 @@ class OrdersController extends Controller
                 
                 $response = json_decode($sber->doPaymentRequest());
 
-                var_dump($response); die;
-
                 // Это участо нужно перенести в очередь. ==
                 \Yii::$app->mailer->compose()
                     ->setFrom('yoursiteaudit@yandex.ru')
