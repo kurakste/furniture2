@@ -167,19 +167,25 @@ class OrdersController extends Controller
                     $ostring->save();
                 }
                 /* var_dump(\Yii::$app->config); die; */
-                 $summ = \app\models\Carts::getSummtOfCart($ssid);
+                $summ = \app\models\Carts::getSummtOfCart($ssid);
+                $success = \yii\helpers\Url::base('https').'/';
+                $error = \yii\helpers\Url::base('https').'/site/tables';
 
                 
                 $sber = new \app\objects\SberBankBModel
                     (
                         $order->id,
                         $summ,
-                        '/',
-                        '/',
-                        'Оплата за заказ номер '.$order->id,
+                        $success,
+                        $error,
+                        'Payment for order #'.$order->id,
                         'DESKTOP'
                     );
-                var_dump($sber->doPaymentRequest()); die;
+                
+                $response = json_decode($sber->doPaymentRequest());
+
+                var_dump($response); die;
+
                 // Это участо нужно перенести в очередь. ==
                 \Yii::$app->mailer->compose()
                     ->setFrom('yoursiteaudit@yandex.ru')
@@ -191,7 +197,7 @@ class OrdersController extends Controller
 
             } 
 
-            return $this->redirect('/');
+            return $this->redirect($response->formUrl);
         }
 
         $order = new Orders;
