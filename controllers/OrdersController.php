@@ -170,7 +170,7 @@ class OrdersController extends Controller
                     $ostring->save();
                 }
                 /* var_dump(\Yii::$app->config); die; */
-                $summ = \app\models\Carts::getSummtOfCart($ssid);
+                $summ = $data['Orders']['totalsumm'];
                 $success = \yii\helpers\Url::base('https').'/';
                 $error = \yii\helpers\Url::base('https').'/site/tables';
 
