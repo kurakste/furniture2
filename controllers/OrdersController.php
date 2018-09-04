@@ -171,7 +171,7 @@ class OrdersController extends Controller
                 }
                 /* var_dump(\Yii::$app->config); die; */
                 $summ = $data['Orders']['totalsumm'];
-                $success = \yii\helpers\Url::base('https').'/';
+                $success = \yii\helpers\Url::base('https').'/site/pay-ok';
                 $error = \yii\helpers\Url::base('https').'/site/tables';
 
                 $strings = Ostrings::find()->where(['oid' => $order->id])->all();

@@ -45,8 +45,8 @@ $this->beginPage(); ?>
             <nav class="amado-nav">
                 <ul>
                     <li class="active"><a href="/">Главная</a></li>
-                    <li><a href="/catalog">Каталог</a></li>
                     <li><a href="/site/tables">Обеденные группы</a></li>
+                    <li><a href="/site/terms">Условия работы</a></li>
                     <li><a href="/cart/get-cart">Корзина </a></li>
                     <li><a href="/site/contact">Контакты</a></li>
                     <li><a href="/site/about">О компании</a></li>

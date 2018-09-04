@@ -103,6 +103,16 @@ class SiteController extends Controller
         ]);
     }
 
+    public function actionTerms()
+    {
+        return $this->render('terms');
+    }
+    
+    public function actionPayOk()
+    {
+        return $this->render('payok');
+    }
+
     /**
      * Logout action.
      *

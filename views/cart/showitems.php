@@ -74,7 +74,7 @@ $pref = ($i === 0) ? '' : $i;
                                             <div class="qty-btn d-flex">
                                                 <div class="quantity">
                                                     <span class="qty-minus" onclick="var effect = document.getElementById('qty<?= $pref ?>'); var qty<?= $pref ?>= effect.value; if( !isNaN( qty<?= $pref ?> ) &amp;&amp; qty<?= $pref ?> &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                                    <input type="number" class="qty-text" id="qty<?= $pref ?>" step="1" min="1" max="300" name="quantity" value="<?= $cart->amount ?>">
+                                                    <input type="number" class="qty-text" id="qty<?= $pref ?>" step="1" min="1" max="300" name="quantity" value="<?= $cart->amount ?>"  text-align="center">
                                                     <span class="qty-plus" onclick="var effect = document.getElementById('qty<?= $pref ?>'); var qty<?= $pref ?> = effect.value; if( !isNaN( qty<?= $pref ?> )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
                                                 </div>
                                             </div>

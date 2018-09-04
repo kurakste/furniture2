@@ -1422,3 +1422,15 @@ img {
     border: 3px solid #6b6b6b;
     box-shadow: 0 0 7px #666;
 }
+
+.qty-text {
+    text-align: center;
+}
+
+.quantity {
+    text-align: center;
+}
+
+.targetData {
+    text-align: center;
+}
