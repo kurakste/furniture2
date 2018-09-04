@@ -187,6 +187,11 @@ class OrdersController extends Controller
                     );
                 
                 $response = json_decode($sber->doPaymentRequest());
+                if (property_exists($response, 'errorCode') 
+                    && ($response->errorCode != 0 )) {
+                        throw new \yii\web\HttpException
+                            ("Банк вернул ошибку: $response->errorMessage"); 
+                } 
 
                 // Это участо нужно перенести в очередь. ==
                 \Yii::$app->mailer->compose('/mail/order', [

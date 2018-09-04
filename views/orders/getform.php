@@ -206,7 +206,8 @@ $this->registerJsFile(\Yii::$app->request->baseUrl.'/js/calcdelivery.js',[
                <h5>Ваши заказы</h5>
                <ul class="summary-table">
                <li><span>Сумма заказа:</span> <span><?= number_format($summ, 2) ?></span></li>
-                  <li><span>Стоимость доставки</span> <span id='deliveryCost'>0</span></li>
+               <li><span>Стоимость доставки</span> <span id='deliveryCost'>0</span></li>
+               <li><span>Итого с доставкой</span> <span id='deliveryCost'>0</span></li>
 
 
                </ul>
