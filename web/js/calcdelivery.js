@@ -46,11 +46,19 @@ document.addEventListener('DOMContentLoaded', function() {
    function success(resp)
    {
          var cost = parseFloat(resp);
-         var field = document.getElementById('deliveryCost');
-         var formField = document.getElementById('ffdeliverycost');
-         console.log(formField);
-         field.innerHTML = cost;        
-         formField.value = cost;
+         var fielddelivery = document.getElementById('deliveryCost');
+         var formFielddeliverycost = document.getElementById('ffdeliverycost');
+         var formFieldtotal = document.getElementById('fftotalsumm');
+         var totalsumm = document.getElementById('sumwithdelivery');
+         let sum = totalsumm.innerHTML;
+         sum = sum.replace(',','');
+         sum = parseFloat(sum);
+         sum = sum + cost; 
+         console.log(sum);
+         fielddelivery.innerHTML = cost;        
+         totalsumm.innerHTML = sum;        
+         formFielddeliverycost.value = cost;
+         formFieldtotal.value = sum;
       
    }
 });
