@@ -143,7 +143,7 @@ $this->registerJsFile(\Yii::$app->request->baseUrl.'/js/calcdelivery.js',[
                                 ; ?>
                     </div>
                     <div class="col-md-12 mb-3" >
-                        <?= $form->field($model, 'deliveryсost')->textinput(array 
+                        <?= $form->field($model, 'deliveryсost')->hiddenInput(array 
                                     (
                                         'placeholder' => "delivery cost",
                                         'class' => "form-control",
@@ -154,7 +154,7 @@ $this->registerJsFile(\Yii::$app->request->baseUrl.'/js/calcdelivery.js',[
                                 ; ?>
                     </div>
                     <div class="col-md-12 mb-3">
-                        <?= $form->field($model, 'totalsumm')->textinput(array 
+                        <?= $form->field($model, 'totalsumm')->hiddenInput(array 
                                     (
                                         'placeholder' => "totalsumm",
                                         'class' => "form-control",
@@ -205,7 +205,7 @@ $this->registerJsFile(\Yii::$app->request->baseUrl.'/js/calcdelivery.js',[
             <div class="cart-summary">
                <h5>Ваши заказы</h5>
                <ul class="summary-table">
-               <li><span>Сумма заказа:</span> <span><?= number_format($summ, 2) ?></span></li>
+               <li><span>Сумма заказа:</span> <span id ='ordercost'><?= number_format($summ, 2) ?></span></li>
                <li><span>Стоимость доставки</span> <span id='deliveryCost'>0</span></li>
                <li><span>Итого с доставкой</span> <span id='sumwithdelivery'><?= number_format($summ, 2) ?></span></li>
 

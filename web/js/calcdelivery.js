@@ -51,9 +51,11 @@ document.addEventListener('DOMContentLoaded', function() {
          var formFieldtotal = document.getElementById('fftotalsumm');
          var totalsumm = document.getElementById('sumwithdelivery');
          let sum = totalsumm.innerHTML;
+         var ordercost = document.getElementById('ordercost').innerHTML;
          sum = sum.replace(',','');
+         ordercost = parseFloat(ordercost.replace(',',''));
          sum = parseFloat(sum);
-         sum = sum + cost; 
+         sum = ordercost + cost; 
          console.log(sum);
          fielddelivery.innerHTML = cost;        
          totalsumm.innerHTML = sum;        
