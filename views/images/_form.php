@@ -12,7 +12,9 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'filename')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'filename')->widget(alexantr\elfinder\InputFile::className(), [
+        'clientRoute' => 'elfinder/input',
+    ]) ?>
 
     <?= $form->field($model, 'iid')->textInput() ?>
 
