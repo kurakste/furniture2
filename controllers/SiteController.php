@@ -141,4 +141,21 @@ class SiteController extends Controller
     {
         return $this->render('contact');
     }
+
+    public function actionSendMail()
+    {
+        $clientEmail = Yii::$app->request->post('email');
+                \Yii::$app->mailer->compose('/mail/mail-request', [
+                    'clientEmail' => $clientEmail
+                    ])
+                    ->setFrom('yoursiteaudit@yandex.ru')
+                    ->setTo('kurakste@gmail.com')
+                    ->setSubject('Email request')
+                    ->send();
+                // =======================================
+        
+        return $this->redirect('/');
+    }
+
+
 }

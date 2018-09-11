@@ -87,7 +87,7 @@ $this->beginPage(); ?>
                     </div>
                     <div class="col-12 col-lg-6 col-xl-5">
                         <div class="newsletter-form mb-100">
-                            <form action="#" method="post">
+                            <form action="site/send-mail" method="post">
                                 <input type="email" name="email" class="nl-email" placeholder="Your E-mail">
                                 <input type="submit" value="Отправить">
                             </form>
