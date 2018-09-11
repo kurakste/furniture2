@@ -4,7 +4,7 @@
         <?php foreach ($items as $item): ?>
         <div class="single-products-catagory clearfix">
             <a href="/items/showitem?id=<?= $item->id ?>">
-            <img src="/img/<?= $item->getMainImage() ?>" alt="chair">
+            <img src="<?= $item->getMainImage() ?>" alt="chair">
                 <div class="hover-content">
                     <div class="line"></div>
                     <p>&#8381 <?= number_format($item->price, 2, '.', ' ') ?></p>
