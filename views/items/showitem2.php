@@ -26,13 +26,13 @@ $this->registerJsFile('/js/showitem.js', [
                                 <?php if ($ii ===0 ): ?>
                                     <div class="carousel-item active">
                                         <a class="gallery_img" href="/img/<?= $image->filename ?>">
-                                            <img class="d-block w-100" src="/img/<?= $image->filename ?>" alt="First slide">
+                                            <img class="d-block w-100" src="<?= $image->filename ?>" alt="First slide">
                                         </a>
                                     </div>
                                 <?php else: ?>
                                     <div class="carousel-item">
                                         <a class="gallery_img" href="/img/<?= $image->filename ?>">
-                                            <img class="d-block w-100" src="/img/<?= $image->filename ?>" alt="First slide">
+                                            <img class="d-block w-100" src="<?= $image->filename ?>" alt="First slide">
                                         </a>
                                     </div>
                                 <?php endif ?>
