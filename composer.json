@@ -24,7 +24,8 @@
         "bower-asset/font-awesome": "dev-master",
         "kartik-v/yii2-widget-select2": "@dev",
         "yiithings/yii2-dotenv": "*",
-        "alexantr/yii2-elfinder": "^1.3@dev"
+        "alexantr/yii2-elfinder": "^1.3@dev",
+        "mihaildev/yii2-ckeditor": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
