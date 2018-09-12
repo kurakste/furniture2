@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\ItemsSearch */
@@ -18,7 +19,6 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a('Create Items', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
-
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
@@ -38,6 +38,23 @@ $this->params['breadcrumbs'][] = $this->title;
             'weight',
 
             ['class' => 'yii\grid\ActionColumn'],
+            [
+                'format' => 'html',
+                'value' => function($model) {
+                    if ($model->isFavorite()) {
+                        return Html::a(
+                            '<span class="glyphicon glyphicon-star">',
+                            Url::to(['site/ajax-remove-favorite', 'iid' => $model->id])
+                        );
+                    
+                    } else {
+                        return Html::a(
+                            '<span class="glyphicon glyphicon-star-empty">',
+                            Url::to(['site/ajax-add-favorite', 'iid' => $model->id])
+                        );
+                    }
+                }
+            ]
         ],
     ]); ?>
 </div>

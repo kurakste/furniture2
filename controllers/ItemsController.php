@@ -159,6 +159,6 @@ class ItemsController extends Controller
           'showitem2',  
           ['item' => $item, 'factures'=>$factures, 'colors' =>$colors]  
       );  
-  }  
+  } 
 
 }

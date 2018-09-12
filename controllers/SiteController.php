@@ -10,6 +10,7 @@ use yii\filters\VerbFilter;
 use app\models\Carts;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use yii\web\NotFoundHttpException;
 
 class SiteController extends Controller
 {
@@ -78,6 +79,14 @@ class SiteController extends Controller
     {
         $items = \app\models\Items::find()->where(['cid'=>2])->all();
         return $this->render('tables', [ 'items' => $items ]);
+    }
+
+    public function actionFavorite()
+    {
+        $fav = new \app\objects\GetFavorite;
+        $items = $fav->get();
+        
+        return $this->render('index', [ 'items' => $items ]);
     }
 
     /**
@@ -155,6 +164,51 @@ class SiteController extends Controller
                 // =======================================
         
         return $this->redirect('/');
+    }
+
+    public function actionAjaxAddFavorite()
+    {
+        $iid =(int)Yii::$app->request->get('iid');
+        if (!($iid > 0)) {
+            throw new NotFoundHttpException('Недопустимый индекс товара');
+        }
+
+        $favorite = \app\models\Favorite::find()->where(['iid'=>$iid])->one();
+        if ($favorite) {
+            // Если товар уже есть в таблице, его нельзя добавить второй раз.
+            throw new NotFoundHttpException('Недопустимый индекс товара');
+        }
+
+        $favorite = new \app\models\Favorite;
+        $favorite->iid = $iid;
+        $res = $favorite->save();
+        
+        if (!$res) {
+            throw new NotFoundHttpException('Недопустимый индекс товара');
+        }
+        return $this->redirect('/items');        
+    }
+
+    public function actionAjaxRemoveFavorite()
+    {
+        $iid =(int)Yii::$app->request->get('iid');
+        if (!($iid > 0)) {
+            throw new NotFoundHttpException('Недопустимый индекс товара');
+        }
+
+        $favorite = \app\models\Favorite::find()->where(['iid'=>$iid])->one();
+
+        if (!$favorite) {
+            throw new NotFoundHttpException('Недопустимый индекс товара');
+        }
+
+        $favorite->delete();
+
+        return $this->redirect('/items');
+    }
+
+    public function actionTest()
+    {
     }
 
 

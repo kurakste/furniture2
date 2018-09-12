@@ -106,4 +106,16 @@ class Items extends \yii\db\ActiveRecord
         $img = \app\models\Images::findOne($this->mainimageid);
         return $img->filename ?? null;
     }
+
+    public function isFavorite()
+    {
+        $fav = \app\models\Favorite::find()->where(['iid'=> $this->id])->one();
+
+        if ($fav) {
+            return true;
+        } else {
+            return false;
+        }
+    
+    }
 }
