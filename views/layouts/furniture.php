@@ -48,7 +48,6 @@ $this->beginPage(); ?>
                     <li><a href="/site/tables">Обеденные группы</a></li>
                     <li><a href="/site/terms">Условия работы</a></li>
                     <li><a href="/news/tape">Новости</a></li>
-                    <li><a href="/cart/get-cart">Корзина </a></li>
                     <li><a href="/site/contact">Контакты</a></li>
                     <li><a href="/site/about">О компании</a></li>
                 </ul>
@@ -124,9 +123,9 @@ $this->beginPage(); ?>
 
 
                                         <li class="nav-item"><a class="nav-link" href="/">Главная</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="/site/chair">Стулья</a></li>
                                         <li class="nav-item"><a class="nav-link" href="/site/tables">Обеденные группы</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="/cart/get-cart">Корзина </a></li>
+                                        <li class="nav-item"><a class="nav-link" href="/site/terms">Условия работы</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="/news/tape">Новости</a></li>
                                         <li class="nav-item"><a class="nav-link" href="/site/contact">Контакты</a></li>
                                         <li class="nav-item"><a class="nav-link" href="/site/about">О компании</a></li>
                                     </ul>
