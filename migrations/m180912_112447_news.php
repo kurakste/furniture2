@@ -12,6 +12,7 @@ class m180912_112447_news extends Migration
      */
     public function Up()
     {
+        $tabelOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnDB';
         $this->createTable('news', [
             'id' => $this->primaryKey(),
             'title' => $this->string()->notNull(),

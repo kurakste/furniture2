@@ -12,6 +12,7 @@ class m180912_080133_favorite extends Migration
      */
     public function Up()
     {
+        $tabelOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnDB';
         $this->createTable('favorite', [
             'id' => $this->primaryKey(),
             'iid' => $this->integer()->notNull()->unique(),
