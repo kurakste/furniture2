@@ -3,6 +3,8 @@
 # phpstorm project files
 .idea
 /tags
+/web/assets
+
 # netbeans project files
 nbproject
 
