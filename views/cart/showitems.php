@@ -33,7 +33,7 @@ $this->registerJsFile('/js/sum.js', [
                                             <?= $cart->item->id ?>
                                         </td>
                                         <td class="cart_product_img">
-                                            <a href="#"><img src="/img/<?= $cart->item->mainImage ?>" alt="Product"></a>
+                                            <a href="#"><img src="<?= $cart->item->mainImage ?>" alt="Product"></a>
                                         </td>
                                         <td style='display: none;'>
                                             <?= $cart->color->id ?>
