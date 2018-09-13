@@ -107,7 +107,7 @@ $this->beginPage(); ?>
                         
                         <p class="copywrite">
                             Copyright &copy; All rights reserved | Produced by 3Kita Studio 2018 
-                           <a href="www.3kita-studio.ru" target="_blank">3Kita Studio</a>
+                           <a href="http://www.3kita-studio.ru" target="_blank">3Kita Studio</a>
                         </p>
                     </div>
                 </div>
