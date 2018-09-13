@@ -28,5 +28,3 @@ $this->registerCssFile('/css/style_company.css');
         <div class="name"><a href="/">На главную</a></div>   
 </div>
 
-</body>
-</html>

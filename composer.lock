@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "97cb0972b5e0e0712287eab5ee1fb4cf",
@@ -3772,12 +3772,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "8c544db578c749f12e43fd22ca2486976d60d85f"
+                "reference": "8a399b4d564033dff5d463065942effc016dee55"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/8c544db578c749f12e43fd22ca2486976d60d85f",
-                "reference": "8c544db578c749f12e43fd22ca2486976d60d85f",
+                "url": "https://api.github.com/repos/symfony/console/zipball/8a399b4d564033dff5d463065942effc016dee55",
+                "reference": "8a399b4d564033dff5d463065942effc016dee55",
                 "shasum": ""
             },
             "require": {
@@ -3833,7 +3833,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2018-09-10T07:26:34+00:00"
+            "time": "2018-09-11T17:20:18+00:00"
         },
         {
             "name": "symfony/contracts",
