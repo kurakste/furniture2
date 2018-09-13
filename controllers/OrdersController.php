@@ -201,7 +201,7 @@ class OrdersController extends Controller
                     'strings' => $strings
                     ])
                     ->setFrom('yoursiteaudit@yandex.ru')
-                    ->setTo('kurakste@gmail.com')
+                    ->setTo([env('ADMIN_EMAIL'), env('OP_EMAIL')])
                     ->setSubject('new order')
                     ->send();
                 // =======================================

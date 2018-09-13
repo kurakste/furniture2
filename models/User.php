@@ -11,21 +11,26 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
     public $accessToken;
 
     private static $users = [
-        '100' => [
-            'id' => '100',
-            'username' => 'admin',
-            'password' => 'mars12345',
-            'authKey' => 'test100key',
-            'accessToken' => '100-token',
-        ],
-        '101' => [
-            'id' => '101',
-            'username' => 'demo',
-            'password' => 'demo',
-            'authKey' => 'test101key',
-            'accessToken' => '101-token',
-        ],
     ];
+
+    public static function __init()
+    {
+        self::$users['200'] = [
+                'id' => '200', 
+                'username' => env('ADMIN_LOGIN'),
+                'password' => env('ADMIN_PASS'),
+                'authKey' => 'sdjsfkjadljdlfjlsdfj',
+                'accessToken' => 'lksajdlksafdjldfjlsdfjlsadfj',
+        ];
+        self::$users['201'] = [
+                'id' => '201',
+                'username' => env('OP_LOGIN'),
+                'password' => env('OP_PASS'),
+                'authKey' => 'sdjsfkvdalkfg alSKDfjlsdfj',
+                'accessToken' => 'lksaFLAKSDJGLKASJGFldfjlsdfjlsadfj',
+        ];
+    
+    }
 
 
     /**
@@ -33,6 +38,7 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
      */
     public static function findIdentity($id)
     {
+        self::__init();
         return isset(self::$users[$id]) ? new static(self::$users[$id]) : null;
     }
 
@@ -41,6 +47,7 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
      */
     public static function findIdentityByAccessToken($token, $type = null)
     {
+        self::__init();
         foreach (self::$users as $user) {
             if ($user['accessToken'] === $token) {
                 return new static($user);
@@ -58,6 +65,7 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
      */
     public static function findByUsername($username)
     {
+        self::__init();
         foreach (self::$users as $user) {
             if (strcasecmp($user['username'], $username) === 0) {
                 return new static($user);
@@ -72,6 +80,7 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
      */
     public function getId()
     {
+        self::__init();
         return $this->id;
     }
 
@@ -80,6 +89,7 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
      */
     public function getAuthKey()
     {
+        self::__init();
         return $this->authKey;
     }
 
@@ -88,6 +98,7 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
      */
     public function validateAuthKey($authKey)
     {
+        self::__init();
         return $this->authKey === $authKey;
     }
 
@@ -99,6 +110,7 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
      */
     public function validatePassword($password)
     {
+        self::__init();
         return $this->password === $password;
     }
 }

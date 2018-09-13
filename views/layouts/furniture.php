@@ -85,7 +85,7 @@ $this->beginPage(); ?>
                     </div>
                     <div class="col-12 col-lg-6 col-xl-5">
                         <div class="newsletter-form mb-100">
-                            <form action="site/send-mail" method="post">
+                            <form action="/site/send-mail" method="post">
                                 <input type="email" name="email" class="nl-email" placeholder="Your E-mail">
                                 <input type="submit" value="Отправить">
                             </form>
@@ -106,8 +106,8 @@ $this->beginPage(); ?>
                         </div>
                         
                         <p class="copywrite">
-                            Copyright &copy; All rights reserved | Produced by NextBestStep 2018 
-                           <a href="www.nextbeststep.ru" target="_blank">NextBestStep</a>
+                            Copyright &copy; All rights reserved | Produced by 3Kita Studio 2018 
+                           <a href="www.3kita-studio.ru" target="_blank">3Kita Studio</a>
                         </p>
                     </div>
                 </div>

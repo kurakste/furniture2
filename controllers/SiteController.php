@@ -158,7 +158,7 @@ class SiteController extends Controller
                     'clientEmail' => $clientEmail
                     ])
                     ->setFrom('yoursiteaudit@yandex.ru')
-                    ->setTo('kurakste@gmail.com')
+                    ->setTo([env('ADMIN_EMAIL'), env('OP_EMAIL')])
                     ->setSubject('Email request')
                     ->send();
                 // =======================================
