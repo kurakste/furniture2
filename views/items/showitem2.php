@@ -25,13 +25,13 @@ $this->registerJsFile('/js/showitem.js', [
                             <?php foreach ($item->images as $image): ?>
                                 <?php if ($ii ===0 ): ?>
                                     <div class="carousel-item active">
-                                        <a class="gallery_img" href="/img/<?= $image->filename ?>">
+                                        <a class="gallery_img" href="<?= $image->filename ?>">
                                             <img class="d-block w-100" src="<?= $image->filename ?>" alt="First slide">
                                         </a>
                                     </div>
                                 <?php else: ?>
                                     <div class="carousel-item">
-                                        <a class="gallery_img" href="/img/<?= $image->filename ?>">
+                                        <a class="gallery_img" href="<?= $image->filename ?>">
                                             <img class="d-block w-100" src="<?= $image->filename ?>" alt="First slide">
                                         </a>
                                     </div>
@@ -104,7 +104,7 @@ $this->registerJsFile('/js/showitem.js', [
                         <?php foreach ($colors as $color): ?>
                             <label>
                             <input form="add-to-cart" type="radio" name="cid" id="cid" required value="<?= $color->id ?>" />
-                              <img class="imgClass" src="/img/material/<?= $color->img ?>">
+                              <img class="imgClass" src="<?= $color->img ?>">
                             </label>
                         <?php endforeach ?>
                         </div>
@@ -159,7 +159,7 @@ $this->registerJsFile('/js/showitem.js', [
                         <?php foreach ($factures as $facture): ?>
                             <label>
                             <input  form="add-to-cart" type="radio" name="fid" id="fid" value="<?= $facture->id ?>" />
-                              <img class="imgClass" src="/img/material/<?= $facture->img ?>">
+                              <img class="imgClass" src="<?= $facture->img ?>">
                             </label>
                         <?php endforeach ?>
                         </div>

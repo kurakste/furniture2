@@ -42,21 +42,21 @@ $this->registerJsFile('/js/sum.js', [
                                         <?php if ($cart->item->cid === 1): ?>
                                             <div style ="width: 40%;">
                                                 <a href="#win_o_1" class="button button-orange">
-                                                    <img src="/img/material/<?= $cart->color->img ?>" alt="Material" class="roundOrder">
+                                                    <img src="<?= $cart->color->img ?>" alt="Material" class="roundOrder">
                                                 </a>
                                                <a href="#" class="overlay" id="win_o_1"></a>
                                                 <div class="popup">
-                                                    <img class="is-image" src="/img/material/<?= $cart->color->img ?>" alt="Material">
+                                                    <img class="is-image" src="<?= $cart->color->img ?>" alt="Material">
                                                     <a class="close" title="Закрыть" href="/cart/get-cart"></a>
                                                 </div>
                                             </div>
                                             <div style ="width: 40%;">
                                                 <a href="#win_m_1" class="button button-orange">
-                                                <img src="/img/material/<?= $cart->facture->img ?>" alt="Material" class="roundOrder">
+                                                <img src="<?= $cart->facture->img ?>" alt="Material" class="roundOrder">
                                             </a>
                                                 <a href="#" class="overlay" id="win_m_1"></a>
                                                     <div class="popup">
-                                                        <img class="is-image" src="/img/material/<?= $cart->facture->img ?>" alt="Material">
+                                                        <img class="is-image" src="<?= $cart->facture->img ?>" alt="Material">
                                                         <a class="close" title="Закрыть" href="#close"></a>
                                                     </div>
                                             </div>
