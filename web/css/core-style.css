@@ -1441,3 +1441,9 @@ img {
       font-family: 'Montserrat Alternates', sans-serif;
       font-size: 20px;
 }
+
+.notHover::after {
+    display: none;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 20px;
+}

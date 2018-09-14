@@ -58,7 +58,7 @@ $this->beginPage(); ?>
             <!-- Cart Menu -->
             <div class="cart-fav-search mb-100">
             <a href="/cart/get-cart" class="cart-nav"><img src="/img/core-img/cart.png" alt="">  Корзина <span>(<?= CartsBModel::getAmountItemsInCart() ?>)</span></a>
-                <a href="/site/favorite" class="fav-nav"><img src="/img/core-img/favorites.png" alt=""> Favourite</a>
+                <a href="/site/favorite" class="fav-nav"><img src="/img/core-img/favorites.png" alt=""> Лидеры продаж</a>
             </div>
         <br>
         <br>

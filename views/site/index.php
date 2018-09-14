@@ -17,9 +17,11 @@ $this->title = 'My Yii Application'; ?>
                  <div class="line"></div>
                  <p>&#8381 <?= number_format($item->price, 2, ',', ' ') ?></p>
                  <h4><?= $item->name ?></h4>
+                 
              </div>
          </a>
-     </div>
+         
+</div>
 <?php endforeach ?>
  </div>
 </div>
