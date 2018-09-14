@@ -27,6 +27,8 @@ body {
   font-family: 'Montserrat Alternates', sans-serif;
   font-size: 20px; }
 
+
+
 h1,
 h2,
 h3,
@@ -1435,3 +1437,7 @@ img {
     text-align: center;
 }
 
+.bodyConf {
+      font-family: 'Montserrat Alternates', sans-serif;
+      font-size: 20px;
+}
