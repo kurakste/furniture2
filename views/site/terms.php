@@ -14,14 +14,14 @@ $this->title = 'My Yii Application'; ?>
         <h1>Основные положения</h1>
              
             <a class="notHover" href="#incConf"><h3>Политика конфиденциальности и пользовательское соглашение</h3></a>
-            <a class="notHover" href="#incConf"><h3>Безопасность</h3></a>
-            <a class="notHover" href="#incConf"><h3>Персональные данные</h3></a>
-            <a class="notHover" href="#incConf"><h3>Изменения политики конфиденциальности</h3></a>
-            <a class="notHover" href="#incConf"><h3>Способы оплаты</h3></a>
-            <a class="notHover" href="#incConf"><h3>Способы возврата выплат</h3></a>
-            <a class="notHover" href="#incConf"><h3>Описание возврата товара</h3></a>
-            <a class="notHover" href="#incConf"><h3>Условия доставки товара</h3></a>
-            <a class="notHover" href="#incConf"><h3>Описание процесса передачи данных</h3></a><br><br><br>
+            <a class="notHover" href="#incConf1"><h3>Безопасность</h3></a>
+            <a class="notHover" href="#incConf2"><h3>Персональные данные</h3></a>
+            <a class="notHover" href="#incConf3"><h3>Изменения политики конфиденциальности</h3></a>
+            <a class="notHover" href="#incConf4"><h3>Способы оплаты</h3></a>
+            <a class="notHover" href="#incConf5"><h3>Способы возврата выплат</h3></a>
+            <a class="notHover" href="#incConf6"><h3>Описание возврата товара</h3></a>
+            <a class="notHover" href="#incConf7"><h3>Условия доставки товара</h3></a>
+            <a class="notHover" href="#incConf8"><h3>Описание процесса передачи данных</h3></a><br><br><br>
             
 
 <h2><a name="incConf"></a>Политика конфиденциальности и пользовательское соглашение</h2>
