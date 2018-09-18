@@ -26,7 +26,7 @@ $this->beginPage(); ?>
     <!-- Mobile Nav 767px-->
         <div class="mobile-nav">
             <div class="amado-navbar-brand">
-                <a href="/"><img src="/img/logo1.jpg" alt="logo"></a>
+                <a href="/"><img src="/img/___logo1.jpg" alt="logo"></a>
             </div>
             <div class="amado-navbar-toggler">
                 <span></span><span></span><span></span>
@@ -40,7 +40,7 @@ $this->beginPage(); ?>
             </div>
         
             <div class="logo">
-                    <a href="/"><img src="/img/logo1.jpg" alt="my icon"></a> 
+                    <a href="/"><img src="/img/___logo1.jpg" alt="my icon"></a> 
             </div>
         
             <nav class="amado-nav">
@@ -58,7 +58,7 @@ $this->beginPage(); ?>
             <!-- Cart Menu -->
             <div class="cart-fav-search mb-100">
             <a href="/cart/get-cart" class="cart-nav"><img src="/img/core-img/cart.png" alt="">  Корзина <span>(<?= CartsBModel::getAmountItemsInCart() ?>)</span></a>
-                <a href="/site/favorite" class="fav-nav"><img src="/img/core-img/favorites.png" alt=""> Лидеры продаж</a>
+                <a href="/site/favorite" class="fav-nav"><img src="/img/core-img/favorites.png" alt=""> Скидки %</a>
             </div>
         <br>
         <br>
@@ -103,7 +103,7 @@ $this->beginPage(); ?>
                     <div class="single_widget_area">
                         <!-- Logo -->
                         <div class="footer-logo mr-50">
-                           <a href="/"><img src="/img/logo1.jpg" alt="logo"></a>
+                           <a href="/"><img src="/img/___logo1.jpg" alt="logo"></a>
                         </div>
                         
                         <p class="copywrite">
