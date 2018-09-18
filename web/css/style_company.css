@@ -42,3 +42,25 @@ body {
     top: -500%;
   }
 }
+
+@media screen and (min-width:200px)
+{
+    .aboutImg{
+        display:none;
+    }
+    .name {
+        /*font-size: 12px;
+        /*text-align: justify;*/
+        display: none;
+        text-align: center;
+    }
+    .movie {
+        display: none;
+    }
+}
+@media screen and (min-width:980px)
+{
+    .aboutImg {
+        display:inline;
+    }
+}
