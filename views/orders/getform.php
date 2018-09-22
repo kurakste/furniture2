@@ -172,33 +172,6 @@ $this->registerJsFile(\Yii::$app->request->baseUrl.'/js/calcdelivery.js',[
 
 
 
-<!--               <form id='client' action="/orders/store-order" method="post">
-                 <div class="row">
-                     <div class="col-md-6 mb-3">
-                        <input type="text" class="form-control" id="first_name" name='name' value="" placeholder="Как к вам обращаться" required>
-                     </div>
-                     <div class="col-md-6 mb-3">
-                        <input type="text" class="form-control" id="last_name" name='lname' value="" placeholder="Ваша фамилия" required>
-                     </div>
-                     <div class="col-12 mb-3">
-                        <input type="email" class="form-control" id="email" name='email' placeholder="Ваш электронный ящик" value="">
-                     </div>
-                     <div class="col-12 mb-3">
-                        <input type="text" class="form-control mb-3" name='addr' id="street_address" placeholder="Адрес доставки" value="">
-                     </div>
-                     <div class="col-12 mb-3">
-                        <input type="text" class="form-control" name='city' id="city" placeholder="Город" value="">
-                     </div>
-                     <div class="col-md-6 mb-3">
-                        <input type="number" class="form-control" name='phone' id="phone_number" min="0" placeholder="Номер телефона" value="">
-                     </div>
-                     <div class="col-12 mb-3">
-                        <textarea name="comments" class="form-control w-100" id="comments" cols="30" rows="10" placeholder="Напишите комментарии по заказу"></textarea>
-                     </div>
-
-                  </div>
-               </form>
--->
             </div>
          </div>
          <div class="col-12 col-lg-4">

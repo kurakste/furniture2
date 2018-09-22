@@ -91,7 +91,7 @@ $this->registerJsFile('/js/showitem.js', [
                 <div class="col-12">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb mt-50">
-                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#">Главная</a></li>
                             <li class="breadcrumb-item active" aria-current="page"><?= $item->name ?></li>
                         </ol>
                     </nav>
@@ -126,10 +126,10 @@ $this->registerJsFile('/js/showitem.js', [
                             </div>
                         </div>
                         <!-- Add to Cart Form -->
-                        <button id="go-to-description" name="addtocart" value="5" class="btn amado-btn">Вернуться к описанию.</button>
-                        <button id="go-to-facture-btn" name="addtocart" value="5" class="btn amado-btn">Перейти к выбору фактуры.</button>
+                        <button id="go-to-description" name="addtocart" value="5" class="btn amado-btn" size>Вернуться к описанию</button>
+                        <button id="go-to-facture-btn" name="addtocart" value="5" class="btn amado-btn">Выбрать фактуру</button>
                         <div id="warn-message-choose-color" style="display: none;">
-                            <p>Выбирите пожалуйста цвет основания стула, для перехода к следующему шагу.</p>
+                            <p class="messageAlert">Для перехода к следующему шагу,выбирите пожалуйста цвет основания стула, для перехода к следующему шагу.</p>
 
                         </div>
                     </div> <!-- single product desc-->
