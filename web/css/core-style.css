@@ -506,6 +506,7 @@ img {
     .main-content-wrapper {
         margin-top: 70px;
         z-index: 100;
+        
     }
 }
 
@@ -2069,4 +2070,8 @@ img {
 .wrapper_target {
     margin-top: 50px;
     margin-bottom: 20px;
+    width: 70%;
+    margin-right: 50px;
+    margin-left: 50px;
+    text-align: justify;
 }
