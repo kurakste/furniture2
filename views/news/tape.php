@@ -9,7 +9,7 @@
         <h4>
             <?= $new->created_at ?>
         </h4>
-        <div>
+        <div class="wrapper_text">
             <?= substr($new->content, 0, 500) ?>
         </div>
 
