@@ -2065,3 +2065,8 @@ img {
 .warn-message-choose-facture {
     color: crimson;
 }
+
+.wrapper_target {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
