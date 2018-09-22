@@ -2102,4 +2102,6 @@ img {
 .centered_rule {
     margin-left: 50px;
     margin-top: 70px;
+    margin-right: 50px;
+    text-align: justify;
 }
