@@ -1,4 +1,6 @@
 
+<!-- новости полностью на всю страничку -->
+
 <div class="wrapper">
 <h1> <?= $news->title ?></h1>
 <h4> <?= $news->created_at ?> </h4>
