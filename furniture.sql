@@ -1,8 +1,8 @@
--- MySQL dump 10.16  Distrib 10.2.13-MariaDB, for osx10.13 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.23, for Linux (x86_64)
 --
 -- Host: localhost    Database: furniture
 -- ------------------------------------------------------
--- Server version	5.7.20
+-- Server version	5.7.23-0ubuntu0.16.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -34,7 +34,7 @@ CREATE TABLE `carts` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `carts_to_items` (`iid`),
   CONSTRAINT `carts_to_items` FOREIGN KEY (`iid`) REFERENCES `items` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=810 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=859 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +43,7 @@ CREATE TABLE `carts` (
 
 LOCK TABLES `carts` WRITE;
 /*!40000 ALTER TABLE `carts` DISABLE KEYS */;
-INSERT INTO `carts` VALUES (520,'jsfsngia45phftv7oirm9q25ed',18,13,20,1,'2018-08-26 07:18:59'),(521,'jsfsngia45phftv7oirm9q25ed',1,4,5,1,'2018-08-26 07:19:10'),(522,'jsfsngia45phftv7oirm9q25ed',1,11,9,1,'2018-08-26 08:10:09'),(769,'10b4697bphor4qhr2a883idm56',18,13,20,25,'2018-08-26 19:05:16'),(770,'10b4697bphor4qhr2a883idm56',1,8,9,8,'2018-08-26 19:05:16'),(771,'10b4697bphor4qhr2a883idm56',1,12,13,2,'2018-08-26 19:05:16'),(772,'10b4697bphor4qhr2a883idm56',1,8,5,1,'2018-08-26 19:05:16'),(773,'10b4697bphor4qhr2a883idm56',1,8,17,1,'2018-08-26 19:05:16'),(774,'10b4697bphor4qhr2a883idm56',1,8,13,1,'2018-08-26 19:05:16'),(775,'10b4697bphor4qhr2a883idm56',1,6,7,2,'2018-08-26 19:05:16'),(776,'10b4697bphor4qhr2a883idm56',1,9,10,1,'2018-08-26 19:05:16'),(777,'10b4697bphor4qhr2a883idm56',1,3,4,1,'2018-08-26 19:21:56'),(788,'hursvpkj4bpmbg4tt35vj5p2m5',4,3,4,1,'2018-09-01 06:19:24'),(792,'k6banb2ms0kllf0kgho15f9hp7',15,13,20,1,'2018-09-02 19:15:50');
+INSERT INTO `carts` VALUES (520,'jsfsngia45phftv7oirm9q25ed',18,13,20,1,'2018-08-26 07:18:59'),(521,'jsfsngia45phftv7oirm9q25ed',1,4,5,1,'2018-08-26 07:19:10'),(522,'jsfsngia45phftv7oirm9q25ed',1,11,9,1,'2018-08-26 08:10:09'),(769,'10b4697bphor4qhr2a883idm56',18,13,20,25,'2018-08-26 19:05:16'),(770,'10b4697bphor4qhr2a883idm56',1,8,9,8,'2018-08-26 19:05:16'),(771,'10b4697bphor4qhr2a883idm56',1,12,13,2,'2018-08-26 19:05:16'),(772,'10b4697bphor4qhr2a883idm56',1,8,5,1,'2018-08-26 19:05:16'),(773,'10b4697bphor4qhr2a883idm56',1,8,17,1,'2018-08-26 19:05:16'),(774,'10b4697bphor4qhr2a883idm56',1,8,13,1,'2018-08-26 19:05:16'),(775,'10b4697bphor4qhr2a883idm56',1,6,7,2,'2018-08-26 19:05:16'),(776,'10b4697bphor4qhr2a883idm56',1,9,10,1,'2018-08-26 19:05:16'),(777,'10b4697bphor4qhr2a883idm56',1,3,4,1,'2018-08-26 19:21:56'),(788,'hursvpkj4bpmbg4tt35vj5p2m5',4,3,4,1,'2018-09-01 06:19:24'),(792,'k6banb2ms0kllf0kgho15f9hp7',15,13,20,1,'2018-09-02 19:15:50'),(818,'0gl9e5eed95k8r2f5id3koiqn3',4,7,9,1,'2018-09-03 20:30:47'),(820,'mj2lma4ugj7s8m32vrn0kd2bv2',1,2,4,1,'2018-09-04 05:45:49'),(821,'mj2lma4ugj7s8m32vrn0kd2bv2',2,6,7,1,'2018-09-04 06:22:24'),(823,'5svoptlh0r1aj24ftgopb0rdr1',1,3,4,1,'2018-09-04 06:23:45'),(824,'5svoptlh0r1aj24ftgopb0rdr1',3,1,6,1,'2018-09-04 06:23:52'),(825,'5svoptlh0r1aj24ftgopb0rdr1',18,13,20,1,'2018-09-04 06:23:57'),(828,'9rt09mm7n5hbgqeuethsk0qd62',4,6,7,1,'2018-09-04 07:24:01'),(832,'nlheqcdfpu1j5eeov0ltg2oqj0',18,13,20,1,'2018-09-06 14:16:01'),(836,'bdesqnq9odp4dqomtlskji3n41',4,6,7,1,'2018-09-09 08:36:38'),(837,'qbsffj59tnsui7fd6ito950bl1',1,3,7,1,'2018-09-13 09:51:48'),(838,'nh9p6pv53huq99k8ptehkc5gp7',5,3,7,1,'2018-09-15 12:39:50'),(843,'detl2qk2ah15r5m8eqqh9s51o0',4,2,15,1,'2018-09-18 08:17:29'),(854,'dkqt1d13av0ai7pv2682t7fl20',1,2,19,1,'2018-09-21 09:15:18'),(855,'3hd37i8dn1n05apign2kc4eq56',15,13,20,1,'2018-09-21 18:17:00'),(856,'bdesqnq9odp4dqomtlskji3n41',31,9,10,1,'2018-09-22 06:29:09'),(858,'9duj7icg7qokastnnrm6huhf72',1,1,13,3,'2018-09-22 20:22:42');
 /*!40000 ALTER TABLE `carts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -120,7 +120,7 @@ CREATE TABLE `color` (
 
 LOCK TABLES `color` WRITE;
 /*!40000 ALTER TABLE `color` DISABLE KEYS */;
-INSERT INTO `color` VALUES (1,'color 1','m1.jpg'),(2,'color 2	','m2.jpg'),(3,'color 3	','m3.jpg'),(4,'color 4	','m4.jpg'),(5,'color 5	','m5.jpg'),(6,'color 6	','m6.jpg'),(7,'color 7	','m7.jpg'),(8,'color 8	','m8.jpg'),(9,'color 9	','m9.jpg'),(10,'color 10	','m10.jpg'),(11,'color 11	','m11.jpg'),(12,'color 12	','m12.jpg'),(13,'color 12','m13.jpg');
+INSERT INTO `color` VALUES (1,'color 1','/img/material/m1.jpg'),(2,'color 2	','/img/material/m2.jpg'),(3,'color 3	','/img/material/m3.jpg'),(4,'color 4	','/img/material/m4.jpg'),(5,'color 5	','/img/material/m5.jpg'),(6,'color 6	','/img/material/m6.jpg'),(7,'color 7	','/img/material/m7.jpg'),(8,'color 8	','/img/material/m8.jpg'),(9,'color 9	','/img/material/m9.jpg'),(10,'color 10	','/img/material/m10.jpg'),(11,'color 11	','/img/material/m11.jpg'),(12,'color 12	','/img/material/m12.jpg'),(13,'color 12','/img/material/m13.jpg');
 /*!40000 ALTER TABLE `color` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -145,8 +145,34 @@ CREATE TABLE `facture` (
 
 LOCK TABLES `facture` WRITE;
 /*!40000 ALTER TABLE `facture` DISABLE KEYS */;
-INSERT INTO `facture` VALUES (1,'Фактура 1','o1.jpg'),(3,'Фактура 2','o2.jpg'),(4,'Фактура 3','o3.jpg'),(5,'Фактура 4','o4.jpg'),(6,'Фактура 5','o5.jpg'),(7,'Фактура 6','o6.jpg'),(8,'Фактура 6','o7.jpg'),(9,'Фактура 8','o8.jpg'),(10,'Фактура 9','o9.jpg'),(11,'Фактура 10','o10.jpg'),(12,'Фактура 11','o11.jpg'),(13,'Фактура 12','o12.jpg'),(14,'Фактура 13','o13.jpg'),(15,'Фактура 14','o14.jpg'),(16,'Фактура 15','o15.jpg'),(17,'Фактура 16','o16.jpg'),(18,'Фактура 17','o17.jpg'),(19,'Фактура 18','o18.jpg'),(20,'Фактура 19','o19.jpg');
+INSERT INTO `facture` VALUES (1,'Фактура 1','/img/material/o1.jpg'),(3,'Фактура 2','/img/material/o2.jpg'),(4,'Фактура 3','/img/material/o3.jpg'),(5,'Фактура 4','/img/material/o4.jpg'),(6,'Фактура 5','/img/material/o5.jpg'),(7,'Фактура 6','/img/material/o6.jpg'),(8,'Фактура 6','/img/material/o7.jpg'),(9,'Фактура 8','/img/material/o8.jpg'),(10,'Фактура 9','/img/material/o9.jpg'),(11,'Фактура 10','/img/material/o10.jpg'),(12,'Фактура 11','/img/material/o11.jpg'),(13,'Фактура 12','/img/material/o12.jpg'),(14,'Фактура 13','/img/material/o13.jpg'),(15,'Фактура 14','/img/material/o14.jpg'),(16,'Фактура 15','/img/material/o15.jpg'),(17,'Фактура 16','/img/material/o16.jpg'),(18,'Фактура 17','/img/material/o17.jpg'),(19,'Фактура 18','/img/material/o18.jpg'),(20,'Фактура 19','/img/material/o19.jpg');
 /*!40000 ALTER TABLE `facture` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `favorite`
+--
+
+DROP TABLE IF EXISTS `favorite`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `favorite` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `iid` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `iid` (`iid`),
+  CONSTRAINT `fk-favorite-items` FOREIGN KEY (`iid`) REFERENCES `items` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `favorite`
+--
+
+LOCK TABLES `favorite` WRITE;
+/*!40000 ALTER TABLE `favorite` DISABLE KEYS */;
+INSERT INTO `favorite` VALUES (6,3),(7,6),(4,18),(5,19),(8,27);
+/*!40000 ALTER TABLE `favorite` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -164,7 +190,7 @@ CREATE TABLE `images` (
   KEY `iid_index` (`iid`),
   KEY `img_to_items_idx` (`iid`),
   CONSTRAINT `img_to_items` FOREIGN KEY (`iid`) REFERENCES `items` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -173,7 +199,7 @@ CREATE TABLE `images` (
 
 LOCK TABLES `images` WRITE;
 /*!40000 ALTER TABLE `images` DISABLE KEYS */;
-INSERT INTO `images` VALUES (1,'lot1.jpg',1),(2,'lot2.jpg',2),(3,'lot3.jpg',3),(4,'lot4.jpg',4),(5,'lot5.jpg',5),(6,'lot6.jpg',6),(7,'lot7.jpg',3),(8,'lot8.jpg',3),(9,'lot9.jpg',3),(10,'pic10.jpg',4),(11,'pic11.jpg',4),(12,'pic12.jpg',4),(13,'pic13.jpg',5),(14,'pic14.jpg',5),(15,'pic15.jpg',5),(16,'pic16.jpg',6),(17,'pic17.jpg',6),(18,'pic18.jpg',6),(19,'group/01.jpg',15),(20,'group/02.jpg',15),(21,'group/07.jpg',16),(22,'group/08.jpg',16),(23,'group/09.jpg',17),(24,'group/12.jpg',18),(25,'group/13.jpg',18),(26,'group/18.jpg',19),(27,'group/19.jpg',19),(28,'group/21.jpg',19),(29,'group/37.jpg',18);
+INSERT INTO `images` VALUES (1,'/img/group/C35.jpg',1),(2,'/img/C08.jpg',2),(3,'/img/C36.jpg',3),(4,'/img/C36A.jpg',4),(5,'/img/C40.jpg',5),(6,'/img/C39M3.jpg',6),(7,'/img/ELEGANT2.jpg',11),(8,'/img/C36B.jpg',3),(9,'/img/C36B.jpg',20),(10,'pic10.jpg',4),(11,'pic11.jpg',4),(12,'pic12.jpg',4),(13,'pic13.jpg',5),(14,'pic14.jpg',5),(15,'pic15.jpg',5),(16,'pic16.jpg',6),(17,'pic17.jpg',6),(18,'pic18.jpg',6),(19,'/img/group/CT01_venge.jpg',15),(20,'/img/group/%D0%A1%D1%82%2001.jpg',15),(23,'/img/group/GRUP_PRESTIZH.jpg',17),(24,'/img/group/CT01_SLON.jpg',18),(25,'/img/group/St.jpg',18),(26,'/img/group/St.jpg',15),(27,'/img/group/St.jpg',19),(28,'group/21.jpg',19),(29,'group/37.jpg',18),(33,'/img/ELEGANT.jpg',24),(34,'/img/ICEBERG.jpg',25),(35,'/img/GRUP_CLASSIK.jpg',26),(36,'/img/GRUP_MODERN.jpg',27),(37,'/img/GRUP_ICEBERG.jpg',28),(38,'/img/group/CT01_MN.jpg',22),(39,'/img/group/C38.jpg',29),(40,'/img/group/C39A.jpg',30),(41,'/img/group/C39B.jpg',31),(42,'/img/group/C40A-1.jpg',32),(43,'/img/group/CT02.jpg',33),(44,'/img/group/CT02_MN.jpg',34),(45,'/img/group/DACHA_SOFA.jpg',35),(46,'/img/group/DACHA_TABLE.jpg',36),(47,'/img/group/GRUP_DACHA.jpg',37),(48,'/img/group/%D0%A132.jpg',38),(49,'/img/group/C33.jpg',39),(50,'/img/group/C40B.jpg',40),(51,'/img/group/C39B2.jpg',41),(52,'/img/group/sofa.jpg',42);
 /*!40000 ALTER TABLE `images` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -199,7 +225,7 @@ CREATE TABLE `items` (
   PRIMARY KEY (`id`),
   KEY `cid_index` (`cid`),
   CONSTRAINT `fk_items_categorys1` FOREIGN KEY (`cid`) REFERENCES `categorys` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -208,8 +234,59 @@ CREATE TABLE `items` (
 
 LOCK TABLES `items` WRITE;
 /*!40000 ALTER TABLE `items` DISABLE KEYS */;
-INSERT INTO `items` VALUES (1,'Стул 1','<h1>Описание стула 1</h1> Lorem ip dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',1,1,2275.5,1.08,0.44,0.11,0.05,6),(2,'Стул 2','Описание стула 2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',1,2,1205,1,0.43,0.1,0.04,5),(3,'Стул 3','Описание стула 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',1,3,2050.9,1,0.43,0.1,0.04,5),(4,'Стол 1','Описание стола 1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',1,4,2050.9,1,0.43,0.1,0.04,5),(5,'Стол 2','Описание стола 2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',1,5,2050.9,1,0.43,0.1,0.04,5),(6,'Стол 3','Описание стола 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',1,6,2050.9,1,0.43,0.1,0.04,5),(11,'Табурет','Простой табурет. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',1,7,3000,1,0.43,0.1,0.04,4.2),(15,'Стол 1','Описание стола №1',2,19,6000,1,0.43,0.1,0.04,4.7),(16,'Стол 2','Описание стола №2',2,21,6500,1,0.485,0.1,0.04,5),(17,'Стол 3','Описание стола №3',2,23,5000,1,0.43,0.1,0.04,5),(18,'Стол 4','Описание стола №4',2,24,4500,0.9,0.43,0.1,0.04,5),(19,'Стол 5','Описание стола №5',2,27,5500,1.08,0.43,0.1,0.04,5);
+INSERT INTO `items` VALUES (1,'Стул C 35 \"Руслан\"','Каркас стула - массив, шпон березы. Материал сидения - ткань, экокожа. Цвета - по каталогу образцов. Размер (ШхВхГ): 480х1030х520. Высота до сидения 475 мм. Мах.нагрузка - 120 кг. 2 шт в упаковке. Произв-ль: Россия. Гарантия - 18 мес. Срок службы 5 лет. ',1,1,4550,1.02,0.67,0.45,0.31,5.6),(2,'Стул C 8 \"Традиция\"','Каркас стула - массив, шпон березы. Материал сидения - ткань, экокожа. Цвета - по каталогу образцов. Размер (ШхВхГ): 420х820х490. Высота до сидения 435 мм. Мах.нагрузка - 120 кг. 2 шт в упаковке. Произв-ль: Россия. Гарантия - 18 мес. Срок службы 5 лет. ',1,2,2550,0.95,0.44,0.55,0.23,4.2),(3,'Стул С 36 \"Престиж\" ','Каркас стула - массив, шпон березы. Материал сидения - ткань, экокожа. Цвета - по каталогу образцов. Размер (ШхВхГ): 400х1000х502. Высота до сидения 470 мм. Мах.нагрузка - 120 кг. 2 шт в упаковке. Произв-ль: Россия. Гарантия - 18 мес. Срок службы 5 лет. ',1,3,3500,1.1,0.41,0.7,0.32,4),(4,'Стул С 36 А \"Престиж\" жесткий','Каркас стула - массив, шпон березы. Цвета - по каталогу образцов. Размер (ШхВхГ): 400х1000х502. Высота до сидения 435 мм. Мах.нагрузка - 120 кг. 2 шт в упаковке. Произв-ль: Россия. Гарантия - 18 мес. Срок службы 5 лет. ',1,4,3250,1.1,0.41,0.7,0.32,4.2),(5,'Стул С 40 \"Классика\"','Каркас стула - массив, шпон березы. Материал сидения - ткань, экокожа. Цвета - по каталогу образцов. Размер (ШхВхГ): 450х935х935. Высота до сидения 480 мм. Мах.нагрузка - 120 кг. 1 шт в упаковке. Произв-ль: Россия. Гарантия - 18 мес. Срок службы 5 лет. 41',1,5,3570,0.95,0.485,0.1,0.05,6),(6,'Стул С 39 м3 \"Модерн\" ','Каркас стула - массив, шпон березы. Материал сидения - ткань, экокожа. Цвета - по каталогу образцов. Размер (ШхВхГ): 420х890х495. Высота до сидения 510 мм. Мах.нагрузка - 120 кг. 1 шт в упаковке. Произв-ль: Россия. Гарантия - 18 мес. Срок службы 5 лет. ',1,6,2950,1,0.43,0.1,0.04,4.7),(11,'Стул \"Элегант-Дача\" ','Каркас стула - массив, шпон березы. Цвета - по каталогу образцов. Размер (ШхВхГ): 580х920х550. Высота до сидения 420 мм. Мах.нагрузка - 120 кг. 1 шт в упаковке. Произв-ль: Россия. Гарантия - 18 мес. Срок службы 5 лет. ',1,7,3500,0.925,0.51,0.105,0.05,6),(15,'Стол Ст 01 раздвижной: венге / миланский дуб','Каркас - массив березы. Столешница - ЛДСП с 2 мм кромкой ПВХ, ударопрочная , влагостойкая. Цвета - по каталогу образцов. Размер (ШхВхД): 760х752х900 /1700. 1 шт в упаковке. Производитель - Россия. Гарантия - 18 мес. Срок службы 5 лет. ',2,19,7200,0.988,0.913,0.11,0.1,25.6),(17,'Обеденная группа \"Традиция\": комплект стол Ст 02,  2 стула С 36','Каркас - массив, шпон березы. Материал сидения стула - ткань, экокожа. Столешница ЛДСП. 2 стула С36. Цвета по каталогу образцов. Размер стола (ШхВхД): 600*720*800. Производитель - Россия. Гарантия - 18 мес. Срок службы 5 лет. ',2,23,10100,NULL,NULL,NULL,0.4,18.4),(18,'Стол Ст 01 раздвижной: слоновая кость / валенсия','Каркас - массив березы. Столешница - ЛДСП с 2 мм кромкой ПВХ, ударопрочная , влагостойкая. Цвета - по каталогу образцов. Размер (ШхВхД): 760х760х900 /1700. 1 шт в упаковке. Производитель - Россия. Гарантия - 18 мес. Срок службы 5 лет. ',2,24,7200,0.988,0.913,0.11,0.1,25.6),(19,'Стол Ст 01 раздвижной: венге/валенсия','Каркас - массив березы. Столешница - ЛДСП с 2 мм кромкой ПВХ, ударопрочная , влагостойкая. Цвета - по каталогу образцов. Размер (ШхВхД): 760х760х900 /1700. 1 шт в упаковке. Производитель - Россия. Гарантия - 18 мес. Срок службы 5 лет. ',2,27,7200,0.988,0.913,0.11,0.1,25.6),(20,'Стул С36 Б  \"Престиж\" ','Каркас стула - массив, шпон березы. Материал сидения - ткань, экокожа. Цвета - по каталогу образцов. Размер (ШхВхГ): 400х1000х502. Высота до сидения 470 мм. Мах.нагрузка - 120 кг. 2 шт в упаковке. Произв-ль: Россия. Гарантия - 18 мес. Срок службы 5 лет. ',1,9,3350,1.1,0.41,0.7,0.32,4.2),(22,'Стол Ст01 раздвижной Мария Ноче Луиза','Каркас - массив березы. Столешница - ЛДСП с 2 мм кромкой ПВХ, ударопрочная , влагостойкая. Цвета - по каталогу образцов. Размер (ШхВхД): 760х752х900 /1700. 1 шт в упаковке. Производитель - Россия. Гарантия - 18 мес. Срок службы 5 лет. ',2,38,7200,0.988,0.913,0.11,0.1,25.6),(24,'Кресло \"Элегант\" С42','Каркас стула - массив, шпон березы. Материал сидения - ткань, экокожа. Цвета - по каталогу образцов. Размер (ШхВхГ): 530х910х510. Высота до сидения: 430 мм.Мах.нагрузка - 120 кг. 2 шт в упаковке. Произв-ль: Россия. Гарантия - 18 мес. Срок службы 5 лет. ',1,33,4350,0.925,0.51,0.105,0.05,6.2),(25,'Стул С17 мягкий \"Айсберг\" ','Каркас стула - массив березы. Материал сидения - ткань, экокожа. Цвета - по каталогу образцов. Размер (ШхВхГ): 410х1000х475. Высота до сидения: 525 мм. Мах.нагрузка - 120 кг. 2 шт в упаковке. Произв-ль: Россия. Гарантия - 18 мес. Срок службы 5 лет. ',1,34,4490,1,0.45,0.65,0.29,4.4),(26,'Обеденная группа \"Классика\": стол Ст 04 \"Руслан\" + 4 стула С 40','Каркас - массив березы. Столешница - ЛДСП с кромкой ПВХ. Стулья С 40. Материал облицовки - ткань, экокожа, цвета - по каталогу образцов. Размер стола (ШхВхД): 760х752х900 /1700. Произв-ль: Россия. Гарантия - 18 мес. Срок службы 5 лет. ',2,35,21400,NULL,NULL,NULL,0.3,49.6),(27,'Обеденная группа \"Модерн\": стол Ст 01 + 4 стула С 39 м3','Каркас - массив березы. Столешница - ЛДСП с кромкой ПВХ. Стулья С39м3 - 4шт., материал сидения- ткань, экокожа. Цвета - по каталогу образцов. Размер стола: (ШхВхД): 760х760х900 /1700. Произв-ль: Россия. Гарантия - 18 мес. Срок службы 5 лет. ',2,36,19000,NULL,NULL,NULL,0.3,44.4),(28,'Обеденная группа \"Айсберг\": стол Ст 01 + 4 стула \"Айсберг\"','Каркас - массив березы. Столешница - ЛДСП с кромкой ПВХ. Стулья С17 - 4 шт. Материал сидения - ткань, экокожа. Цвета - по каталогу образцов. Размер стола: (ШхВхД): 760х760х900 /1700. Произв-ль: Россия. Гарантия - 18 мес. Срок службы 5 лет. ',2,37,22900,NULL,NULL,NULL,0.68,43.2),(29,'Стул С 38 \"Этюд\"','Каркас стула - массив березы. Материал сидения - ткань, экокожа. Цвета - по каталогу образцов. Размер (ШхВхГ): 400х1038х510. Высота до сидения: 480 мм. Мах.нагрузка - 120 кг. 1 шт в упаковке. Произв-ль: Россия. Гарантия - 18 мес. Срок службы 5 лет. ',1,39,5450,1.08,0.44,0.11,0.05,7),(30,'Стул С 39А \"Зардон\"','Каркас стула - массив, шпон березы. Материал сидения - ткань, экокожа. Цвета - по каталогу образцов. Размер (ШхВхГ): 420х990х495. Высота до сидения - 510 мм.Мах.нагрузка - 120 кг. 1 шт в упаковке. Произв-ль: Россия. Гарантия - 18 мес. Срок службы 5 лет. ',1,40,3350,1,0.43,0.1,0.04,5),(31,'Стул С 39 Б','Каркас стула - массив, шпон березы. Материал сидения - ткань, экокожа. Цвета - по каталогу образцов. Размер (ШхВхГ): 420х990х495. Высота до сидения: 510  Мах.нагрузка - 120 кг. 1 шт в упаковке. Произв-ль: Россия. Гарантия - 18 мес. Срок службы 5 лет. ',1,41,3350,1,0.43,0.1,0.04,5),(32,'Стул С40А','Каркас стула - массив, шпон березы. Материал сидения - ткань, экокожа. Цвета - по каталогу образцов. Размер (ШхВхГ): 420х990х495. Высота до сидения 510 мм. Мах.нагрузка - 120 кг. 1 шт в упаковке. Произв-ль: Россия. Гарантия - 18 мес. Срок службы 5 лет. ',1,42,3350,0.95,0.485,0.1,0.04,5),(33,'Стол Ст 02 компакт ','Каркас - массив березы, цвет \"венге\". Столешница: цвет \"валенсия\" - ЛДСП с 2 мм кромкой ПВХ, ударопрочная , влагостойкая. Размер (ШхВхД): 600х720х800. 1 шт в упаковке. Произв-ль:  Россия. Гарантия - 18 мес. Срок службы 5 лет. ',2,43,3950,0.81,0.61,0.09,0.05,10.1),(34,'Стол Ст 02 компакт','Каркас - массив березы. Столешница - ЛДСП с 2 мм кромкой ПВХ, ударопрочная , влагостойкая. Цвет \"Мария Ноче Луиза\" Размер (ШхВхД): 600х720х800. 1 шт в упаковке. Произв-ль: Россия. Гарантия - 18 мес. Срок службы 5 лет. ',2,44,3950,0.81,0.61,0.9,0.05,10.1),(35,'Диванчик \"Элегант-Дача\"','Каркас дивана - массив, шпон березы. Цвета - по каталогу образцов. Размер (ШхВхГ): 1130х920х550. Высота до сидения - 420 мм. Мах.нагрузка - 120 кг. 1 шт в упаковке. Производитель - Россия. Гарантия - 18 мес. Срок службы 5 лет',1,45,4850,1.12,0.93,0.11,0.11,9.8),(36,'Стол \"Дачный\"','Каркас - массив, шпон березы. Цвета - по каталогу образцов. Размер (ШхВхД): 1200х700х760. 1 шт в упаковке. Произв-ль: Россия. Гарантия - 18 мес. Срок службы 5 лет.',2,46,3690,1.215,0.71,0.08,0.07,15.6),(37,'Дачный комплект \"Элегант\"','Каркас - массив, шпон березы. Цвета - по каталогу образцов. Комплект: стол дачный, 2 кресла, диванчик. Произв-ль - Россия. Гарантия - 18 мес. Срок службы 5 лет. ',2,47,13990,NULL,NULL,NULL,0.28,37.4),(38,'Стул С32','Каркас стула - массив, шпон березы. Материал сидения - ткань, экокожа. Цвета - по каталогу образцов. Размер (ШхВхГ): 430х920х500. Высота до сидения 470 мм.Мах.нагрузка - 120 кг. 2 шт в упаковке. Произв-ль: Россия. Гарантия - 18 мес. Срок службы 5 лет. ',1,48,3190,0.94,0.45,0.63,0.27,5.3),(39,'Стул С33','Каркас стула - массив, шпон березы. Материал сидения - ткань, экокожа. Цвета - по каталогу образцов. Размер (ШхВхГ): 430х910х500. Высота до сидения 470 мм. Мах.нагрузка - 120 кг. 2 шт в упаковке. Произв-ль: Россия. Гарантия - 18 мес. Срок службы 5 лет. ',1,49,3220,0.94,0.63,0.45,0.27,5.3),(40,'Стул С40В','Каркас стула - массив, шпон березы. Материал сидения - ткань, экокожа. Цвета - по каталогу образцов. Размер (ШхВхГ): 420х1050х495. Высота до сидения 510 мм. Мах.нагрузка - 120 кг. 1 шт в упаковке. Произв-ль: Россия. Гарантия - 18 мес. Срок службы 5 лет. ',1,50,3560,1.08,0.43,0.1,0.05,5.2),(41,'Стул С39Б 2','Каркас стула - массив, шпон березы. Материал сидения - ткань, экокожа. Цвета - по каталогу образцов. Размер (ШхВхГ): 420х990х495. Высота до сидения 510 мм.Мах.нагрузка - 120 кг. 1 шт в упаковке. Произв-ль: Россия. Гарантия - 18 мес. Срок службы 5 лет. ',1,51,3350,1,0.44,0.1,0.04,5),(42,'Диванчик \"Элегант\"','Каркас стула - массив, шпон березы. Материал сидения - ткань, экокожа. Цвета - по каталогу образцов. Размер (ШхВхГ): 950х910х510. Мах.нагрузка - 120 кг. 1 шт в упаковке. Произв-ль - Россия. Гарантия - 18 мес. Срок службы 5 лет. ',1,52,6350,1.12,0.93,0.105,0.085,9.6);
 /*!40000 ALTER TABLE `items` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `migration`
+--
+
+DROP TABLE IF EXISTS `migration`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `migration` (
+  `version` varchar(180) NOT NULL,
+  `apply_time` int(11) DEFAULT NULL,
+  PRIMARY KEY (`version`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `migration`
+--
+
+LOCK TABLES `migration` WRITE;
+/*!40000 ALTER TABLE `migration` DISABLE KEYS */;
+INSERT INTO `migration` VALUES ('m000000_000000_base',1536750728),('m180912_080133_favorite',1536775352),('m180912_112447_news',1536775352);
+/*!40000 ALTER TABLE `migration` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `news`
+--
+
+DROP TABLE IF EXISTS `news`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `news` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `tags` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `content` text COLLATE utf8_unicode_ci,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `news`
+--
+
+LOCK TABLES `news` WRITE;
+/*!40000 ALTER TABLE `news` DISABLE KEYS */;
+INSERT INTO `news` VALUES (5,'Новость 1','мебель, стулья, троны','2018-09-22 19:48:28','<p><span style=\"color:rgb(0, 0, 0); font-family:open sans,arial,sans-serif; font-size:14px\">&quot;But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?&quot;</span></p>\r\n'),(6,'Новость 2','мебель, стулья, троны','2018-09-22 19:48:53','<p><span style=\"color:rgb(0, 0, 0); font-family:open sans,arial,sans-serif; font-size:14px\">&quot;But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?&quot;&quot;But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?&quot;&quot;But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?&quot;</span></p>\r\n');
+/*!40000 ALTER TABLE `news` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -235,7 +312,7 @@ CREATE TABLE `orders` (
   `totalsumm` decimal(7,2) DEFAULT NULL COMMENT 'Стоимость с доставкой',
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=160 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=171 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -244,7 +321,6 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (149,'Степан','Куракин','+79176450029','kurakste@gmail.com',-496,'пр. Ленина, 100','Простой комментарий к заказу. ',0,'new','2018-09-03 20:11:48',780.00,4.00),(150,'Степан','Куракин','+79176450029','kurakste@gmail.com',-496,'пр. Ленина, 100','Простой комментарий к заказу. ',0,'new','2018-09-03 20:19:58',780.00,4.00),(151,'Степан','Куракин','+79176450029','kurakste@gmail.com',-496,'пр. Ленина, 100','Простой комментарий к заказу. ',0,'new','2018-09-03 20:49:15',780.00,4.00),(152,'Степан','Куракин','+79176450029','kurakste@gmail.com',-496,'пр. Ленина, 100','Простой комментарий к заказу. ',0,'new','2018-09-03 20:54:19',400.00,4.00),(153,'Степан','Куракин','+79176450029','kurakste@gmail.com',-496,'пр. Ленина, 100','Простой комментарий к заказу. ',0,'new','2018-09-03 21:00:17',780.00,5.00),(154,'Степан','Куракин','+79176450029','kurakste@gmail.com',-496,'пр. Ленина, 100','Простой комментарий к заказу. ',0,'new','2018-09-03 21:53:35',400.00,5500.00),(155,'Степан','Куракин','+79176450029','kurakste@gmail.com',-496,'пр. Ленина, 100','Простой комментарий к заказу. ',0,'new','2018-09-03 22:00:24',400.00,13000.00),(156,'Степан','Куракин','+79176450029','kurakste@gmail.com',-496,'пр. Ленина, 100','Простой комментарий к заказу. ',0,'new','2018-09-03 22:00:44',400.00,13000.00),(157,'Степан','Куракин','+79176450029','kurakste@gmail.com',-496,'пр. Ленина, 100','Простой комментарий к заказу. ',0,'new','2018-09-03 22:01:45',400.00,13000.00),(158,'Степан','Куракин','+79176450029','kurakste@gmail.com',-496,'пр. Ленина, 100','Простой комментарий к заказу. ',0,'new','2018-09-03 22:02:08',400.00,13000.00),(159,'Степан','Куракин','+79176450029','kurakste@gmail.com',-496,'пр. Ленина, 100','Простой комментарий к заказу. ',0,'new','2018-09-03 22:02:30',400.00,13000.00);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -268,7 +344,7 @@ CREATE TABLE `ostrings` (
   KEY `ostring_to_items` (`iid`),
   CONSTRAINT `oid` FOREIGN KEY (`oid`) REFERENCES `orders` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `ostring_to_items` FOREIGN KEY (`iid`) REFERENCES `items` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=200 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=215 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -277,7 +353,6 @@ CREATE TABLE `ostrings` (
 
 LOCK TABLES `ostrings` WRITE;
 /*!40000 ALTER TABLE `ostrings` DISABLE KEYS */;
-INSERT INTO `ostrings` VALUES (189,149,18,13,20,1),(190,150,18,13,20,1),(191,151,18,13,20,1),(192,152,18,13,20,1),(193,153,19,13,20,1),(194,154,19,13,20,1),(195,155,16,13,20,2),(196,156,16,13,20,2),(197,157,16,13,20,2),(198,158,16,13,20,2),(199,159,16,13,20,2);
 /*!40000 ALTER TABLE `ostrings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -320,4 +395,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-09-03 22:13:00
+-- Dump completed on 2018-09-23  3:13:32

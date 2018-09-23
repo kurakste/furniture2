@@ -14,9 +14,15 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
+    <?= $form->field($model, 'extid')->textInput() ?>
+
     <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'cid')->textInput() ?>
+    
+    <?= $form->field($model, 'hasfacture')->textInput() ?>
+    
+    <?= $form->field($model, 'hascolor')->textInput() ?>
 
     <?= $form->field($model, 'mainimageid')->textInput() ?>
 

@@ -40,7 +40,7 @@ class Items extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['cid'], 'required'],
+            [['cid', 'price', 'length', 'width', 'height', 'volume', 'weight'], 'required'],
             [['cid', 'mainimageid'], 'integer'],
             [['price', 'length', 'width', 'height', 'volume', 'weight'], 'number'],
             [['name'], 'string', 'max' => 125],
@@ -56,10 +56,13 @@ class Items extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
+            'extid' => 'Артикул товара в системе учета',
             'name' => 'Наименование',
             'description' => 'Описание',
             'cid' => 'Индекс категории',
             'mainimageid' => 'Индекс главного изображения',
+            'hasfacture' => 'Для этого товара можно выбирать фактуру?',
+            'hascolor' => 'Можно ли для этого товара выбирать цвет?',
             'price' => 'Цена',
             'length' => 'Длина в упаковке.',
             'width' => 'Ширина в упаковке.',

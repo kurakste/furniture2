@@ -61,6 +61,7 @@ class ItemsSearch extends Items
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
+            'extid' => $this->extid,
             'cid' => $this->cid,
             'mainimageid' => $this->mainimageid,
             'price' => $this->price,

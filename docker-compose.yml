@@ -1,34 +1,40 @@
-version: '2'
-services:
-   php:
-      image: yiisoftware/yii2-php:7.1-apache
-      volumes:
-      - ~/.composer-docker/cache:/root/.composer/cache:delegated
-      - ./:/app:delegated
-      ports:
-      - '8000:80'
-   db:
-      image: mysql:5.7
-      environment:
-         MYSQL_ROOT_PASSWORD: foo
-         MYSQL_DATABASE: furniture
-         MYSQL_USER: homework
-         MYSQL_PASSWORD: akfyem
-      ports:
-         - 3306:3306
+version: "3"
 
-   phpmyadmin:
-      depends_on:
-         - db
-      links:
-         - db
-      image: phpmyadmin/phpmyadmin
-      environment:
-         PMA_ARBITRARY: 1
-         PMA_HOST: db
-         PMA_USER: root
-         PMA_PASSWORD: foo
-      ports:
-         - 8081:80
-      volumes:
-         - /sessions
+services:
+  app:
+    build: docker/php
+    volumes:
+      - ./:/app
+    depends_on:
+      - db
+      - mailcatcher
+        #    env_file:
+       #      - .env
+
+  nginx:
+    image: nginx:1.12-alpine
+    ports:
+      - 80:80
+    volumes:
+      - ./:/app
+      - ./docker/nginx/vhost.conf:/etc/nginx/conf.d/vhost.conf
+    depends_on:
+      - app
+
+  mailcatcher:
+    image: schickling/mailcatcher:latest
+    ports:
+      - 1080:1080
+
+  db:
+    image: mysql:5.7
+    volumes:
+      - /var/lib/mysql
+      - ./docker/mysql/config.cnf:/etc/mysql/conf.d/config.cnf
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: foorniture
+      MYSQL_USER: ysk_dbu
+      MYSQL_PASSWORD: ysk_pass

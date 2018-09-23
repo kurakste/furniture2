@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\StringHelper;
 use yii\grid\GridView;
 use yii\helpers\Url;
 
@@ -14,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="items-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php  //echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
         <?= Html::a('Create Items', ['create'], ['class' => 'btn btn-success']) ?>
@@ -25,11 +26,18 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            'extid',
             'name',
-            'description',
+            [   
+                'attribute' => 'description',
+                'value' => function ($model) {
+                       return StringHelper::truncate($model->description, 50);
+                    }
+            ],
             'cid',
-            'mainimageid',
+//            'hasfacture',
+//            'hascolor',
+//            'mainimageid',
             'price',
             'length',
             'width',
