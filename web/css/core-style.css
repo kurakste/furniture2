@@ -701,7 +701,7 @@ img {
     -ms-flex: 0 0 calc(100% - 320px);
     flex: 0 0 calc(100% - 320px);
     width: calc(100% - 320px);
-    max-width: calc(100% - 320px);
+    max-width: calc(99% - 320px);
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {

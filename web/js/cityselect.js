@@ -60,7 +60,9 @@ $(document).ready(function() {
 
       return "\
            <style> \
-                
+              #citytable tr { \
+              background-color: green; \
+   }        \
            </style> \
           <table id='citytable' style = 'width: 100%'>" + str +"</table>";
    }
