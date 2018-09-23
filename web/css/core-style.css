@@ -700,7 +700,7 @@ img {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 calc(100% - 320px);
     flex: 0 0 calc(100% - 320px);
-    width: calc(100% - 320px);
+    width: calc(97% - 320px);
     max-width: calc(97% - 320px);
 }
 
@@ -709,7 +709,7 @@ img {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 calc(100% - 280px);
         flex: 0 0 calc(100% - 280px);
-        width: calc(100% - 280px);
+        width: calc(97% - 280px);
         max-width: calc(97% - 280px);
     }
 }
@@ -719,7 +719,7 @@ img {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 100%;
         flex: 0 0 100%;
-        width: 100%;
+        width: 97%;
         max-width: 97%;
     }
 }
