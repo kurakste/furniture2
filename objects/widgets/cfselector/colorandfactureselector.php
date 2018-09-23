@@ -18,16 +18,22 @@ class Colorandfactureselector extends Widget
 
     public function run()
     {
+        $factures = Factures::find()->all();  
+        $colors =Color::find()->all();  
+    
+        if ($this->item->hasfacture) {
+            $template = 'colorandfacture';
+        } else {
+            $template = 'coloronly';
+        }
 
-      $factures = Factures::find()->all();  
-      $colors =Color::find()->all();  
-      return $this->render('colorandfacture', 
-          [
-              'item' => $this->item,
-              'colors' => $colors,
-              'factures' => $factures,
-          ]
-      );
+        return $this->render($template, 
+            [
+                'item' => $this->item,
+                'colors' => $colors,
+                'factures' => $factures,
+            ]
+        );
     }
 
     

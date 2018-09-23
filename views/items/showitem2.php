@@ -82,7 +82,7 @@ use app\objects\widgets\cfselector\Colorandfactureselector;
 </div>
 <!-- ==== Этот блок нужен только если категория  === 1 - стулья& -->
 <?php if ($item->cid === 1): ?>
-    <?= Colorandfactureselector::widget(['item' => $item]) ?> 
+        <?= Colorandfactureselector::widget(['item' => $item]) ?> 
 <?php else: ?> 
 
 <input form="add-to-cart" type="hidden" name="cid" id="cid" required value="13" />

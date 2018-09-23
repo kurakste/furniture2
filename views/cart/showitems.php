@@ -52,18 +52,18 @@ $this->registerJsFile('/js/sum.js', [
                                             </div>
                                             <div style ="width: 40%;">
                                                 <a href="#win_m_1" class="button button-orange">
-                                                <img src="<?= $cart->facture->img ?>" alt="Material" class="roundOrder">
+                                                <img src="<?= $cart->facture->img ?? '/img/none.png' ?>" alt="Material" class="roundOrder">
                                             </a>
                                                 <a href="#" class="overlay" id="win_m_1"></a>
                                                     <div class="popup">
-                                                        <img class="is-image" src="<?= $cart->facture->img ?>" alt="Material">
+                                                        <img class="is-image" src="<?= $cart->facture->img ?? '/img/none.png' ?>" alt="Material">
                                                         <a class="close" title="Закрыть" href="#close"></a>
                                                     </div>
                                             </div>
                                         <?php endif ?>
                                         </td>
                                         <td style='display: none;'>
-                                            <?= $cart->facture->id ?>
+                                            <?= $cart->facture->id ?? '' ?>
                                         </td>
                                         <td class="facture" style="display:none;">
                                         </td>
