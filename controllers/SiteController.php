@@ -22,6 +22,11 @@ class SiteController extends Controller
     public function behaviors()
     {
         return [
+             [
+            'class' => 'yii\filters\PageCache',
+            'only' => ['index', 'chair', 'tables', 'favorite', 'terms'],
+            'duration' => 60*10,
+            ],
             'access' => [
                 'class' => AccessControl::className(),
                 'only' => ['logout'],
@@ -66,6 +71,7 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $items = \app\models\Items::find()->where(['cid'=>1])->all();
+
         return $this->render('index', [ 'items' => $items ]);
     }
     
