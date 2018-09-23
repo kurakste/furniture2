@@ -1,5 +1,5 @@
 .env
-/web/img/.tmb
+/web
 # phpstorm project files
 .idea
 /tags
