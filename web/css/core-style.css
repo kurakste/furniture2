@@ -701,7 +701,7 @@ img {
     -ms-flex: 0 0 calc(100% - 320px);
     flex: 0 0 calc(100% - 320px);
     width: calc(100% - 320px);
-    max-width: calc(99% - 320px);
+    max-width: calc(97% - 320px);
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -710,7 +710,7 @@ img {
         -ms-flex: 0 0 calc(100% - 280px);
         flex: 0 0 calc(100% - 280px);
         width: calc(100% - 280px);
-        max-width: calc(99% - 280px);
+        max-width: calc(97% - 280px);
     }
 }
 
@@ -720,7 +720,7 @@ img {
         -ms-flex: 0 0 100%;
         flex: 0 0 100%;
         width: 100%;
-        max-width: 99%;
+        max-width: 97%;
     }
 }
 
