@@ -14,7 +14,7 @@ $this->beginPage(); ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Чепецкая мебельная фабрика</title>
-    <link rel="icon" href="/img/title_icon.png">
+    <link rel="icon" href="/icon/logo.png">
     <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates" rel="stylesheet">
     <?php $this->head() ?>
 </head>
@@ -26,7 +26,7 @@ $this->beginPage(); ?>
     <!-- Mobile Nav 767px-->
         <div class="mobile-nav">
             <div class="amado-navbar-brand">
-                <a href="/"><img src="/img/logo_icon.png" alt="logo"></a>
+                <a href="/"><img src="/icon/logo.png" alt="logo"></a>
             </div>
             <div class="amado-navbar-toggler">
                 <span></span><span></span><span></span>
@@ -41,7 +41,7 @@ $this->beginPage(); ?>
                 </div>
 
                 <div class="logo">
-                    <a href="/"><img src="/img/logo_icon.png" alt="my icon"></a>
+                    <a href="/"><img src="/icon/logo.png" alt="my icon"></a>
 
         
                 </div>
@@ -110,7 +110,7 @@ $this->beginPage(); ?>
                         <div class="single_widget_area">
                             <!-- Logo -->
                             <div class="footer-logo mr-50">
-                                <a href="/"><img src="/img/logo_icon.png" alt="logo"></a>
+                                <a href="/"><img src="/icon/logo.png" alt="logo"></a>
                             </div>
 
                             <p class="copywrite">
