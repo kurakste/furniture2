@@ -17,6 +17,7 @@ class CartsBModel
         $cookies = \Yii::$app->request->cookies;
         if ($cookies->has('ssid')) {
             $ssid = $cookies->get('ssid');
+//            var_dump($ssid); die;
             $count = Carts::find()->where(['ssid'=>$ssid])->count();
             return $count;
         } else {

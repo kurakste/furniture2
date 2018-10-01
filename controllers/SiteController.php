@@ -25,8 +25,13 @@ class SiteController extends Controller
              [
             'class' => 'yii\filters\PageCache',
             'only' => ['index', 'chair', 'tables', 'favorite', 'terms'],
-            'duration' => 60*10,
+            'duration' => 10*60,
+            'dependency' => [
+                'class' => 'yii\caching\DbDependency',
+                'sql' => 'SELECT COUNT(*) FROM carts',
+                ],
             ],
+
             'access' => [
                 'class' => AccessControl::className(),
                 'only' => ['logout'],
