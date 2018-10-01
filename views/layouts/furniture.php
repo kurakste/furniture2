@@ -15,7 +15,7 @@ $this->beginPage(); ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Чепецкая мебельная фабрика</title>
     <link rel="icon" href="/icon/logo.png">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates" rel="stylesheet"> -->
     <?php $this->head() ?>
 </head>
 
