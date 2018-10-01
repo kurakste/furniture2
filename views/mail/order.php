@@ -12,13 +12,15 @@
 <p>Код города ПЭК: <?= $order->city ?> </p>
 <p>Город: <?= $order->cityName->name ?> </p>
 <p>Адрес: <?= $order->addr ?> </p>
-<p>Доставка до двери? <?= $order->delivery_to_door ?> </p>
+<?php $todoor = $order->delivery_to_door ? 'Да' : 'Нет'; ?>
+<p>Доставка до двери? <?= $todoor ?> </p>
 <p>Комментарий: <?= $order->comments ?> </p>
 <p>Стоимость стоимость доставки: <?= $order->deliveryсost ?> </p>
 <p>Стоимость заказа: <?= $order->totalsumm ?> </p>
 
 <table>
     <tr>
+        <th>Артикул</th>
         <th>Наименование</th>
         <th>цена</th>
         <th>кол-во</th>
@@ -26,6 +28,7 @@
     
 <?php foreach ($strings as $string) : ?>
     <tr>
+    <td><?= $string->item->extid ?></td>
     <td><?= $string->item->name ?></td>
     <td><?= $string->item->price ?></td>
     <td><?= $string->amount ?></td>
