@@ -58,11 +58,7 @@ $(document).ready(function() {
          str = str + "<tr><td style='display: none;'>" + item.id + "</td><td>" + item.text + "</td></tr>"
       });
 
-      return "\
-           <style> \
-                
-           </style> \
-          <table id='citytable' style = 'width: 100%'>" + str +"</table>";
+      return "<table id='citytable' style = 'width: 100%'>" + str +"</table>";
    }
 
 })
