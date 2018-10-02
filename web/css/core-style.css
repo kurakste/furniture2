@@ -11,9 +11,8 @@
 @import url(../css/font-awesome.min.css);
 @font-face {
     font-family: 'Montserrat Alternates', sans-serif;
-    src: url("/web/fonts/MontserratAlternates-Italic.otf");
-    font-weight: normal;
-    font-style: normal;
+    /*src: url("/web/fonts/MontserratAlternates-ExtraBold.otf");*/
+    src: url("/web/fonts/RobotoSlab-Regular.ttf")
 }
 /*@font-face {
     font-family: 'helveticaneuebold';
@@ -42,6 +41,7 @@ body {
     font-family: 'Montserrat Alternates', sans-serif;
     font-stretch: semi-condensed;
     font-size: 20px;
+    font-weight: 900;
 }
 
 h1,
@@ -1688,6 +1688,17 @@ img {
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .footer_area .single_widget_area .footer_menu .navbar-nav .nav-item .nav-link {
         padding: 10px 0;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .footer-logo {
+        display: none;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .footer-logo {
+        display: none;
     }
 }
 
