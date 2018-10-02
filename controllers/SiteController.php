@@ -31,7 +31,6 @@ class SiteController extends Controller
                 'sql' => 'SELECT COUNT(*) FROM carts',
                 ],
             ],
-
             'access' => [
                 'class' => AccessControl::className(),
                 'only' => ['logout'],
