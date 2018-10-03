@@ -179,7 +179,8 @@ class OrdersController extends Controller
                 $sber = new \app\objects\SberBankBModel
                     (
                         $order->id,
-                        $summ,
+                        //     $summ,
+                        100,
                         $success,
                         $error,
                         'Payment for order #'.$order->id,

@@ -19,10 +19,10 @@ class SberBankBModel
     private $clientId; //Номер (идентификатор) клиента в системе магазина. Используется для реализации функционала связок. Может присутoствовать, если магазину разрешено создание связок.
     private $sessionTimeoutSecs; //Продолжительность жизни заказа в секундах. по умолчанию (1200 секунд = 20 минут).
 // ================================
-    private $testMode = true; 
+    private $testMode = false; 
     //private $testUrl ='https://3dsec.sberbank.ru/payment/webservices/merchant-ws?wsdl'; 
     private $testUrl ='https://3dsec.sberbank.ru/payment/rest/register.do'; 
-    private $workUrl ='https://securepayments.sberbank.ru/payment/webservices/merchant-ws?wsdl';
+    private $workUrl ='https://securepayments.sberbank.ru/rest/register.do';
 
     /*
      *  I will use .env to setup some setting in constructor
@@ -59,12 +59,13 @@ class SberBankBModel
 
 
         $request = http_build_query($data);
-        var_dump($this->testUrl.'?'.$request);
+//        var_dump($this->testUrl.'?'.$request);
 
 
         if ($this->testMode) {
             $response = file_get_contents($this->testUrl.'?'.$request);
         } else {
+//            var_dump($this->workUrl.'?'.$request); die;
             $response = file_get_contents($this->workUrl.'?'.$request);
         } 
 
