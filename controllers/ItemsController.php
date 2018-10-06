@@ -91,7 +91,7 @@ class ItemsController extends Controller
 
         return $this->render('create', [
             'model' => $model,
-            'category' => $category
+            'category' => $category,
         ]);
     }
 
@@ -110,8 +110,14 @@ class ItemsController extends Controller
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
+        $category = Categorys::find()
+            ->select(['name'])
+            ->indexBy('id')
+            ->column();
+
         return $this->render('update', [
             'model' => $model,
+            'category' => $category,
         ]);
     }
 
