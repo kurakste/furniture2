@@ -19,7 +19,7 @@ class ItemsSearch extends Items
     {
         return [
             [['id', 'cid', 'mainimageid'], 'integer'],
-            [['name', 'description'], 'safe'],
+            [['name', 'description', 'extid'], 'safe'],
             [['price', 'length', 'width', 'height', 'volume', 'weight'], 'number'],
         ];
     }
@@ -61,7 +61,6 @@ class ItemsSearch extends Items
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'extid' => $this->extid,
             'cid' => $this->cid,
             'mainimageid' => $this->mainimageid,
             'price' => $this->price,
@@ -73,7 +72,8 @@ class ItemsSearch extends Items
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'description', $this->description]);
+            ->andFilterWhere(['like', 'description', $this->description])
+            ->andFilterWhere(['like', 'extid', $this->extid]);
 
         return $dataProvider;
     }
