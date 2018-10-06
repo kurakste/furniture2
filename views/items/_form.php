@@ -18,11 +18,12 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'cid')->textInput() ?>
+    <?= $form->field($model, 'cid')->dropdownList($category);
+
+    ?>
+    <?= $form->field($model, 'hasfacture')->checkbox() ?>
     
-    <?= $form->field($model, 'hasfacture')->textInput() ?>
-    
-    <?= $form->field($model, 'hascolor')->textInput() ?>
+    <?= $form->field($model, 'hascolor')->checkbox() ?>
 
     <?= $form->field($model, 'mainimageid')->textInput() ?>
 

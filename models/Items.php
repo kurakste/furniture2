@@ -40,12 +40,13 @@ class Items extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['cid', 'price', 'length', 'width', 'height', 'volume', 'weight'], 'required'],
+            [['cid', 'price', 'length', 'width', 'height', 'volume', 'weight', 'extid'], 'required'],
             [['cid', 'mainimageid'], 'integer'],
             [['price', 'length', 'width', 'height', 'volume', 'weight'], 'number'],
             [['name'], 'string', 'max' => 125],
             [['description'], 'string', 'max' => 255],
             [['cid'], 'exist', 'skipOnError' => true, 'targetClass' => Categorys::className(), 'targetAttribute' => ['cid' => 'id']],
+            [['extid', 'hasfacture', 'hascolor'], 'safe'],
         ];
     }
 

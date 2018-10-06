@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Items;
+use app\models\Categorys;
 use app\models\Color;
 use app\models\Factures;
 use app\models\ItemsSearch;
@@ -83,8 +84,14 @@ class ItemsController extends Controller
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
+        $category = Categorys::find()
+            ->select(['name'])
+            ->indexBy('id')
+            ->column();
+
         return $this->render('create', [
             'model' => $model,
+            'category' => $category
         ]);
     }
 
