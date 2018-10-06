@@ -25,7 +25,6 @@ class OrderAsset extends AssetBundle
     ];
     public $js = [
         '/js/plugins.js',
-        '/js/button.js',
         '/js/active.js',
 
     ];
