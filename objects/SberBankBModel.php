@@ -22,7 +22,7 @@ class SberBankBModel
     private $testMode = false; 
     //private $testUrl ='https://3dsec.sberbank.ru/payment/webservices/merchant-ws?wsdl'; 
     private $testUrl ='https://3dsec.sberbank.ru/payment/rest/register.do'; 
-    private $workUrl ='https://securepayments.sberbank.ru/rest/register.do';
+    private $workUrl ='https://securepayments.sberbank.ru/payment/rest/register.do';
 
     /*
      *  I will use .env to setup some setting in constructor
