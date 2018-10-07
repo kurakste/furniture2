@@ -85,7 +85,7 @@ $this->beginPage(); ?>
                     <div class="col-12 col-lg-6 col-xl-7">
                         <div class="newsletter-text mb-100">
                             <h2>Закажите <span>обратный звонок</span></h2>
-                            <p>Отправьте номер и вам перезвонят в течении 30 минут</p>
+                            <p><label for='phone'>Отправьте номер и вам перезвонят в течении 30 минут</label><p>
                         </div>
                     </div>
                     <div class="col-12 col-lg-6 col-xl-5">
