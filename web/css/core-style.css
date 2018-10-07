@@ -1366,10 +1366,39 @@ img {
     top: 0;
     left: 0;
     content: '';
+    /*news after */
     background-color: rgba(60, 60, 60, 0.7);
     z-index: 1;
     opacity: 0;
     visibility: visible;
+}
+
+a.newsHover {
+    color: dimgray;
+    background-color: white;
+}
+
+a.newsHover::after {
+    background-color: white;
+    color: black;
+}
+
+a.newsHover::focus {
+    background-color: white;
+    color: black;
+}
+
+a.newsHover::visited {
+    color: black;
+}
+
+a.newsHover::focus {
+    background-color: white;
+    color: black;
+}
+
+.wraper-text {
+    text-align: justify;
 }
 
 .single-products-catagory a img {
@@ -2122,4 +2151,5 @@ img {
     margin-top: 70px;
     margin-right: 50px;
     text-align: justify;
+    /*width: 90%;*/
 }
