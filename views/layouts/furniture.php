@@ -68,9 +68,9 @@ $this->beginPage(); ?>
                 <br>
                 <!-- Social -->
                 <div class="social-info d-flex justify-content-between">
-                    <a href="https://www.instagram.com/chepcamebel" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                    <a href="https://www.facebook.com/chepcamebel/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                    <a href="https://m.vk.com/club117603272" target="_blank"><i class="fa fa-vk" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/chepcamebel" target="_blank" rel="noopener"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://www.facebook.com/chepcamebel/" target="_blank" rel="noopener"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="https://m.vk.com/club117603272" target="_blank" rel="noopener"><i class="fa fa-vk" aria-hidden="true"></i></a>
                 </div>
             </header>
 
@@ -116,7 +116,7 @@ $this->beginPage(); ?>
 
                             <p class="copywrite">
                                 Copyright &copy; All rights reserved | Produced by 3Kita Studio 2018
-                                <a href="http://www.3kita-studio.ru" target="_blank">3Kita Studio</a>
+                                <a href="http://www.3kita-studio.ru" target="_blank" rel="noopener">3Kita Studio</a>
                             </p>
                         </div>
                     </div>
