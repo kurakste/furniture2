@@ -27,7 +27,7 @@ $this->beginPage(); ?>
     <!-- Mobile Nav 767px-->
         <div class="mobile-nav">
             <div class="amado-navbar-brand">
-                <a href="/"><img src="/icon/logo.png" alt="logo"></a>
+                <a href="/"><img class="logo" src="/icon/logo.png" alt="logo"></a>
             </div>
             <div class="amado-navbar-toggler">
                 <span></span><span></span><span></span>
@@ -111,7 +111,7 @@ $this->beginPage(); ?>
                         <div class="single_widget_area">
                             <!-- Logo -->
                             <div class="footer-logo mr-50">
-                                <a href="/"><img src="/icon/logo.png" alt="logo"></a>
+                                <a href="/"><img  class="footer_logo" src="/icon/logo.png" alt="logo"></a>
                             </div>
 
                             <p class="copywrite">
