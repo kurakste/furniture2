@@ -3,17 +3,15 @@
 /* :: :: 1.0 Import Fonts */
 
 /* @import url(../css/bootstrap.min.css); */
-@import url(../css/owl.carousel.css);
-@import url(../css/animate.css);
-@import url(../css/magnific-popup.css);
-@import url(../css/jquery-ui.min.css);
-@import url(../css/nice-select.css);
+@import url(/css/owl.carousel.css);
+@import url(/css/animate.css);
+@import url(/css/magnific-popup.css);
+@import url(/css/jquery-ui.min.css);
+@import url(/css/nice-select.css);
 /* @import url(../css/font-awesome.min.css); */
 @font-face {
     font-family: 'Montserrat Alternates';
    /* src: url("/fonts/MontserratAlternates-ExtraBold.otf"); */
-    /* src: url('/fonts/RobotoSlab-Regular.ttf'); */
-    /* src: url('/fonts/MontserratAlternates-Italic.ttf'); */
     src: url('/fonts/MontserratAlternates-Light.ttf');
 }
 /*@font-face {
