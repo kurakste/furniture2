@@ -16,7 +16,7 @@ $this->beginPage(); ?>
     <meta name="description" content="Магазин мебели от производителя. Стулья. Столы. Чепетская Мебельная фабрика." > 
     <title>Чепецкая мебельная фабрика</title>
     <link rel="icon" href="/icon/logo.png">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates" rel="stylesheet"> -->
     <?php $this->head() ?>
 </head>
 
@@ -49,12 +49,12 @@ $this->beginPage(); ?>
 
                 <nav class="amado-nav">
                     <ul>
-                        <li class="active"><a href="/">Главная</a></li>
-                        <li><a href="/site/tables">Обеденные группы</a></li>
-                        <li><a href="/site/terms">Условия работы</a></li>
-                        <li><a href="/news/tape">Новости</a></li>
-                        <li><a href="/site/contact">Контакты</a></li>
-                        <li><a href="/site/about">О компании</a></li>
+                        <li class="active"><a href="/"><b>Главная</b></a></li>
+                        <li><a href="/site/tables"><b>Обеденные группы</b></a></li>
+                        <li><a href="/site/terms"><b>Условия работы</b></a></li>
+                        <li><a href="/news/tape"><b>Новости</b></a></li>
+                        <li><a href="/site/contact"><b>Контакты</b></a></li>
+                        <li><a href="/site/about"><b>О компании</b></a></li>
                     </ul>
                 </nav>
                 <br>
