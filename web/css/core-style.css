@@ -10,11 +10,6 @@
 @import url(../css/nice-select.css);
 @import url(../css/font-awesome.min.css);
 @font-face {
-    font-family: 'Montserrat Alternates', sans-serif;
-    /*src: url("/web/fonts/MontserratAlternates-ExtraBold.otf");*/
-    src: url("/web/fonts/RobotoSlab-Regular.ttf")
-}
-/*@font-face {
     font-family: 'helveticaneuebold';
     src: url("../fonts/helvetica_neu_bold-webfont.woff2") format("woff2"), url("../fonts/helvetica_neu_bold-webfont.woff") format("woff");
     font-weight: normal;
@@ -26,7 +21,7 @@
     src: url("../fonts/helveticaneue_medium-webfont.woff2") format("woff2"), url("../fonts/helveticaneue_medium-webfont.woff") format("woff");
     font-weight: normal;
     font-style: normal;
-} */
+}
 
 /* :: 2.0 Import All CSS */
 
@@ -39,9 +34,7 @@
 
 body {
     font-family: 'Montserrat Alternates', sans-serif;
-    font-stretch: semi-condensed;
     font-size: 20px;
-    font-weight: 900;
 }
 
 h1,
@@ -1366,39 +1359,10 @@ img {
     top: 0;
     left: 0;
     content: '';
-    /*news after */
     background-color: rgba(60, 60, 60, 0.7);
     z-index: 1;
     opacity: 0;
     visibility: visible;
-}
-
-a.newsHover {
-    color: dimgray;
-    background-color: white;
-}
-
-a.newsHover::after {
-    background-color: white;
-    color: black;
-}
-
-a.newsHover::focus {
-    background-color: white;
-    color: black;
-}
-
-a.newsHover::visited {
-    color: black;
-}
-
-a.newsHover::focus {
-    background-color: white;
-    color: black;
-}
-
-.wraper-text {
-    text-align: justify;
 }
 
 .single-products-catagory a img {
@@ -1717,17 +1681,6 @@ a.newsHover::focus {
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .footer_area .single_widget_area .footer_menu .navbar-nav .nav-item .nav-link {
         padding: 10px 0;
-    }
-}
-
-@media only screen and (max-width: 767px) {
-    .footer-logo {
-        display: none;
-    }
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-    .footer-logo {
-        display: none;
     }
 }
 
@@ -2151,5 +2104,4 @@ a.newsHover::focus {
     margin-top: 70px;
     margin-right: 50px;
     text-align: justify;
-    /*width: 90%;*/
 }

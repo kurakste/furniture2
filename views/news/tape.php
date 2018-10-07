@@ -8,10 +8,10 @@ $this->title = 'My Yii Application'; ?>
 
     <div class="products-catagories-area clearfix">
         <div class="amado-pro-catagory clearfix">
-            <div class="single-products-catagory clearfix">
+            <div class="single-products-catagory clearfix" style="width: 85%;">
 
-                <div class="centered_rule" style="width: 95%;">
-                    <h1 style="width: 95%;">Ключевые новости отрасли</h1>
+                <div class="centered_rule">
+                    <h1><b>Ключевые новости отрасли</b></h1>
                     <hr>
 
                     <?php foreach ($news as $new): ?>
@@ -22,10 +22,10 @@ $this->title = 'My Yii Application'; ?>
                         <?= $new->created_at ?>
                     </h4>
                     <div class="wrapper_text">
-                        <?= substr($new->content, 0, 500) ?>...<br>
+                        <?= substr($new->content, 0, 500) ?>
                     </div>
 
-                    <a  class="newsHover" href="/news/read?id=<?= $new->id?>">...читать статью</a>
+                    <a href="/news/read?id=<?= $new->id?>">...читать статью</a>
                     <hr>
                     <?php endforeach ?>
 
