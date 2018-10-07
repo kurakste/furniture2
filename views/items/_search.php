@@ -16,6 +16,8 @@ use yii\widgets\ActiveForm;
     ]); ?>
 
     <?= $form->field($model, 'id') ?>
+    
+    <?= $form->field($model, 'extid') ?>
 
     <?= $form->field($model, 'name') ?>
 
