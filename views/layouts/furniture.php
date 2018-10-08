@@ -68,9 +68,9 @@ $this->beginPage(); ?>
                 <br>
                 <!-- Social -->
                 <div class="social-info d-flex justify-content-between">
-                    <a href="https://www.instagram.com/chepcamebel" target="_blank" rel="noopener"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                    <a href="https://www.facebook.com/chepcamebel/" target="_blank" rel="noopener"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                    <a href="https://m.vk.com/club117603272" target="_blank" rel="noopener"><i class="fa fa-vk" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/chepcamebel" target="_blank" rel="noopener"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://www.facebook.com/chepcamebel/" target="_blank" rel="noopener"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                    <a href="https://m.vk.com/club117603272" target="_blank" rel="noopener"><i class="fab fa-vk" aria-hidden="true"></i></a>
                 </div>
             </header>
 
