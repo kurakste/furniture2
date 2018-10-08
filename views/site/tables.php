@@ -1,7 +1,7 @@
 
 <?php
 
-use dastanaron\translit\Translit;
+use yii\helpers\Url;
 
 $this->title = ''; 
 ?>
@@ -12,12 +12,11 @@ $this->title = '';
         <?php foreach ($items as $item): ?>
 
          <?php 
-            $translit = new Translit();
             $seo = $item->c->name.' / ';
         ?>
 
         <div class="single-products-catagory clearfix">
-            <a href="/items/showitem?id=<?= $item->id ?>">
+            <a href="<?= Url::toRoute(['items/showitemtable', 'id' => $item->cpu]) ?>">
             <img src="<?= $item->getMainImage() ?>" alt="<?= $seo.$item->name ?>" title="<?= $seo.$item->name ?>">
                 <div class="hover-content">
                     <div class="line"></div>

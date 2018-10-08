@@ -171,7 +171,36 @@ class ItemsController extends Controller
       $colors =Color::find()->all();  
  
  
-      $item = $this->findModel($id);  
+      //$item = $this->findModel($id);  
+      $item = Items::find()->where(['cpu' => $id])->one();
+
+        if (!$item) {
+            throw new NotFoundHttpException('Извините. Товар не найден. Мы работаем над проблемой.');
+        }
+      
+
+      $headers = Yii::$app->response->headers;  
+      $headers->set('Pragma', 'no-cache');  
+ 
+      return $this->render(  
+          'showitem2',  
+          ['item' => $item, 'factures'=>$factures, 'colors' =>$colors]  
+      );  
+  } 
+    
+    public function actionShowitemtable($id)  
+  {  
+      $this->layout = 'furniture';  
+      $factures = Factures::find()->all();  
+      $colors =Color::find()->all();  
+ 
+      $item = Items::find()->where(['cpu' => $id])->one();
+
+        if (!$item) {
+            throw new NotFoundHttpException('Извините. Товар не найден. Мы работаем над проблемой.');
+        }
+      
+      //$this->findModel($id);  
         
       $headers = Yii::$app->response->headers;  
       $headers->set('Pragma', 'no-cache');  

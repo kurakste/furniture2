@@ -2,6 +2,7 @@
 use yii\helpers\Html;
 use app\assets\AppAsset;
 use app\objects\CartsBModel;
+use yii\helpers\Url;
 
 AppAsset::register($this);
 
@@ -14,7 +15,7 @@ $this->beginPage(); ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Магазин мебели от производителя. Стулья. Столы. Чепетская Мебельная фабрика." > 
-    <title>Чепецкая мебельная фабрика</title>
+    <title>Чепетская мебельная фабрика</title>
     <link rel="icon" href="/icon/logo.png">
     <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates" rel="stylesheet">
     <?php $this->head() ?>
@@ -50,11 +51,11 @@ $this->beginPage(); ?>
                 <nav class="amado-nav">
                     <ul>
                         <li class="active"><a href="/">Главная</a></li>
-                        <li><a href="/site/tables">Обеденные группы</a></li>
-                        <li><a href="/site/terms">Условия работы</a></li>
-                        <li><a href="/news/tape">Новости</a></li>
-                        <li><a href="/site/contact">Контакты</a></li>
-                        <li><a href="/site/about">О компании</a></li>
+                        <li><a href="<?= Url::toRoute(['site/tables']) ?>">Обеденные группы</a></li>
+                        <li><a href="<?= Url::toRoute(['site/terms']) ?>">Условия работы</a></li>
+                        <li><a href="<?= Url::toRoute(['news/tape']) ?>">Новости</a></li>
+                        <li><a href="<?= Url::toRoute(['site/contact']) ?>">Контакты</a></li>
+                        <li><a href="<?= Url::toRoute(['site/about']) ?>">О компании</a></li>
                     </ul>
                 </nav>
                 <br>
