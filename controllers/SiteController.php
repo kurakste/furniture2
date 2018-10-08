@@ -230,7 +230,7 @@ class SiteController extends Controller
 
 
         foreach ($items as $item) {
-            $cpu = stripslashes($translit->translit(str_replace(["\"", ",", "+", ":", "/"] ,"" , $item->name))).'_'.$item->id;
+            $cpu = stripslashes($translit->translit(str_replace(["\"", ",", "+", ":", "/","\""] ,"" , $item->name))).'_'.$item->id;
             $item->cpu = $cpu; 
             $res = $item->save();
         }
