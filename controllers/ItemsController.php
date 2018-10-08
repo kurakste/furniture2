@@ -11,6 +11,8 @@ use app\models\ItemsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use dastanaron\translit\Translit;
+
 
 /**
  * ItemsController implements the CRUD actions for Items model.
@@ -81,6 +83,12 @@ class ItemsController extends Controller
         $model = new Items();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+
+            $translit = new Translit();
+            $cpu = $translit->translit(str_replace(["\"", ",", "+", ":"], "", $model->name)).'_'.$model->id;
+            $model->cpu = $cpu; 
+            $model->save();
+
             return $this->redirect(['view', 'id' => $model->id]);
         }
 

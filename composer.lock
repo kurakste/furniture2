@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "97cb0972b5e0e0712287eab5ee1fb4cf",
+    "content-hash": "d0a717760d018842cace979fba6d8005",
     "packages": [
         {
             "name": "2amigos/yii-cdn-asset-management-library",
@@ -585,6 +585,47 @@
                 "zikula"
             ],
             "time": "2018-08-27T06:10:37+00:00"
+        },
+        {
+            "name": "dastanaron/yii2-translit",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dastanaron/yii2-translit.git",
+                "reference": "41132644c9cfc8c68d76570e39413bcf4875b620"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dastanaron/yii2-translit/zipball/41132644c9cfc8c68d76570e39413bcf4875b620",
+                "reference": "41132644c9cfc8c68d76570e39413bcf4875b620",
+                "shasum": ""
+            },
+            "type": "extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "dastanaron\\translit\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "dastanaron",
+                    "email": "flow199@yandex.ru"
+                }
+            ],
+            "description": "Transliteration symbols rus-en and en-rus",
+            "keywords": [
+                "extension"
+            ],
+            "time": "2018-01-12T09:05:56+00:00"
         },
         {
             "name": "dmstr/yii2-adminlte-asset",
@@ -4542,6 +4583,7 @@
         "bower-asset/font-awesome": 20,
         "kartik-v/yii2-widget-select2": 20,
         "alexantr/yii2-elfinder": 20,
+        "dastanaron/yii2-translit": 20,
         "kint-php/kint": 20
     },
     "prefer-stable": false,
