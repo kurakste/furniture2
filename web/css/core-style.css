@@ -8,7 +8,7 @@
 @import url(../css/magnific-popup.css);
 @import url(../css/jquery-ui.min.css);
 @import url(../css/nice-select.css);
-@import url(../css/font-awesome.min.css);
+/* @import url(../css/font-awesome.min.css); */
 @font-face {
     font-family: 'helveticaneuebold';
     src: url("../fonts/helvetica_neu_bold-webfont.woff2") format("woff2"), url("../fonts/helvetica_neu_bold-webfont.woff") format("woff");
