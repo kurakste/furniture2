@@ -38,7 +38,7 @@ $this->beginPage(); ?>
             <!-- Header -->
             <header class="header-area clearfix">
                 <div class="nav-close">
-                    <i class="fa fa-close" aria-hidden="true"></i>
+                    <i class="fas fa-times" aria-hidden="true"></i>
                 </div>
 
                 <div class="logo">
