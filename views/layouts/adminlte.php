@@ -330,7 +330,7 @@ dmstr\web\AdminLteAsset::register($this);
         <li><a href="/items"><i class="fas fa-briefcase"></i> <span>Items</span></a></li>
         <li><a href="/orders"><i class="far fa-folder-open"></i> <span>Orders</span></a></li>
         <li><a href="/images"><i class="fa fa-images"></i> <span>Images</span></a></li>
-        <li><a href="/news"><i class="fas fa-newspaper"></i> <span>News</span></a></li>
+        <li><a href="/news/index"><i class="fas fa-newspaper"></i> <span>News</span></a></li>
         <li><a href="/colors"><i class="fas fa-palette"></i> <span>Colors</span></a></li>
         <li><a href="/factures"><i class="fas fa-paint-roller"></i> <span>Factures</span></a></li>
         <li><a href="/finder"><i class="fas fa-file"></i> <span>Files</span></a></li>

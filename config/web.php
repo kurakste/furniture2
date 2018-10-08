@@ -16,7 +16,8 @@ $config = [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'RrqkwnPzuA0n0I0OwRbBbRWyVDsLesd8',
-            'enableCsrfValidation' => false,
+            'enableCsrfValidation' => true,
+            'baseUrl' => '',
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -57,7 +58,14 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 'cart/<id:\d+>'=>'cart/index',
-                'addtocart/<id:\d+>'=>'cart/index'
+                'addtocart/<id:\d+>'=>'cart/index',
+                'chair/<id:\w+>' => 'items/showitem',
+                'table/<id:\w+>' => 'items/showitemtable',
+                'tables' =>'site/tables',
+                'terms' => 'site/terms',
+                'news' => 'news/tape', 
+                'contacts' => 'site/contact',
+                'about' => 'site/about',
             ],
 
         ],
