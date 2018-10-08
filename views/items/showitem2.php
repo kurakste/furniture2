@@ -57,6 +57,7 @@ use app\objects\widgets\cfselector\Colorandfactureselector;
                     </div>
                     <!-- Add to Cart Form -->
                     <form id='add-to-cart' class="cart clearfix" method="post" action='/cart/add-string-to-cart'>
+                    <input type="hidden" name="<?= Yii::$app->request->csrfParam; ?>" value="<?= Yii::$app->request->csrfToken; ?>" />
                     <input type="hidden" name="iid" id="iid" value="<?= $item->id ?>" />
                         <div class="cart-btn d-flex mb-50">
                             <p>кол-во</p>
