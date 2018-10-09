@@ -50,7 +50,7 @@ use app\objects\widgets\cfselector\Colorandfactureselector;
                               <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
                                 <meta itemprop="price" content="<?= number_format($item->price, 2, '.', ' ')?>">
                                 <meta itemprop="priceCurrency" content="RUB">
-                                <p class="product-price"><?= number_format($item->price, 2, '.', ' ')?></p>
+                                <p class="product-price"><?= number_format($item->price, 0, '.', ' ')?></p>
                               </div> <!-- offers -->
                             <a href="#">
                                 <div itemprop="name">
