@@ -50,11 +50,17 @@ $(document).ready(function() {
    // Сохраняет всю корзину через API.
    function sendDataToAPI(cstrings)
    {
-      console.log(JSON.stringify(cstrings));
+      var csrfToken = $('meta[name="csrf-token"]').attr("content");
+      var csrfParam = $('meta[name="csrf-param"]').attr("content");
+      
+      console.log('cartstrings='+ JSON.stringify(cstrings) + '&' + csrfParam + '=' + csrfToken);
+      
       $.ajax({
          type: "POST",
          url: "/cart/jason-api-store",
-         data: 'cartstrings='+JSON.stringify(cstrings),
+         // data: 'cartstrings='+JSON.stringify(cstrings),
+         //data: { cartstrings: cstrings, csrfParam: csrfToken},
+         data: 'cartstrings='+ JSON.stringify(cstrings) + '&' + csrfParam + '=' + csrfToken,
 
          success: function (msg) {
             console.log('Получены данные:' + msg);

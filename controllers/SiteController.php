@@ -164,13 +164,13 @@ class SiteController extends Controller
 
     public function actionSendMail()
     {
-        $clientEmail = Yii::$app->request->post('email');
+        $phone = Yii::$app->request->post('phone');
                 \Yii::$app->mailer->compose('/mail/mail-request', [
-                    'clientEmail' => $clientEmail
+                    'phone' => $phone
                     ])
                     ->setFrom('yoursiteaudit@yandex.ru')
                     ->setTo([env('ADMIN_EMAIL'), env('OP_EMAIL')])
-                    ->setSubject('Email request')
+                    ->setSubject('chepeck-mebel.ru: Запрос на обратны звонок.')
                     ->send();
                 // =======================================
         

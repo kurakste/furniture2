@@ -13,10 +13,13 @@ $(document).ready(function() {
 
    function getCityList(pattern)
    {
+      var csrfToken = $('meta[name="csrf-token"]').attr("content");
+      var csrfParam = $('meta[name="csrf-param"]').attr("content");
+
       $.ajax({
          type: "POST",
          url: "/pec/ajax-get-cities",
-         data: 'pattern='+ pattern,
+         data: 'pattern='+ pattern  + '&' + csrfParam + '=' + csrfToken,
 
          success: function (msg) {
             var data = msg;
