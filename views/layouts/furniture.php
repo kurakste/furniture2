@@ -14,7 +14,7 @@ $this->beginPage(); ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Магазин мебели от производителя. Стулья. Столы. Чепетская Мебельная фабрика." > 
-    <title>Чепецкая мебельная фабрика</title>
+    <title>Чепетская мебельная фабрика.</title>
     <link rel="icon" href="/icon/logo.png">
     <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates" rel="stylesheet">
     <?php $this->head() ?>
@@ -68,9 +68,9 @@ $this->beginPage(); ?>
                 <br>
                 <!-- Social -->
                 <div class="social-info d-flex justify-content-between">
-                    <a href="https://www.instagram.com/chepcamebel" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                    <a href="https://www.facebook.com/chepcamebel/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                    <a href="https://m.vk.com/club117603272" target="_blank"><i class="fa fa-vk" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/chepcamebel" target="_blank" rel="noopener"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://www.facebook.com/chepcamebel/" target="_blank" rel="noopener"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="https://m.vk.com/club117603272" target="_blank" rel="noopener"><i class="fa fa-vk" aria-hidden="true"></i></a>
                 </div>
             </header>
 
@@ -85,7 +85,7 @@ $this->beginPage(); ?>
                     <div class="col-12 col-lg-6 col-xl-7">
                         <div class="newsletter-text mb-100">
                             <h2>Закажите <span>обратный звонок</span></h2>
-                            <p>Отправьте номер и вам перезвонят в течении 30 минут</p>
+                            <p><label for='phone'>Отправьте номер и вам перезвонят в течении 30 минут</label><p>
                         </div>
                     </div>
                     <div class="col-12 col-lg-6 col-xl-5">
@@ -116,7 +116,7 @@ $this->beginPage(); ?>
 
                             <p class="copywrite">
                                 Copyright &copy; All rights reserved | Produced by 3Kita Studio 2018
-                                <a href="http://www.3kita-studio.ru" target="_blank">3Kita Studio</a>
+                                <a href="http://www.3kita-studio.ru" target="_blank" rel="noopener">3Kita Studio</a>
                             </p>
                         </div>
                     </div>

@@ -33,12 +33,14 @@ $(document).ready(function (){
    {
       $('#page1').css('display', 'none');
       $('#page2').css('display', 'block');
+      window.scrollTo(0,0);
    }
 
    function toBackToDescription()
    {
       $('#page1').css('display', 'block');
       $('#page2').css('display', 'none');
+      window.scrollTo(0,0);
    }
 
    function toChooseFacture()
@@ -50,6 +52,7 @@ $(document).ready(function (){
       }
       $('#page2').css('display', 'none');
       $('#page3').css('display', 'block');
+      window.scrollTo(0,0);
       return;
    };
    
@@ -69,6 +72,7 @@ $(document).ready(function (){
    {
       $('#page3').css('display', 'none');
       $('#page2').css('display', 'block');
+      window.scrollTo(0,0);
    }
 
 });
