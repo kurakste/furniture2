@@ -1,7 +1,5 @@
 <?php 
 
-$this->registerMetaTag(['name' => 'csrf-param', 'content' => Yii::$app->request->csrfParam]);
-$this->registerMetaTag(['name' => 'csrf-token', 'content' => Yii::$app->request->getCsrfToken()]);
 
 
 $this->registerJsFile('/js/sum.js', [

@@ -5,6 +5,9 @@ use app\objects\CartsBModel;
 use yii\helpers\Url;
 
 AppAsset::register($this);
+$this->registerMetaTag(['name' => 'csrf-param', 'content' => Yii::$app->request->csrfParam]);
+$this->registerMetaTag(['name' => 'csrf-token', 'content' => Yii::$app->request->getCsrfToken()]);
+
 
 $this->beginPage(); ?>
 
