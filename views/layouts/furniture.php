@@ -13,8 +13,8 @@ $this->beginPage(); ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Магазин мебели от производителя. Стулья. Столы. Чепетская Мебельная фабрика." > 
-    <title>Чепетская мебельная фабрика.</title>
+    <meta name="description" content="Магазин мебели от производителя. Стулья. Столы. Чепецкая Мебельная фабрика." > 
+    <title>Чепецкая мебельная фабрика.</title>
     <link rel="icon" href="/icon/logo.png">
     <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates" rel="stylesheet">
     <?php $this->head() ?>
