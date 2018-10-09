@@ -1,7 +1,14 @@
 <?php 
+
+$this->registerMetaTag(['name' => 'csrf-param', 'content' => Yii::$app->request->csrfParam]);
+$this->registerMetaTag(['name' => 'csrf-token', 'content' => Yii::$app->request->getCsrfToken()]);
+
+
 $this->registerJsFile('/js/sum.js', [
         'depends' => [\yii\web\JqueryAsset::className()] 
     ]);
+
+
 
 ?>
 
@@ -100,6 +107,7 @@ $pref = ($i === 0) ? '' : $i;
                             <div class="cart-btn mt-100">
                                 <a href="/orders/getform" class="btn amado-btn w-100">Оплата</a>
                                 <form action="/cart/clear-cart" method="post">
+                                    <input type="hidden" name="<?= Yii::$app->request->csrfParam; ?>" value="<?= Yii::$app->request->csrfToken; ?>" />
                                     <input type="submit" class="btn amado-btn w-100" name="" id="" value="Очистить" />
                                     
                                 </form>

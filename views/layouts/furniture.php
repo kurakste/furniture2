@@ -15,7 +15,7 @@ $this->beginPage(); ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Магазин мебели от производителя. Стулья. Столы. Чепетская Мебельная фабрика." > 
-    <title>Чепетская мебельная фабрика</title>
+    <title>Чепецская мебельная фабрика</title>
     <link rel="icon" href="/icon/logo.png">
     <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates" rel="stylesheet">
     <?php $this->head() ?>
@@ -92,6 +92,7 @@ $this->beginPage(); ?>
                     <div class="col-12 col-lg-6 col-xl-5">
                         <div class="newsletter-form mb-100">
                             <form action="/site/send-mail" method="post">
+                                <input type="hidden" name="<?= Yii::$app->request->csrfParam; ?>" value="<?= Yii::$app->request->csrfToken; ?>" />
                                 <div class="input_tel">
                                     <input type="tel" id="phone" name="phone" class="nl-tel" placeholder="8-999-555-00-00" pattern="[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}">
                                 </div>
