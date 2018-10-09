@@ -11,6 +11,7 @@ use app\models\Carts;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use yii\web\NotFoundHttpException;
+use dastanaron\translit\Translit;
 
 class SiteController extends Controller
 {
@@ -163,13 +164,13 @@ class SiteController extends Controller
 
     public function actionSendMail()
     {
-        $clientEmail = Yii::$app->request->post('email');
+        $phone = Yii::$app->request->post('phone');
                 \Yii::$app->mailer->compose('/mail/mail-request', [
-                    'clientEmail' => $clientEmail
+                    'phone' => $phone
                     ])
                     ->setFrom('yoursiteaudit@yandex.ru')
                     ->setTo([env('ADMIN_EMAIL'), env('OP_EMAIL')])
-                    ->setSubject('Email request')
+                    ->setSubject('chepeck-mebel.ru: Запрос на обратны звонок.')
                     ->send();
                 // =======================================
         
@@ -219,6 +220,24 @@ class SiteController extends Controller
 
     public function actionTest()
     {
+
+        $translit = new Translit();
+
+        /* $items = \app\models\Items::find()->where(['id'=>17])->one(); */
+        /* var_dump($translit->translit(str_replace(["\"", ",", "+", ":"], "", $items->name))); */
+        $items = \app\models\Items::find()->all();
+
+
+
+        foreach ($items as $item) {
+            $cpu = stripslashes($translit->translit(str_replace(["\"", ",", "+", ":", "/","\""] ,"" , $item->name))).'_'.$item->id;
+            $item->cpu = $cpu; 
+            $res = $item->save();
+        }
+
+        /* var_dump($items); */
+        die;
+        return;
     }
 
 

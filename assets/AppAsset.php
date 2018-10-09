@@ -22,8 +22,6 @@ class AppAsset extends AssetBundle
     public $css = [
         '/scss/style.css',
         '/css/core-style.css',
-        '/css/modal.css',
-        '/css/radio.css',
     ];
     public $js = [
         '/js/plugins.js',
