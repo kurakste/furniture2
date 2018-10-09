@@ -11,6 +11,8 @@ use app\models\ItemsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use dastanaron\translit\Translit;
+
 
 /**
  * ItemsController implements the CRUD actions for Items model.
@@ -81,6 +83,12 @@ class ItemsController extends Controller
         $model = new Items();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+
+            $translit = new Translit();
+            $cpu = $translit->translit(str_replace(["\"", ",", "+", ":"], "", $model->name)).'_'.$model->id;
+            $model->cpu = $cpu; 
+            $model->save();
+
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
@@ -163,7 +171,36 @@ class ItemsController extends Controller
       $colors =Color::find()->all();  
  
  
-      $item = $this->findModel($id);  
+      //$item = $this->findModel($id);  
+      $item = Items::find()->where(['cpu' => $id])->one();
+
+        if (!$item) {
+            throw new NotFoundHttpException('Извините. Товар не найден. Мы работаем над проблемой.');
+        }
+      
+
+      $headers = Yii::$app->response->headers;  
+      $headers->set('Pragma', 'no-cache');  
+ 
+      return $this->render(  
+          'showitem2',  
+          ['item' => $item, 'factures'=>$factures, 'colors' =>$colors]  
+      );  
+  } 
+    
+    public function actionShowitemtable($id)  
+  {  
+      $this->layout = 'furniture';  
+      $factures = Factures::find()->all();  
+      $colors =Color::find()->all();  
+ 
+      $item = Items::find()->where(['cpu' => $id])->one();
+
+        if (!$item) {
+            throw new NotFoundHttpException('Извините. Товар не найден. Мы работаем над проблемой.');
+        }
+      
+      //$this->findModel($id);  
         
       $headers = Yii::$app->response->headers;  
       $headers->set('Pragma', 'no-cache');  

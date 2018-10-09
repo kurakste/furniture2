@@ -1,8 +1,9 @@
 <?php
 
-/* @var $this yii\web\View */
+use yii\helpers\Url;
 
-$this->title = 'My Yii Application'; ?>
+$this->title = ''; 
+?>
 
 
 
@@ -11,8 +12,11 @@ $this->title = 'My Yii Application'; ?>
     <?php foreach ($items as $item) : ?>
     
      <div class="single-products-catagory clearfix">
-     <a href="/items/showitem?id=<?= $item->id ?>">
-     <img src="<?= $item->getMainImage(); ?>" alt="chair">
+     <?php 
+        $seo = $item->c->name.' / ';
+    ?>
+     <a href="<?= Url::toRoute(['items/showitem', 'id' => $item->cpu]) ?>">
+     <img src="<?= $item->getMainImage(); ?>" alt="<?= $seo.$item->name ?>" title="<?= $seo.$item->name ?>">
              <div class="hover-content">
                  <div class="line"></div>
                  <p>&#8381 <?= number_format($item->price, 2, ',', ' ') ?></p>

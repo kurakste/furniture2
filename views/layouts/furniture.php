@@ -2,8 +2,12 @@
 use yii\helpers\Html;
 use app\assets\AppAsset;
 use app\objects\CartsBModel;
+use yii\helpers\Url;
 
 AppAsset::register($this);
+$this->registerMetaTag(['name' => 'csrf-param', 'content' => Yii::$app->request->csrfParam]);
+$this->registerMetaTag(['name' => 'csrf-token', 'content' => Yii::$app->request->getCsrfToken()]);
+
 
 $this->beginPage(); ?>
 
@@ -14,7 +18,7 @@ $this->beginPage(); ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Магазин мебели от производителя. Стулья. Столы. Чепетская Мебельная фабрика." > 
-    <title>Чепетская мебельная фабрика.</title>
+    <title>Чепецская мебельная фабрика</title>
     <link rel="icon" href="/icon/logo.png">
     <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates" rel="stylesheet">
     <?php $this->head() ?>
@@ -27,7 +31,7 @@ $this->beginPage(); ?>
     <!-- Mobile Nav 767px-->
         <div class="mobile-nav">
             <div class="amado-navbar-brand">
-                <a href="/"><img src="/icon/logo.png" alt="logo"></a>
+                <a href="/"><img class="logo" src="/icon/logo.png" alt="logo"></a>
             </div>
             <div class="amado-navbar-toggler">
                 <span></span><span></span><span></span>
@@ -50,11 +54,11 @@ $this->beginPage(); ?>
                 <nav class="amado-nav">
                     <ul>
                         <li class="active"><a href="/">Главная</a></li>
-                        <li><a href="/site/tables">Обеденные группы</a></li>
-                        <li><a href="/site/terms">Условия работы</a></li>
-                        <li><a href="/news/tape">Новости</a></li>
-                        <li><a href="/site/contact">Контакты</a></li>
-                        <li><a href="/site/about">О компании</a></li>
+                        <li><a href="<?= Url::toRoute(['site/tables']) ?>">Обеденные группы</a></li>
+                        <li><a href="<?= Url::toRoute(['site/terms']) ?>">Условия работы</a></li>
+                        <li><a href="<?= Url::toRoute(['news/tape']) ?>">Новости</a></li>
+                        <li><a href="<?= Url::toRoute(['site/contact']) ?>">Контакты</a></li>
+                        <li><a href="<?= Url::toRoute(['site/about']) ?>">О компании</a></li>
                     </ul>
                 </nav>
                 <br>
@@ -91,6 +95,7 @@ $this->beginPage(); ?>
                     <div class="col-12 col-lg-6 col-xl-5">
                         <div class="newsletter-form mb-100">
                             <form action="/site/send-mail" method="post">
+                                <input type="hidden" name="<?= Yii::$app->request->csrfParam; ?>" value="<?= Yii::$app->request->csrfToken; ?>" />
                                 <div class="input_tel">
                                     <input type="tel" id="phone" name="phone" class="nl-tel" placeholder="8-999-555-00-00" pattern="[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}">
                                 </div>
@@ -111,7 +116,7 @@ $this->beginPage(); ?>
                         <div class="single_widget_area">
                             <!-- Logo -->
                             <div class="footer-logo mr-50">
-                                <a href="/"><img src="/icon/logo.png" alt="logo"></a>
+                                <a href="/"><img  class="footer_logo" src="/icon/logo.png" alt="logo"></a>
                             </div>
 
                             <p class="copywrite">
@@ -129,14 +134,12 @@ $this->beginPage(); ?>
                                     <div class="collapse navbar-collapse" id="footerNavContent">
 
                                         <ul class="navbar-nav ml-auto">
-
-
                                             <li class="nav-item"><a class="nav-link" href="/">Главная</a></li>
-                                            <li class="nav-item"><a class="nav-link" href="/site/tables">Обеденные группы</a></li>
-                                            <li class="nav-item"><a class="nav-link" href="/site/terms">Условия работы</a></li>
-                                            <li class="nav-item"><a class="nav-link" href="/news/tape">Новости</a></li>
-                                            <li class="nav-item"><a class="nav-link" href="/site/contact">Контакты</a></li>
-                                            <li class="nav-item"><a class="nav-link" href="/site/about">О компании</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="<?= Url::toRoute(['site/tables']) ?>">Обеденные группы</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="<?= Url::toRoute(['site/terms']) ?>">Условия работы</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="<?= Url::toRoute(['news/tape']) ?>">Новости</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="<?= Url::toRoute(['site/contact']) ?>">Контакты</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="<?= Url::toRoute(['site/about']) ?>">О компании</a></li>
                                         </ul>
                                     </div>
                                 </nav>
