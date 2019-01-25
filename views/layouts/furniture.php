@@ -95,7 +95,7 @@ $this->beginPage(); ?>
                     <div class="col-12 col-lg-6 col-xl-5">
                         <div class="newsletter-form mb-100">
                             <form action="/site/send-mail" method="post">
-                                <input type="hidden" name="<?= Yii::$app->request->csrfParam; ?>" value="<?= Yii::$app->request->csrfToken; ?>" />
+                                <input type="hidden" name="<?= $this->renderDynamic('return Yii::$app->request->csrfParam;'); ?>" value="<?= Yii::$app->request->csrfToken; ?>" />
                                 <div class="input_tel">
                                     <input type="tel" id="phone" name="phone" class="nl-tel" placeholder="8-999-555-00-00" pattern="[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}">
                                 </div>
